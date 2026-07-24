@@ -1,12 +1,16 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Marginalia from '../components/Marginalia.astro';
+import WorkCard from '../components/WorkCard.astro';
 
-// Milestone 1: hero plus one representative section to prove the system.
-// Hero copy is the approved-in-draft text from BRAND.md section 2. The
-// section below it is draft copy drawn from the three doors, for Erin to
-// review. Remaining Home sections (featured work, closing) come in
-// Milestone 2.
+// Home: hero, a short passage from the three doors, featured work, and a
+// closing line with the page's single primary call to action. Hero copy is
+// the approved-in-draft text from BRAND.md section 2; the rest is draft
+// copy for Erin to review.
+
+const featured = (await getCollection('work', (entry) => entry.data.featured))
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Base
@@ -40,7 +44,30 @@ import Marginalia from '../components/Marginalia.astro';
       Different rooms, same job: getting people with different vocabularies
       working from the same page, so the work ships.
     </p>
-    <p><a class="button-primary" href="/contact/">Get in touch</a></p>
+  </section>
+
+  <section class="featured content">
+    <h2>Selected work</h2>
+    <div class="cards">
+      {featured.map((entry) => (
+        <WorkCard
+          id={entry.id}
+          title={entry.data.title}
+          kind={entry.data.kind}
+          summary={entry.data.summary}
+        />
+      ))}
+    </div>
+    <p><a href="/work/">See more of the work</a></p>
+  </section>
+
+  <section class="closing content">
+    <p>
+      If you're hiring for program or operations work, wrestling with your
+      MarTech stack, or a small business that needs a site built by someone
+      who's run the whole function, let's talk.
+    </p>
+    <p><a class="button-primary" href="/contact/">Start a conversation</a></p>
   </section>
 </Base>
 
@@ -61,7 +88,9 @@ import Marginalia from '../components/Marginalia.astro';
     color: var(--muted);
   }
 
-  .doors {
+  .doors,
+  .featured,
+  .closing {
     margin-top: var(--section-gap);
   }
 
@@ -69,13 +98,38 @@ import Marginalia from '../components/Marginalia.astro';
     margin-bottom: var(--space-16);
   }
 
-  .doors p + .annotated,
-  .doors .annotated + p,
-  .doors p + p {
+  .doors .annotated + p {
     margin-top: var(--space-16);
   }
 
-  .doors .button-primary {
-    margin-top: var(--space-8);
+  .featured .cards {
+    display: grid;
+    gap: var(--space-16);
+    margin-top: var(--space-24);
+  }
+
+  .featured .cards + p {
+    margin-top: var(--space-24);
+  }
+
+  .closing p:first-child {
+    font-family: var(--font-display);
+    font-size: var(--size-heading);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  .closing p + p {
+    margin-top: var(--space-32);
+  }
+
+  @media (min-width: 768px) {
+    .featured .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .featured .cards > :global(.work-card:first-child) {
+      grid-column: 1 / -1;
+    }
   }
 </style>

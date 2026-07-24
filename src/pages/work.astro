@@ -1,0 +1,112 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+// The proof page. Entries live as markdown files in src/content/work/,
+// sorted by their `order` field, and render as hairline-separated sections
+// with anchors so Home cards can link straight to an entry.
+
+const entries = (await getCollection('work')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content }))
+);
+---
+
+<Base
+  title="Work | Erin Ankeny"
+  description="Selected work: program and operations leadership, MarTech and data governance, and websites and brands for small businesses."
+>
+  <div class="content">
+    <header class="page-intro">
+      <h1>Work</h1>
+      <p>
+        A few things I've built and run, and what came of them. Each one is the
+        same job in a different room: getting people with different vocabularies
+        working from the same page.
+      </p>
+    </header>
+
+    {rendered.map(({ entry, Content }) => (
+      <article id={entry.id} class="entry">
+        <p class="eyebrow">
+          {entry.data.kind}{entry.data.years && <> · {entry.data.years}</>}
+        </p>
+        <h2>
+          {entry.data.link ? (
+            <a href={entry.data.link}>{entry.data.title}</a>
+          ) : (
+            entry.data.title
+          )}
+        </h2>
+        <div class="entry-body">
+          <Content />
+        </div>
+      </article>
+    ))}
+
+    <p class="also">
+      I also build and maintain smaller sites, including{' '}
+      <a href="https://blbrenovations.com">blbrenovations.com</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .page-intro {
+    padding-block-start: var(--space-48);
+  }
+
+  .page-intro p {
+    margin-top: var(--space-16);
+    font-size: var(--size-subhead);
+    color: var(--muted);
+  }
+
+  .entry {
+    margin-top: var(--space-48);
+    padding-top: var(--space-48);
+    border-top: 1px solid var(--border);
+  }
+
+  .entry .eyebrow {
+    margin-bottom: var(--space-8);
+  }
+
+  .entry h2 a {
+    color: var(--ink);
+  }
+
+  .entry h2 a:hover {
+    color: var(--plum);
+  }
+
+  .entry-body :global(h3) {
+    margin-top: var(--space-24);
+  }
+
+  .entry-body :global(p) {
+    margin-top: var(--space-8);
+  }
+
+  .also {
+    margin-top: var(--space-48);
+    padding-top: var(--space-32);
+    border-top: 1px solid var(--border);
+    font-size: var(--size-small);
+    color: var(--muted);
+  }
+
+  @media (min-width: 1024px) {
+    .page-intro {
+      padding-block-start: var(--space-64);
+    }
+
+    .entry {
+      margin-top: var(--space-64);
+      padding-top: var(--space-64);
+    }
+  }
+</style>

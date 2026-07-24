@@ -1,0 +1,46 @@
+---
+// Card for a work entry (BRAND.md section 7: cards are only for work
+// entries). Links through to the entry's anchor on the Work page.
+interface Props {
+  id: string;
+  title: string;
+  kind: string;
+  summary: string;
+}
+
+const { id, title, kind, summary } = Astro.props;
+---
+
+<a class="work-card" href={`/work/#${id}`}>
+  <p class="eyebrow">{kind}</p>
+  <h3>{title}</h3>
+  <p class="summary">{summary}</p>
+</a>
+
+<style>
+  .work-card {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-24);
+    color: var(--ink);
+    transition: border-color var(--transition);
+  }
+
+  .work-card:hover {
+    text-decoration: none;
+    border-color: color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+
+  h3 {
+    margin-top: var(--space-8);
+  }
+
+  .summary {
+    margin-top: var(--space-8);
+    font-size: var(--size-small);
+    line-height: 1.5;
+    color: var(--muted);
+  }
+</style>

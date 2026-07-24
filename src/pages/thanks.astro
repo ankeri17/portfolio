@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Landing page for the contact form's success redirect. Not in the
+// navigation.
+---
+
+<Base
+  title="Message sent | Erin Ankeny"
+  description="Your message is on its way."
+>
+  <div class="content">
+    <header class="page-intro">
+      <h1>Thanks, your message is on its way</h1>
+      <p>
+        I read everything that comes through here and I'll get back to you
+        within a couple of days. In the meantime, the
+        <a href="/work/">work page</a> has more on what I do.
+      </p>
+    </header>
+  </div>
+</Base>
+
+<style>
+  .page-intro {
+    padding-block-start: var(--space-48);
+  }
+
+  .page-intro p {
+    margin-top: var(--space-16);
+    color: var(--muted);
+  }
+
+  @media (min-width: 1024px) {
+    .page-intro {
+      padding-block-start: var(--space-64);
+    }
+  }
+</style>

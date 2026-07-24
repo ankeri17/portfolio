@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+
+// One clear ask, one simple form, and what she's open to. The form posts
+// to Netlify Forms (the data-netlify attribute wires it up at deploy
+// time), with a honeypot field for spam and a mailto fallback below.
+---
+
+<Base
+  title="Contact | Erin Ankeny"
+  description="Get in touch about program and operations work, MarTech and data governance, or a website for your small business."
+>
+  <div class="content">
+    <header class="page-intro">
+      <h1>Say hello</h1>
+      <p>
+        Tell me a little about what you're working on, and I'll get back to you
+        within a couple of days.
+      </p>
+    </header>
+
+    <section class="open-to">
+      <p class="eyebrow">What I'm open to</p>
+      <p>
+        Contract program and operations work, MarTech and data governance
+        engagements, and website and brand projects for small businesses.
+      </p>
+    </section>
+
+    <form
+      name="contact"
+      method="POST"
+      action="/thanks/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="visually-hidden" aria-hidden="true">
+        <label>Leave this field empty: <input name="bot-field" /></label>
+      </p>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="message">What you're working on</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button class="button-primary" type="submit">Send message</button>
+    </form>
+
+    <p class="fallback">
+      Prefer email? Write to{' '}
+      <a href="mailto:erinankeny@gmail.com">erinankeny@gmail.com</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .page-intro {
+    padding-block-start: var(--space-48);
+  }
+
+  .page-intro p {
+    margin-top: var(--space-16);
+    font-size: var(--size-subhead);
+    color: var(--muted);
+  }
+
+  .open-to {
+    margin-top: var(--space-32);
+  }
+
+  .open-to .eyebrow {
+    margin-bottom: var(--space-8);
+  }
+
+  form {
+    margin-top: var(--space-48);
+    max-width: 520px;
+  }
+
+  form .button-primary {
+    margin-top: var(--space-24);
+  }
+
+  .fallback {
+    margin-top: var(--space-32);
+    font-size: var(--size-small);
+    color: var(--muted);
+  }
+
+  @media (min-width: 1024px) {
+    .page-intro {
+      padding-block-start: var(--space-64);
+    }
+  }
+</style>
