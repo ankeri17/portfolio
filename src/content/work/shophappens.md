@@ -1,12 +1,12 @@
 ---
-title: 'ShopHappens'
+title: 'ShopHappens.com Website'
 kind: 'Independent venture'
 years: 'Since 2007'
 link: 'https://shophappens.com'
-summary: "An affiliate content site I've owned and run since 2007, helping everyday people make sense of a crowded marketplace."
+summary: "An affiliate content site helping people make sense of online shopping and the digital marketing tactics that stack up against them."
 highlight: 'Owned and run on my own since 2007.'
 order: 4
 featured: false
 ---
 
-An affiliate content site built to help everyday people make sense of a crowded marketplace. I gave it a full redesign in 2026.
+An affiliate content site helping people make sense of online shopping and the digital marketing tactics that stack up against them.
