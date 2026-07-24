@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form definitions</title>
+  </head>
+  <body>
+    <!-- This file exists only for Netlify's build-time form scanner. It is
+         never linked or shown to visitors. The form here must stay in sync
+         with the real one in src/pages/contact.astro: same form name, same
+         field names, same honeypot. -->
+    <form name="contact" method="POST" action="/thanks/" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
