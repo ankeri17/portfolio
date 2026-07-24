@@ -153,7 +153,12 @@ Use marginalia sparingly. Two or three per page at most. If everything is annota
 
 ## 7. Components
 
-**Links.** `--plum`, no underline at rest, underline on hover with a 2px offset. External links get no icon.
+**Links.** Two cases, and the distinction is deliberate.
+
+- *In body text:* `--plum` with a resting underline in a softened plum, going full strength on hover, 2px offset. The underline is required. Color alone cannot be the only thing distinguishing a link from surrounding text, and WCAG AA is the floor for this site. Do not remove it.
+- *Navigation, buttons, and work cards:* `--plum` with no underline at rest, underline on hover with a 2px offset. These are unambiguous as interactive elements from position and treatment, so the underline isn't needed.
+
+External links get no icon.
 
 **Primary button.** `--plum` fill, `--paper` text, 999px radius, 10px by 20px padding, Instrument Sans 500 at 15px. Hover goes to `--plum-hover`. One per view.
 
