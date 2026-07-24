@@ -3,7 +3,7 @@ title: 'MarTech enablement at TD Ameritrade and Charles Schwab'
 kind: 'Enterprise program work'
 years: '2018 to 2021'
 summary: 'Program management for the MarTech and data architecture team behind a major brokerage, through a merger.'
-highlight: 'Tag and consent management rolled out across more than 100 sites.'
+highlight: 'Project managed the Tealium TMS and OneTrust CMP rollouts across more than 100 sites.'
 order: 5
 featured: true
 ---
