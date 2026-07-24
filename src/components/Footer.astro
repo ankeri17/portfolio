@@ -1,0 +1,53 @@
+---
+// Footer: hairline rule, then contact and links in muted 14px
+// (BRAND.md section 7). Real estate referral link lives here, per section 11.
+const year = new Date().getFullYear();
+---
+
+<footer class="canvas">
+  <div class="footer-inner">
+    <ul>
+      <li><a href="mailto:erinankeny@gmail.com">erinankeny@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/erinankeny" rel="me">LinkedIn</a></li>
+      <li>
+        <a href="https://realtyconnect.net/site/erin-ankeny/">Real estate referrals</a>
+      </li>
+    </ul>
+    <p>&copy; {year} Erin Ankeny</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    margin-top: auto;
+  }
+
+  .footer-inner {
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-12) var(--space-32);
+    padding-block: var(--space-32) var(--space-48);
+    margin-top: var(--section-gap);
+    font-size: var(--size-small);
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8) var(--space-24);
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    color: var(--muted);
+  }
+
+  a:hover {
+    color: var(--plum);
+  }
+</style>

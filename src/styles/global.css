@@ -1,0 +1,241 @@
+@import './tokens.css';
+
+/* Self-hosted fonts (BRAND.md section 5). Both files are variable fonts
+   covering weights 400 and 500. Latin subset only. */
+
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/instrument-sans-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/newsreader-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/newsreader-italic-latin.woff2') format('woff2');
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  font-weight: 400;
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--size-title);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: var(--size-heading);
+  line-height: 1.25;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: var(--size-subhead);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+p {
+  max-width: 68ch;
+}
+
+small,
+.text-small {
+  font-size: var(--size-small);
+  line-height: 1.5;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--size-eyebrow);
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Links (BRAND.md section 7) */
+
+a {
+  color: var(--plum);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Focus (BRAND.md section 9) */
+
+:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 2px;
+}
+
+/* Layout shell */
+
+.canvas {
+  width: 100%;
+  max-width: calc(var(--canvas-width) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+/* Buttons (BRAND.md section 7) */
+
+.button-primary {
+  display: inline-block;
+  background: var(--plum);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.button-primary:hover {
+  background: var(--plum-hover);
+  text-decoration: none;
+}
+
+.button-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.button-secondary:hover {
+  background: var(--panel);
+  text-decoration: none;
+}
+
+/* Skip link: hidden until focused */
+
+.skip-link {
+  position: absolute;
+  left: var(--space-16);
+  top: var(--space-16);
+  background: var(--paper);
+  padding: var(--space-8) var(--space-16);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Marginalia wrapper: paragraphs with an aside position against this */
+
+.annotated {
+  position: relative;
+}
+
+/* Placeholder marker (BRAND.md section 12): visible on purpose, removed
+   before launch */
+
+.placeholder {
+  background: var(--plum-tint);
+  color: var(--plum);
+  font-size: var(--size-small);
+  padding: 2px 6px;
+  border-radius: var(--radius-control);
+}
+
+/* Motion (BRAND.md section 8): hero reveal is the whole load budget */
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-reveal {
+  animation: hero-reveal 400ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

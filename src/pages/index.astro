@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import Marginalia from '../components/Marginalia.astro';
+
+// Milestone 1: hero plus one representative section to prove the system.
+// Hero copy is the approved-in-draft text from BRAND.md section 2. The
+// section below it is draft copy drawn from the three doors, for Erin to
+// review. Remaining Home sections (featured work, closing) come in
+// Milestone 2.
+---
+
+<Base
+  title="Erin Ankeny"
+  description="Program and operations leadership, MarTech and data governance, and web and brand work for small businesses."
+>
+  <section class="hero content hero-reveal">
+    <h1>I help people who don't speak the same language build things together.</h1>
+    <p>
+      Twenty years getting technical teams and everyone else to understand each
+      other. Lately, one of them isn't human.
+    </p>
+  </section>
+
+  <section class="doors content">
+    <p class="eyebrow">Ways to work with me</p>
+    <div class="annotated">
+      <Marginalia>
+        My first job title was technical writer. Everything since has been a
+        version of that job.
+      </Marginalia>
+      <p>
+        I lead programs and operations for teams in the middle of change,
+        including agile and transformation work. I untangle MarTech, data, and
+        privacy and consent governance. And I build websites and brands for
+        small businesses, with property and home services as the corner I know
+        best.
+      </p>
+    </div>
+    <p>
+      Different rooms, same job: getting people with different vocabularies
+      working from the same page, so the work ships.
+    </p>
+    <p><a class="button-primary" href="/contact/">Get in touch</a></p>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-block-start: var(--section-gap);
+  }
+
+  .hero h1 {
+    font-size: var(--size-hero);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+
+  .hero p {
+    margin-top: var(--space-24);
+    font-size: var(--size-subhead);
+    color: var(--muted);
+  }
+
+  .doors {
+    margin-top: var(--section-gap);
+  }
+
+  .doors .eyebrow {
+    margin-bottom: var(--space-16);
+  }
+
+  .doors p + .annotated,
+  .doors .annotated + p,
+  .doors p + p {
+    margin-top: var(--space-16);
+  }
+
+  .doors .button-primary {
+    margin-top: var(--space-8);
+  }
+</style>

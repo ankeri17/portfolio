@@ -1,0 +1,42 @@
+---
+// The signature element (BRAND.md section 6): a short aside in Newsreader
+// italic, muted, sitting in the left margin beside the paragraph it
+// annotates. Use inside a div.annotated, placed before the paragraph:
+//
+//   <div class="annotated">
+//     <Marginalia>Short aside text.</Marginalia>
+//     <p>The paragraph being annotated.</p>
+//   </div>
+//
+// Under 1040px it collapses inline above the paragraph with a left
+// hairline rule. Two or three per page at most.
+---
+
+<aside class="marginalia"><slot /></aside>
+
+<style>
+  .marginalia {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--size-eyebrow);
+    line-height: 1.4;
+    color: var(--muted);
+    border-left: 1px solid var(--border);
+    padding-left: var(--space-16);
+    margin-bottom: var(--space-12);
+    max-width: 40ch;
+  }
+
+  @media (min-width: 1040px) {
+    .marginalia {
+      position: absolute;
+      top: 0.2em;
+      left: -176px;
+      width: 140px;
+      border-left: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      text-align: right;
+    }
+  }
+</style>
