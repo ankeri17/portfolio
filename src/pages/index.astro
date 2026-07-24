@@ -4,10 +4,9 @@ import Base from '../layouts/Base.astro';
 import Marginalia from '../components/Marginalia.astro';
 import WorkCard from '../components/WorkCard.astro';
 
-// Home: hero, a short passage from the three doors, featured work, and a
-// closing line with the page's single primary call to action. Hero copy is
-// the approved-in-draft text from BRAND.md section 2; the rest is draft
-// copy for Erin to review.
+// Home: hero, the three doors in a tinted band, featured work, and a
+// closing line with the page's single primary call to action. All copy is
+// final per Erin; the hero aside is an empty placeholder awaiting her text.
 
 const featured = (await getCollection('work', (entry) => entry.data.featured))
   .sort((a, b) => a.data.order - b.data.order);
@@ -18,43 +17,56 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
   description="Program and operations leadership, MarTech and data governance, and web and brand work for small businesses."
 >
   <section class="hero content hero-reveal">
-    <h1>I help people who don't speak the same language build things together.</h1>
+    <div class="annotated">
+      <Marginalia>
+        <span class="placeholder">[PLACEHOLDER: hero aside, needs Erin]</span>
+      </Marginalia>
+      <h1>I help people who don't speak the same language build things together.</h1>
+    </div>
+    <div class="hero-rule"></div>
     <p>
       Twenty years getting technical teams and everyone else to understand each
       other. Lately, one of them isn't human.
     </p>
   </section>
 
-  <section class="doors content">
-    <p class="eyebrow">Ways to work with me</p>
-    <div class="annotated">
-      <Marginalia>
-        My first job title was technical writer. Everything since has been a
-        version of that job.
-      </Marginalia>
-      <p>
-        I lead programs and operations for teams in the middle of change,
-        including agile and transformation work. I untangle MarTech, data, and
-        privacy and consent governance. And I build websites and brands for
-        small businesses, with property and home services as the corner I know
-        best.
+  <section class="doors">
+    <div class="content">
+      <p class="eyebrow">Ways to work with me</p>
+      <div class="annotated door">
+        <Marginalia>
+          My first job title was technical writer. Everything since has been a
+          version of that job.
+        </Marginalia>
+        <p>
+          I lead programs and operations for teams in the middle of change,
+          including agile and transformation work.
+        </p>
+      </div>
+      <p class="door">I untangle MarTech, data, and privacy and consent governance.</p>
+      <p class="door">
+        And I build websites and brands for small businesses, with property and
+        home services as the corner I know best.
+      </p>
+      <p class="door">
+        Different rooms, same job: getting people with different vocabularies
+        working from the same page, so the work ships.
       </p>
     </div>
-    <p>
-      Different rooms, same job: getting people with different vocabularies
-      working from the same page, so the work ships.
-    </p>
   </section>
 
   <section class="featured content">
     <h2>Selected work</h2>
     <div class="cards">
-      {featured.map((entry) => (
+      {featured.map((entry, index) => (
         <WorkCard
           id={entry.id}
           title={entry.data.title}
           kind={entry.data.kind}
           summary={entry.data.summary}
+          image={entry.data.image}
+          imageAlt={entry.data.imageAlt}
+          wide={index === 0}
         />
       ))}
     </div>
@@ -82,24 +94,44 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
     letter-spacing: -0.01em;
   }
 
+  .hero-rule {
+    width: 52px;
+    height: 3px;
+    background: var(--plum);
+    margin-top: var(--space-24);
+  }
+
   .hero p {
     margin-top: var(--space-24);
     font-size: var(--size-subhead);
     color: var(--muted);
   }
 
-  .doors,
-  .featured,
-  .closing {
+  /* Full-bleed tinted band. The negative margins stretch the section to
+     the viewport edges; the inner .content column stays aligned. */
+  .doors {
     margin-top: var(--section-gap);
+    margin-inline: calc(50% - 50vw);
+    background: var(--plum-tint);
+    padding-block: var(--space-48);
+    padding-inline: var(--gutter);
   }
 
   .doors .eyebrow {
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-8);
   }
 
-  .doors .annotated + p {
-    margin-top: var(--space-16);
+  .doors .door {
+    padding-block: var(--space-16);
+  }
+
+  .doors .door + .door {
+    border-top: 1px solid var(--border);
+  }
+
+  .featured,
+  .closing {
+    margin-top: var(--section-gap);
   }
 
   .featured .cards {
@@ -128,8 +160,14 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
       grid-template-columns: 1fr 1fr;
     }
 
-    .featured .cards > :global(.work-card:first-child) {
+    .featured .cards > :global(.work-card.wide) {
       grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .doors {
+      padding-block: var(--space-64);
     }
   }
 </style>

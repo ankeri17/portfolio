@@ -1,20 +1,42 @@
 ---
 // Card for a work entry (BRAND.md section 7: cards are only for work
-// entries). Links through to the entry's anchor on the Work page.
+// entries). Links through to the entry's anchor on the Work page. The
+// screenshot slot shows the entry's image when one exists and a neutral
+// placeholder block until then; real images and alt text come from Erin
+// via the entry's `image` and `imageAlt` frontmatter.
 interface Props {
   id: string;
   title: string;
   kind: string;
   summary: string;
+  image?: string;
+  imageAlt?: string;
+  wide?: boolean;
 }
 
-const { id, title, kind, summary } = Astro.props;
+const { id, title, kind, summary, image, imageAlt, wide = false } = Astro.props;
 ---
 
-<a class="work-card" href={`/work/#${id}`}>
-  <p class="eyebrow">{kind}</p>
-  <h3>{title}</h3>
-  <p class="summary">{summary}</p>
+<a class:list={['work-card', { wide }]} href={`/work/#${id}`}>
+  <div class="shot">
+    {image ? (
+      <img
+        src={image}
+        alt={imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'}
+        width="640"
+        height="400"
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      <span class="placeholder">[PLACEHOLDER: screenshot, needs Erin]</span>
+    )}
+  </div>
+  <div class="card-body">
+    <p class="eyebrow">{kind}</p>
+    <h3>{title}</h3>
+    <p class="summary">{summary}</p>
+  </div>
 </a>
 
 <style>
@@ -23,7 +45,7 @@ const { id, title, kind, summary } = Astro.props;
     background: var(--paper);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
-    padding: var(--space-24);
+    overflow: hidden;
     color: var(--ink);
     transition: border-color var(--transition);
   }
@@ -31,6 +53,27 @@ const { id, title, kind, summary } = Astro.props;
   .work-card:hover {
     text-decoration: none;
     border-color: color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+
+  .shot {
+    aspect-ratio: 16 / 10;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16);
+    text-align: center;
+  }
+
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: var(--space-24);
   }
 
   h3 {
@@ -42,5 +85,21 @@ const { id, title, kind, summary } = Astro.props;
     font-size: var(--size-small);
     line-height: 1.5;
     color: var(--muted);
+  }
+
+  /* The wide card (first on Home) goes side by side at tablet and up so
+     its screenshot doesn't dominate the page. */
+  @media (min-width: 768px) {
+    .work-card.wide {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+    }
+
+    .work-card.wide .shot {
+      aspect-ratio: auto;
+      height: 100%;
+      border-bottom: none;
+      border-right: 1px solid var(--border);
+    }
   }
 </style>

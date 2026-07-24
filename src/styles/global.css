@@ -38,6 +38,9 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* Full-bleed bands stretch to 100vw, which includes the scrollbar;
+     clip the sliver of overflow instead of showing a horizontal scroll. */
+  overflow-x: clip;
 }
 
 body {
