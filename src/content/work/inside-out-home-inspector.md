@@ -8,4 +8,4 @@ order: 3
 featured: true
 ---
 
-For seven years I ran the whole marketing function for Inside Out Home Inspector, a family-owned home inspection business in central Maryland: brand, social media, and outreach. The work built a reputation that helped homeowners buy and sell with confidence. The business has since closed.
+For seven years I ran the whole marketing function for Inside Out Home Inspector, a family-owned home inspection business in central Maryland: brand, social media, and outreach. The work built a reputation that helped homeowners buy and sell with confidence.
