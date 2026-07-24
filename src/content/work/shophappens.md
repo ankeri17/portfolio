@@ -1,19 +1,17 @@
 ---
 title: 'ShopHappens'
-kind: 'Own project'
-summary: 'An affiliate content site I built and operate end to end, helping people navigate complicated buying decisions.'
+kind: 'Independent venture'
+years: 'Since 2007'
+link: 'https://shophappens.com'
+summary: "An affiliate content site I've owned and run since 2007, helping everyday people make sense of a crowded marketplace."
 order: 4
 featured: false
 ---
 
 ### What it was
 
-An affiliate content site I built and run myself. It shares the thread that runs through the rest of my work: helping people navigate complicated systems, in this case what to buy and why. <span class="placeholder">[PLACEHOLDER: link, years running, and a sentence on the niche, needs Erin]</span>
+An affiliate content site built to help everyday people make sense of a crowded marketplace.
 
 ### My role
 
-Everything. Building, writing, operating, and maintaining it over years.
-
-### The outcome
-
-<span class="placeholder">[PLACEHOLDER: outcome, such as traffic, longevity, or what running it has taught, needs Erin]</span>
+Everything. I've owned and run it on my own since 2007, and gave it a full redesign in 2026.
