@@ -8,4 +8,4 @@ order: 1
 featured: true
 ---
 
-A portfolio and workshop site for a North Dakota photographer whose work runs to prairie churches, abandoned farmsteads, and night skies. I'm designing and building it end to end, and making his workshops easy to find and book. Launching soon.
+A portfolio and booking site for a North Dakota photographer who leads workshops to prairie churches, abandoned farmsteads, and night skies. I'm designing and building it, and making his workshops easy to find and book. Launching soon.
