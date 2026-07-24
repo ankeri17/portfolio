@@ -228,12 +228,12 @@ Four pages for v1. The fuller project plan lives alongside this file.
 |---|---|
 | Home | State the throughline, then route to work and contact. |
 | About | The full arc and the person. The most important page after Home. |
-| Work | Proof. Entries structured as what it was, her role, the outcome. |
+| Work | Proof. Each entry is one tight paragraph plus a single highlight line. |
 | Contact | One clear ask, one simple form, and what she's open to. |
 
 ShopHappens, her affiliate content site, belongs as an entry on the Work page rather than as a page of its own. It is proof that she builds and runs something end to end, and it shares the values thread that runs through her career: helping people navigate complicated systems. Frame it that way. Do not list it as a bare credential.
 
-**Work page curation.** Feature four to six entries, not everything she has ever touched. Quantity dilutes proof. Each featured entry carries real weight: what it was, her role, the outcome. Candidates, strongest first:
+**Work page curation.** Feature four to six entries, not everything she has ever touched. Quantity dilutes proof. Each featured entry carries real weight: one paragraph covering what it was, her role, and what came of it, plus one highlight line as the proof point. Candidates, strongest first:
 
 - The photographer's site (in progress). Carries design craft and is the source of referral traffic.
 - helloagainproperties.com. A complete multi-page site for a vacation rental business, with real photography and copy that has a voice.

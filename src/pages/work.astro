@@ -44,6 +44,9 @@ const rendered = await Promise.all(
         <div class="entry-body">
           <Content />
         </div>
+        {entry.data.highlight && (
+          <p class="highlight">{entry.data.highlight}</p>
+        )}
       </article>
     ))}
 
@@ -83,12 +86,19 @@ const rendered = await Promise.all(
     color: var(--plum);
   }
 
-  .entry-body :global(h3) {
-    margin-top: var(--space-24);
+  .entry-body :global(p) {
+    margin-top: var(--space-16);
   }
 
-  .entry-body :global(p) {
-    margin-top: var(--space-8);
+  .highlight {
+    margin-top: var(--space-24);
+    border-left: 2px solid var(--plum);
+    padding-left: var(--space-16);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--size-subhead);
+    line-height: 1.5;
+    max-width: 52ch;
   }
 
   .also {
