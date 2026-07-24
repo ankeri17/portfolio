@@ -116,6 +116,21 @@ a:hover {
   text-underline-offset: 2px;
 }
 
+/* Links inside running text keep a resting underline so they don't rely
+   on color alone (WCAG 1.4.1). Softened underline color keeps it quiet;
+   hover brings it to full strength. Nav, cards, and buttons stay bare. */
+
+main p a:not(.button-primary):not(.button-secondary) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--plum) 40%, transparent);
+}
+
+main p a:not(.button-primary):not(.button-secondary):hover {
+  text-decoration-color: var(--plum);
+}
+
 /* Focus (BRAND.md section 9) */
 
 :focus-visible {
@@ -216,8 +231,14 @@ a:hover {
   resize: vertical;
 }
 
-/* Visually hidden but available to assistive tech, and used for the form
-   honeypot */
+/* Spam honeypot: hidden from everyone, kept out of the tab order in the
+   markup */
+
+.honeypot {
+  display: none;
+}
+
+/* Visually hidden but available to assistive tech */
 
 .visually-hidden {
   position: absolute;

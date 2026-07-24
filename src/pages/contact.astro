@@ -35,8 +35,8 @@ import Base from '../layouts/Base.astro';
       netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <p class="visually-hidden" aria-hidden="true">
-        <label>Leave this field empty: <input name="bot-field" /></label>
+      <p class="honeypot" aria-hidden="true">
+        <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
       </p>
       <div class="field">
         <label for="name">Name</label>

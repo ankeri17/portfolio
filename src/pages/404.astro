@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found | Erin Ankeny"
+  description="That page doesn't exist."
+>
+  <div class="content">
+    <header class="page-intro">
+      <p class="eyebrow">404</p>
+      <h1>That page doesn't exist</h1>
+      <p>
+        The link may be old, or the address mistyped. The{' '}
+        <a href="/">home page</a> is the best place to start over, or head
+        straight to the <a href="/work/">work</a>.
+      </p>
+    </header>
+  </div>
+</Base>
+
+<style>
+  .page-intro {
+    padding-block-start: var(--space-48);
+  }
+
+  .page-intro .eyebrow {
+    margin-bottom: var(--space-8);
+  }
+
+  .page-intro p:not(.eyebrow) {
+    margin-top: var(--space-16);
+    color: var(--muted);
+  }
+
+  @media (min-width: 1024px) {
+    .page-intro {
+      padding-block-start: var(--space-64);
+    }
+  }
+</style>
