@@ -15,7 +15,14 @@ import Marginalia from '../components/Marginalia.astro';
     <header class="page-intro">
       <h1>About</h1>
       <figure class="headshot">
-        <span class="placeholder">[PLACEHOLDER: headshot, no photo exists yet]</span>
+        <img
+          src="/images/headshot.webp"
+          alt="Erin Ankeny, smiling in glasses in front of a brick wall"
+          width="400"
+          height="400"
+          loading="eager"
+          decoding="async"
+        />
       </figure>
       <p>
         The short version: I've spent twenty years being the person who gets
@@ -119,18 +126,15 @@ import Marginalia from '../components/Marginalia.astro';
     max-width: 60ch;
   }
 
-  /* Reserved space for the headshot. Swaps to an img when one exists. */
   .headshot {
     margin-top: var(--space-24);
     width: 200px;
-    aspect-ratio: 4 / 5;
-    background: var(--panel);
+  }
+
+  .headshot img {
+    width: 100%;
+    height: auto;
     border-radius: var(--radius-card);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-16);
-    text-align: center;
   }
 
   section {
