@@ -7,4 +7,4 @@ order: 6
 featured: false
 ---
 
-A startup building a platform that helps cross-functional teams monitor the data their marketing technology stacks generate, so they can be sure their tools are doing what they're supposed to. I joined the founding team in 2021, and for five years my focus was product operations, customer support, and team building, plus whatever else a fast-moving startup needed on a given day. <span class="placeholder">[PLACEHOLDER: outcome, such as what the product became or what she built there, needs Erin]</span>
+A startup building a platform that helps cross-functional teams monitor the data their marketing technology stacks generate, so they can be sure their tools are doing what they're supposed to. I joined as the first employee in 2021, and for five years my focus was product operations, customer support, and team building, plus whatever else a fast-moving startup needed on a given day.

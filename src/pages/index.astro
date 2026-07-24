@@ -4,10 +4,6 @@ import Base from '../layouts/Base.astro';
 import Marginalia from '../components/Marginalia.astro';
 import WorkCard from '../components/WorkCard.astro';
 
-// Home: hero, the three doors in a tinted band, featured work, and a
-// closing line with the page's single primary call to action. All copy is
-// final per Erin; the hero aside is an empty placeholder awaiting her text.
-
 const featured = (await getCollection('work', (entry) => entry.data.featured))
   .sort((a, b) => a.data.order - b.data.order);
 ---
@@ -25,32 +21,26 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
     </div>
     <div class="hero-rule"></div>
     <p>
-      Twenty years getting technical teams and everyone else to understand each
-      other. Lately, one of them isn't human.
+      Twenty years helping technical teams and everyone else to understand each
+      other... including our new AI partners.
     </p>
   </section>
 
   <section class="doors">
     <div class="content">
-      <p class="eyebrow">Ways to work with me</p>
-      <div class="annotated door">
-        <Marginalia>
-          My first job title was technical writer. Everything since has been a
-          version of that job.
-        </Marginalia>
-        <p>
-          I lead programs and operations for teams in the middle of change,
-          including agile and transformation work.
-        </p>
-      </div>
+      <p class="eyebrow">How to work with me</p>
+      <p class="door">
+        I lead programs and operations for teams in the middle of change,
+        including agile and transformation work.
+      </p>
       <p class="door">I untangle MarTech, data, and privacy and consent governance.</p>
       <p class="door">
         And I build websites and brands for small businesses, with property and
-        home services as the corner I know best.
+        home services as the corner of the world I know best.
       </p>
       <p class="door">
         Different rooms, same job: getting people with different vocabularies
-        working from the same page, so the work ships.
+        working from the same page, so work ships more smoothly.
       </p>
     </div>
   </section>
