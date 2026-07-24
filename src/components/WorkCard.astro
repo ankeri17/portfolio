@@ -66,6 +66,10 @@ const { id, title, kind, summary, image, imageAlt, wide = false } = Astro.props;
     text-align: center;
   }
 
+  .shot:has(img) {
+    padding: 0;
+  }
+
   .shot img {
     width: 100%;
     height: 100%;

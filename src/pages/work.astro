@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Marginalia from '../components/Marginalia.astro';
 
 // The proof page. Entries live as markdown files in src/content/work/,
 // sorted by their `order` field, and render as hairline-separated sections
@@ -29,7 +30,7 @@ const rendered = await Promise.all(
       </p>
     </header>
 
-    {rendered.map(({ entry, Content }) => (
+    {rendered.map(({ entry, Content }, index) => (
       <article id={entry.id} class="entry">
         <p class="eyebrow">
           {entry.data.kind}{entry.data.years && <> · {entry.data.years}</>}
@@ -41,7 +42,26 @@ const rendered = await Promise.all(
             entry.data.title
           )}
         </h2>
-        <div class="entry-body">
+        <div class="shot">
+          {entry.data.image ? (
+            <img
+              src={entry.data.image}
+              alt={entry.data.imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'}
+              width="680"
+              height="425"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <span class="placeholder">[PLACEHOLDER: screenshot, needs Erin]</span>
+          )}
+        </div>
+        <div class="annotated entry-body">
+          {index === 0 && (
+            <Marginalia>
+              <span class="placeholder">[PLACEHOLDER: work aside, needs Erin]</span>
+            </Marginalia>
+          )}
           <Content />
         </div>
         {entry.data.highlight && (
@@ -84,6 +104,30 @@ const rendered = await Promise.all(
 
   .entry h2 a:hover {
     color: var(--plum);
+  }
+
+  .shot {
+    aspect-ratio: 16 / 10;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    margin-top: var(--space-24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .shot:has(img) {
+    padding: 0;
+  }
+
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .entry-body :global(p) {
