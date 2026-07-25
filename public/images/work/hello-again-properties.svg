@@ -1,30 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
-  <!-- Lake house with a plum front door, water beside it. Palette from
-       BRAND.md section 4 only; hairline strokes, no gradients or shadows. -->
+  <!-- Ripples widening from a returning point on still water, with a
+       second smaller ripple beside them. Palette from BRAND.md section 4
+       only; no gradients. -->
   <rect width="1280" height="800" fill="#EDEBEF"/>
 
-  <!-- low sun, a hairline circle kept deliberately faint -->
-  <circle cx="1040" cy="200" r="80" fill="none" stroke="#E2E0E5" stroke-width="3"/>
-
-  <!-- ground -->
-  <line x1="0" y1="580" x2="1280" y2="580" stroke="#6E6A75" stroke-width="2.5"/>
-
-  <!-- chimney, drawn first so the roof overlaps its base -->
-  <rect x="660" y="286" width="34" height="60" fill="#FDFDFD" stroke="#16151A" stroke-width="2.5"/>
-
-  <!-- house -->
-  <g stroke="#16151A" stroke-width="2.5" stroke-linejoin="round">
-    <rect x="440" y="380" width="320" height="200" fill="#FDFDFD"/>
-    <path d="M420 380 L600 262 L780 380 Z" fill="#FDFDFD"/>
-    <rect x="486" y="432" width="52" height="52" fill="#FDFDFD"/>
-    <rect x="668" y="432" width="52" height="52" fill="#FDFDFD"/>
+  <!-- the main ripple, uneven rings widening outward -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M465 415 C465 385, 494 352, 525 352 C556 352, 578 378, 578 408 C578 438, 549 468, 518 468 C488 468, 465 445, 465 415 Z" stroke="#16151A" stroke-width="2.5"/>
+    <path d="M398 400 C398 336, 462 288, 528 288 C594 288, 642 350, 642 415 C642 480, 582 532, 515 532 C450 532, 398 465, 398 400 Z" stroke="#6E6A75" stroke-width="2.5"/>
+    <path d="M322 420 C322 306, 408 212, 515 212 C625 212, 718 296, 718 405 C718 512, 632 608, 525 608 C418 608, 322 530, 322 420 Z" stroke="#6E6A75" stroke-width="2"/>
+    <path d="M232 400 C232 244, 372 122, 530 122 C688 122, 808 268, 808 425 C808 580, 668 698, 512 698 C355 698, 232 558, 232 400 Z" stroke="#E2E0E5" stroke-width="3"/>
+    <path d="M132 415 C132 200, 312 22, 525 22 C738 22, 908 188, 908 400 C908 612, 732 795, 520 795 C308 795, 132 630, 132 415 Z" stroke="#E2E0E5" stroke-width="2.5"/>
   </g>
-  <rect x="574" y="480" width="54" height="100" fill="#6B2049"/>
 
-  <!-- water -->
-  <g fill="none" stroke="#6E6A75" stroke-width="2.5" stroke-linecap="round">
-    <path d="M860 630 q 30 -16 60 0 q 30 16 60 0"/>
-    <path d="M950 672 q 30 -16 60 0 q 30 16 60 0"/>
-    <path d="M880 714 q 30 -16 60 0 q 30 16 60 0"/>
+  <!-- the second visit -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M965 572 C965 548, 986 525, 1011 525 C1036 525, 1055 546, 1055 570 C1055 595, 1035 615, 1010 615 C986 615, 965 596, 965 572 Z" stroke="#6E6A75" stroke-width="2"/>
+    <path d="M915 568 C915 516, 958 475, 1010 475 C1062 475, 1105 518, 1105 570 C1105 622, 1060 665, 1008 665 C956 665, 915 620, 915 568 Z" stroke="#E2E0E5" stroke-width="3"/>
   </g>
+  <circle cx="1010" cy="570" r="5.5" fill="#16151A"/>
+
+  <circle cx="520" cy="410" r="8" fill="#6B2049"/>
 </svg>

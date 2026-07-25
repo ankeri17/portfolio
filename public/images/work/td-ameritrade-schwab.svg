@@ -1,51 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
-  <!-- A governed grid of many sites, a few marked in plum. Palette from
-       BRAND.md section 4 only; hairline strokes, no gradients or shadows. -->
+  <!-- Threads arriving from different places and settling into one band,
+       one of them plum. Palette from BRAND.md section 4 only; no
+       gradients. -->
   <rect width="1280" height="800" fill="#EDEBEF"/>
 
-  <g fill="#FDFDFD" stroke="#6E6A75" stroke-width="1.5">
-    <rect x="196" y="217" width="90" height="54" rx="6"/>
-    <rect x="310" y="217" width="90" height="54" rx="6"/>
-    <rect x="424" y="217" width="90" height="54" rx="6"/>
-    <rect x="538" y="217" width="90" height="54" rx="6"/>
-    <rect x="652" y="217" width="90" height="54" rx="6"/>
-    <rect x="880" y="217" width="90" height="54" rx="6"/>
-    <rect x="994" y="217" width="90" height="54" rx="6"/>
-    <rect x="196" y="295" width="90" height="54" rx="6"/>
-    <rect x="310" y="295" width="90" height="54" rx="6"/>
-    <rect x="424" y="295" width="90" height="54" rx="6"/>
-    <rect x="538" y="295" width="90" height="54" rx="6"/>
-    <rect x="766" y="295" width="90" height="54" rx="6"/>
-    <rect x="880" y="295" width="90" height="54" rx="6"/>
-    <rect x="994" y="295" width="90" height="54" rx="6"/>
-    <rect x="196" y="373" width="90" height="54" rx="6"/>
-    <rect x="424" y="373" width="90" height="54" rx="6"/>
-    <rect x="538" y="373" width="90" height="54" rx="6"/>
-    <rect x="652" y="373" width="90" height="54" rx="6"/>
-    <rect x="766" y="373" width="90" height="54" rx="6"/>
-    <rect x="880" y="373" width="90" height="54" rx="6"/>
-    <rect x="994" y="373" width="90" height="54" rx="6"/>
-    <rect x="196" y="451" width="90" height="54" rx="6"/>
-    <rect x="310" y="451" width="90" height="54" rx="6"/>
-    <rect x="424" y="451" width="90" height="54" rx="6"/>
-    <rect x="538" y="451" width="90" height="54" rx="6"/>
-    <rect x="652" y="451" width="90" height="54" rx="6"/>
-    <rect x="880" y="451" width="90" height="54" rx="6"/>
-    <rect x="994" y="451" width="90" height="54" rx="6"/>
-    <rect x="196" y="529" width="90" height="54" rx="6"/>
-    <rect x="310" y="529" width="90" height="54" rx="6"/>
-    <rect x="424" y="529" width="90" height="54" rx="6"/>
-    <rect x="652" y="529" width="90" height="54" rx="6"/>
-    <rect x="766" y="529" width="90" height="54" rx="6"/>
-    <rect x="880" y="529" width="90" height="54" rx="6"/>
-    <rect x="994" y="529" width="90" height="54" rx="6"/>
-  </g>
-
-  <!-- the sites the governance work has reached -->
-  <g fill="#F5EDF1" stroke="#6B2049" stroke-width="2">
-    <rect x="766" y="217" width="90" height="54" rx="6"/>
-    <rect x="310" y="373" width="90" height="54" rx="6"/>
-    <rect x="994" y="451" width="90" height="54" rx="6"/>
-    <rect x="538" y="529" width="90" height="54" rx="6"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-20 120 C 300 140, 480 330, 700 372 C 820 392, 900 389, 1000 377 C 1120 363, 1220 382, 1300 379" stroke="#16151A" stroke-width="2.5"/>
+    <path d="M-20 280 C 260 300, 500 360, 720 395 C 840 412, 910 404, 1010 392 C 1130 378, 1230 397, 1300 394" stroke="#6E6A75" stroke-width="2.5"/>
+    <path d="M-20 430 C 280 432, 520 424, 740 415 C 850 411, 920 419, 1020 407 C 1140 393, 1240 412, 1300 409" stroke="#6B2049" stroke-width="3"/>
+    <path d="M-20 560 C 300 545, 500 470, 720 437 C 850 428, 930 434, 1030 422 C 1150 408, 1250 427, 1300 424" stroke="#6E6A75" stroke-width="2.5"/>
+    <path d="M-20 690 C 320 665, 520 520, 740 460 C 860 440, 940 449, 1040 437 C 1160 425, 1260 442, 1300 439" stroke="#16151A" stroke-width="2.5"/>
   </g>
 </svg>

@@ -6,7 +6,7 @@ link: 'https://shophappens.com'
 summary: "An affiliate content site helping people make sense of online shopping and the digital marketing tactics that stack up against them."
 highlight: 'Operating since 2007 with multiple rebrands and pivots along the way.'
 image: '/images/work/shophappens.svg'
-imageAlt: 'Line drawing of three price tags on strings, one tinted plum.'
+imageAlt: 'One line winding between scattered circles and arriving at a plum point.'
 order: 4
 featured: false
 ---
