@@ -1,32 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
-  <!-- Floor plan with door swings and one room marked for inspection.
-       Palette from BRAND.md section 4 only; no gradients or shadows. -->
+  <!-- A spiral unwinding from the inside out, with a fainter echo behind
+       it. Palette from BRAND.md section 4 only; no gradients. -->
   <rect width="1280" height="800" fill="#EDEBEF"/>
 
-  <!-- outer walls -->
-  <rect x="340" y="180" width="600" height="440" fill="#FDFDFD" stroke="#16151A" stroke-width="3.5"/>
-
-  <!-- the room that gets looked at -->
-  <rect x="782" y="432" width="156" height="186" fill="#F5EDF1"/>
-  <circle cx="860" cy="525" r="9" fill="#6B2049"/>
-
-  <!-- interior walls, with openings for the doors -->
-  <g stroke="#16151A" stroke-width="2.5" stroke-linecap="square">
-    <line x1="620" y1="180" x2="620" y2="330"/>
-    <line x1="620" y1="390" x2="620" y2="430"/>
-    <line x1="340" y1="430" x2="480" y2="430"/>
-    <line x1="540" y1="430" x2="940" y2="430"/>
-    <line x1="780" y1="430" x2="780" y2="500"/>
-    <line x1="780" y1="560" x2="780" y2="620"/>
+  <!-- echo -->
+  <g transform="translate(120 85)">
+    <path d="M670 420 A30 30 0 0 0 610 420 A40 40 0 0 0 690 420 A54 54 0 0 0 582 420 A73 73 0 0 0 728 420 A99 99 0 0 0 530 420 A133 133 0 0 0 796 420 A180 180 0 0 0 436 420 A243 243 0 0 0 922 420 A328 328 0 0 0 594 92"
+      fill="none" stroke="#E2E0E5" stroke-width="3" stroke-linecap="round"/>
   </g>
 
-  <!-- door leaves and swings -->
-  <g fill="none" stroke-linecap="round">
-    <line x1="620" y1="330" x2="680" y2="330" stroke="#16151A" stroke-width="2"/>
-    <path d="M680 330 A60 60 0 0 1 620 390" stroke="#6E6A75" stroke-width="1.5"/>
-    <line x1="480" y1="430" x2="480" y2="490" stroke="#16151A" stroke-width="2"/>
-    <path d="M480 490 A60 60 0 0 1 540 430" stroke="#6E6A75" stroke-width="1.5"/>
-    <line x1="780" y1="500" x2="724" y2="522" stroke="#16151A" stroke-width="2"/>
-    <path d="M724 522 A60 60 0 0 1 780 560" stroke="#6E6A75" stroke-width="1.5"/>
-  </g>
+  <!-- the spiral -->
+  <path d="M670 420 A30 30 0 0 0 610 420 A40 40 0 0 0 690 420 A54 54 0 0 0 582 420 A73 73 0 0 0 728 420 A99 99 0 0 0 530 420 A133 133 0 0 0 796 420 A180 180 0 0 0 436 420 A243 243 0 0 0 922 420 A328 328 0 0 0 594 92"
+    fill="none" stroke="#16151A" stroke-width="3" stroke-linecap="round"/>
+
+  <circle cx="643" cy="418" r="8" fill="#6B2049"/>
 </svg>
