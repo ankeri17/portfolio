@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
+  <!-- A governed grid of many sites, a few marked in plum. Palette from
+       BRAND.md section 4 only; hairline strokes, no gradients or shadows. -->
+  <rect width="1280" height="800" fill="#EDEBEF"/>
+
+  <g fill="#FDFDFD" stroke="#6E6A75" stroke-width="1.5">
+    <rect x="196" y="217" width="90" height="54" rx="6"/>
+    <rect x="310" y="217" width="90" height="54" rx="6"/>
+    <rect x="424" y="217" width="90" height="54" rx="6"/>
+    <rect x="538" y="217" width="90" height="54" rx="6"/>
+    <rect x="652" y="217" width="90" height="54" rx="6"/>
+    <rect x="880" y="217" width="90" height="54" rx="6"/>
+    <rect x="994" y="217" width="90" height="54" rx="6"/>
+    <rect x="196" y="295" width="90" height="54" rx="6"/>
+    <rect x="310" y="295" width="90" height="54" rx="6"/>
+    <rect x="424" y="295" width="90" height="54" rx="6"/>
+    <rect x="538" y="295" width="90" height="54" rx="6"/>
+    <rect x="766" y="295" width="90" height="54" rx="6"/>
+    <rect x="880" y="295" width="90" height="54" rx="6"/>
+    <rect x="994" y="295" width="90" height="54" rx="6"/>
+    <rect x="196" y="373" width="90" height="54" rx="6"/>
+    <rect x="424" y="373" width="90" height="54" rx="6"/>
+    <rect x="538" y="373" width="90" height="54" rx="6"/>
+    <rect x="652" y="373" width="90" height="54" rx="6"/>
+    <rect x="766" y="373" width="90" height="54" rx="6"/>
+    <rect x="880" y="373" width="90" height="54" rx="6"/>
+    <rect x="994" y="373" width="90" height="54" rx="6"/>
+    <rect x="196" y="451" width="90" height="54" rx="6"/>
+    <rect x="310" y="451" width="90" height="54" rx="6"/>
+    <rect x="424" y="451" width="90" height="54" rx="6"/>
+    <rect x="538" y="451" width="90" height="54" rx="6"/>
+    <rect x="652" y="451" width="90" height="54" rx="6"/>
+    <rect x="880" y="451" width="90" height="54" rx="6"/>
+    <rect x="994" y="451" width="90" height="54" rx="6"/>
+    <rect x="196" y="529" width="90" height="54" rx="6"/>
+    <rect x="310" y="529" width="90" height="54" rx="6"/>
+    <rect x="424" y="529" width="90" height="54" rx="6"/>
+    <rect x="652" y="529" width="90" height="54" rx="6"/>
+    <rect x="766" y="529" width="90" height="54" rx="6"/>
+    <rect x="880" y="529" width="90" height="54" rx="6"/>
+    <rect x="994" y="529" width="90" height="54" rx="6"/>
+  </g>
+
+  <!-- the sites the governance work has reached -->
+  <g fill="#F5EDF1" stroke="#6B2049" stroke-width="2">
+    <rect x="766" y="217" width="90" height="54" rx="6"/>
+    <rect x="310" y="373" width="90" height="54" rx="6"/>
+    <rect x="994" y="451" width="90" height="54" rx="6"/>
+    <rect x="538" y="529" width="90" height="54" rx="6"/>
+  </g>
+</svg>

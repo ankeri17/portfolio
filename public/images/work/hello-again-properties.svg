@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
+  <!-- Lake house with a plum front door, water beside it. Palette from
+       BRAND.md section 4 only; hairline strokes, no gradients or shadows. -->
+  <rect width="1280" height="800" fill="#EDEBEF"/>
+
+  <!-- low sun, a hairline circle kept deliberately faint -->
+  <circle cx="1040" cy="200" r="80" fill="none" stroke="#E2E0E5" stroke-width="3"/>
+
+  <!-- ground -->
+  <line x1="0" y1="580" x2="1280" y2="580" stroke="#6E6A75" stroke-width="2.5"/>
+
+  <!-- chimney, drawn first so the roof overlaps its base -->
+  <rect x="660" y="286" width="34" height="60" fill="#FDFDFD" stroke="#16151A" stroke-width="2.5"/>
+
+  <!-- house -->
+  <g stroke="#16151A" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="440" y="380" width="320" height="200" fill="#FDFDFD"/>
+    <path d="M420 380 L600 262 L780 380 Z" fill="#FDFDFD"/>
+    <rect x="486" y="432" width="52" height="52" fill="#FDFDFD"/>
+    <rect x="668" y="432" width="52" height="52" fill="#FDFDFD"/>
+  </g>
+  <rect x="574" y="480" width="54" height="100" fill="#6B2049"/>
+
+  <!-- water -->
+  <g fill="none" stroke="#6E6A75" stroke-width="2.5" stroke-linecap="round">
+    <path d="M860 630 q 30 -16 60 0 q 30 16 60 0"/>
+    <path d="M950 672 q 30 -16 60 0 q 30 16 60 0"/>
+    <path d="M880 714 q 30 -16 60 0 q 30 16 60 0"/>
+  </g>
+</svg>

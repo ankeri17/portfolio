@@ -4,6 +4,8 @@ kind: 'Small business marketing'
 years: '2017 to 2024'
 summary: 'The full marketing function for a family-owned home inspection business, over seven years.'
 highlight: 'A recognizable local brand backed by consistent five-star reviews.'
+image: '/images/work/inside-out-home-inspector.svg'
+imageAlt: 'Hairline floor plan with door swings and one room tinted plum, marked with a dot.'
 order: 3
 featured: true
 ---

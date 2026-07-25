@@ -3,6 +3,8 @@ title: 'Sentinel Insights'
 kind: 'Founding team'
 years: '2021 to 2026'
 summary: 'Five years on the founding team of a MarTech monitoring startup, running product operations and customer support.'
+image: '/images/work/sentinel-insights.svg'
+imageAlt: 'A signal line over ruled paper with one pulse marked by a plum point.'
 order: 6
 featured: false
 ---

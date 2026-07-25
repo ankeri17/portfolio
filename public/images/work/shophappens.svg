@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
+  <!-- Three price tags on strings, one tinted plum. Palette from BRAND.md
+       section 4 only; hairline strokes, no gradients or shadows. -->
+  <rect width="1280" height="800" fill="#EDEBEF"/>
+
+  <!-- strings -->
+  <g fill="none" stroke="#6E6A75" stroke-width="2" stroke-linecap="round">
+    <path d="M474 236 C 380 180 250 160 140 210"/>
+    <path d="M736 384 C 660 330 560 300 440 330"/>
+    <path d="M560 596 C 470 560 380 570 300 640"/>
+  </g>
+
+  <!-- tag shape reused per tag: pointed tip at the group origin -->
+  <g stroke-linejoin="round">
+    <g transform="translate(400 300) rotate(-16)">
+      <path d="M0 0 L80 -62 H288 Q300 -62 300 -50 V50 Q300 62 288 62 H80 Z" fill="#FDFDFD" stroke="#16151A" stroke-width="2.5"/>
+      <circle cx="82" cy="0" r="11" fill="#EDEBEF" stroke="#16151A" stroke-width="2.5"/>
+    </g>
+    <g transform="translate(670 450) rotate(10)">
+      <path d="M0 0 L80 -62 H288 Q300 -62 300 -50 V50 Q300 62 288 62 H80 Z" fill="#F5EDF1" stroke="#6B2049" stroke-width="2.5"/>
+      <circle cx="82" cy="0" r="11" fill="#EDEBEF" stroke="#6B2049" stroke-width="2.5"/>
+    </g>
+    <g transform="translate(500 650) rotate(-6) scale(0.82)">
+      <path d="M0 0 L80 -62 H288 Q300 -62 300 -50 V50 Q300 62 288 62 H80 Z" fill="#FDFDFD" stroke="#16151A" stroke-width="2.5"/>
+      <circle cx="82" cy="0" r="11" fill="#EDEBEF" stroke="#16151A" stroke-width="2.5"/>
+    </g>
+  </g>
+</svg>
