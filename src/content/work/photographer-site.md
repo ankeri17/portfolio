@@ -4,6 +4,8 @@ kind: 'Small business web'
 years: 'In progress'
 summary: 'A portfolio and workshop site for a North Dakota photographer, built to stay out of the way of the pictures.'
 highlight: 'The build stays out of the way of the pictures.'
+image: '/images/work/photographer-site.svg'
+imageAlt: 'Line drawing of a small prairie church on the horizon under a night sky with scattered stars.'
 order: 1
 featured: true
 ---

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
+  <!-- Prairie church on the horizon under a night sky. Palette from BRAND.md
+       section 4 only; hairline strokes, no gradients or shadows. -->
+  <rect width="1280" height="800" fill="#EDEBEF"/>
+
+  <!-- moon, a hairline circle kept deliberately faint -->
+  <circle cx="300" cy="210" r="90" fill="none" stroke="#E2E0E5" stroke-width="3"/>
+
+  <!-- stars -->
+  <circle cx="180" cy="120" r="4" fill="#6E6A75"/>
+  <circle cx="470" cy="90" r="3.5" fill="#6E6A75"/>
+  <circle cx="620" cy="180" r="4" fill="#6E6A75"/>
+  <circle cx="760" cy="80" r="3" fill="#6E6A75"/>
+  <circle cx="905" cy="150" r="4" fill="#6E6A75"/>
+  <circle cx="1060" cy="100" r="3.5" fill="#6E6A75"/>
+  <circle cx="1150" cy="230" r="4" fill="#6E6A75"/>
+  <circle cx="540" cy="290" r="3" fill="#6E6A75"/>
+  <circle cx="985" cy="300" r="3.5" fill="#6E6A75"/>
+  <circle cx="700" cy="330" r="6" fill="#6B2049"/>
+
+  <!-- horizon -->
+  <line x1="0" y1="560" x2="1280" y2="560" stroke="#6E6A75" stroke-width="2.5"/>
+
+  <!-- church, small and distant on the prairie -->
+  <g fill="none" stroke="#16151A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M840 560 V480 H920 V560"/>
+    <path d="M832 480 L880 438 L928 480"/>
+    <path d="M872 442 L880 402 L888 442"/>
+    <path d="M872 560 V522 H888 V560"/>
+  </g>
+</svg>
