@@ -1,15 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
-  <!-- Calm drifting lines, one of them rising into a swell that gets
-       noticed. Palette from BRAND.md section 4 only; no gradients. -->
+  <!-- Calm thick drifting lines, one rising into a real swell that gets
+       noticed: circled in plum on a soft wash, with a mark floating just
+       above the crest. Palette from BRAND.md section 4 only; no
+       gradients. -->
   <rect width="1280" height="800" fill="#EDEBEF"/>
 
+  <!-- the wash behind the thing worth noticing -->
+  <circle cx="820" cy="400" r="118" fill="#F5EDF1"/>
+
   <g fill="none" stroke-linecap="round">
-    <path d="M-20 200 C 200 185, 400 215, 640 200 C 880 185, 1080 212, 1300 198" stroke="#E2E0E5" stroke-width="3"/>
-    <path d="M-20 300 C 220 285, 420 318, 660 302 C 900 287, 1080 312, 1300 297" stroke="#6E6A75" stroke-width="2.5"/>
-    <path d="M-20 415 C 240 400, 480 428, 640 410 C 740 398, 760 345, 810 345 C 860 345, 880 402, 980 412 C 1090 422, 1200 405, 1300 408" stroke="#16151A" stroke-width="3.5"/>
-    <path d="M-20 520 C 240 508, 460 540, 700 525 C 940 510, 1100 535, 1300 520" stroke="#6E6A75" stroke-width="2.5"/>
-    <path d="M-20 620 C 220 605, 440 638, 680 622 C 920 606, 1100 632, 1300 618" stroke="#E2E0E5" stroke-width="3"/>
+    <path d="M-40 205 C 240 188, 480 226, 720 208 C 960 192, 1140 218, 1320 204" stroke="#E2E0E5" stroke-width="12"/>
+    <path d="M-40 320 C 240 304, 460 338, 700 322 C 940 307, 1120 332, 1320 318" stroke="#6E6A75" stroke-width="11"/>
+    <path d="M-40 470 C 200 458, 420 480, 600 466 C 700 458, 735 332, 820 332 C 905 332, 915 468, 1015 473 C 1135 478, 1225 464, 1320 468" stroke="#16151A" stroke-width="13"/>
+    <path d="M-40 600 C 250 586, 470 614, 710 600 C 950 586, 1130 610, 1320 597" stroke="#6E6A75" stroke-width="11"/>
+    <path d="M-40 700 C 240 686, 460 714, 700 700 C 940 686, 1130 710, 1320 698" stroke="#E2E0E5" stroke-width="12"/>
   </g>
 
-  <circle cx="810" cy="345" r="8" fill="#6B2049"/>
+  <!-- the notice -->
+  <circle cx="820" cy="400" r="118" fill="none" stroke="#6B2049" stroke-width="10"/>
+  <circle cx="820" cy="308" r="10" fill="#6B2049"/>
 </svg>
