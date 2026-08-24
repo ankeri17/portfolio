@@ -5,7 +5,7 @@ years: '2018 to 2021'
 summary: 'Program management for the MarTech and data architecture team behind a major brokerage, through a merger.'
 highlight: 'Project managed the Tealium TMS and OneTrust CMP rollouts across more than 100 sites.'
 image: '/images/work/td-ameritrade-schwab.svg'
-imageAlt: 'Flowing threads arriving from different directions and settling into one parallel band, one of them plum.'
+imageAlt: 'Five thick threads arriving from different directions and settling into one parallel band, the center thread plum.'
 order: 5
 featured: true
 ---

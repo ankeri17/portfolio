@@ -4,7 +4,7 @@ kind: 'Founding team'
 years: '2021 to 2026'
 summary: 'Five years on the founding team of a MarTech monitoring startup, running product operations and customer support.'
 image: '/images/work/sentinel-insights.svg'
-imageAlt: 'Calm drifting lines with one rising into a swell, marked at its crest with a plum point.'
+imageAlt: 'Calm drifting lines, one rising into a swell, circled and marked in plum.'
 order: 6
 featured: false
 ---

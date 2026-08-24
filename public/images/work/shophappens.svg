@@ -1,24 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
-  <!-- One line finding its way between scattered circles to a plum point.
-       Palette from BRAND.md section 4 only; no gradients. -->
+  <!-- One bold line finding its way between soft filled circles to a plum
+       ringed point. Palette from BRAND.md section 4 only; no gradients. -->
   <rect width="1280" height="800" fill="#EDEBEF"/>
 
   <!-- what's in the way -->
-  <g fill="none">
-    <circle cx="250" cy="180" r="18" stroke="#E2E0E5" stroke-width="3"/>
-    <circle cx="420" cy="150" r="12" stroke="#6E6A75" stroke-width="2"/>
-    <circle cx="180" cy="640" r="22" stroke="#E2E0E5" stroke-width="3"/>
-    <circle cx="520" cy="660" r="15" stroke="#6E6A75" stroke-width="2"/>
-    <circle cx="700" cy="220" r="25" stroke="#E2E0E5" stroke-width="3"/>
-    <circle cx="880" cy="600" r="18" stroke="#E2E0E5" stroke-width="3"/>
-    <circle cx="1000" cy="180" r="14" stroke="#6E6A75" stroke-width="2"/>
-    <circle cx="620" cy="420" r="10" stroke="#6E6A75" stroke-width="2"/>
-    <circle cx="330" cy="480" r="13" stroke="#E2E0E5" stroke-width="3"/>
-  </g>
+  <circle cx="240" cy="190" r="55" fill="#E2E0E5"/>
+  <circle cx="500" cy="150" r="36" fill="#FDFDFD" stroke="#6E6A75" stroke-width="8"/>
+  <circle cx="770" cy="230" r="62" fill="#E2E0E5"/>
+  <circle cx="300" cy="565" r="70" fill="#E2E0E5"/>
+  <circle cx="620" cy="645" r="42" fill="#FDFDFD" stroke="#6E6A75" stroke-width="8"/>
+  <circle cx="905" cy="565" r="52" fill="#E2E0E5"/>
+  <circle cx="1060" cy="175" r="38" fill="#FDFDFD" stroke="#6E6A75" stroke-width="8"/>
+  <circle cx="560" cy="395" r="28" fill="#E2E0E5"/>
 
   <!-- the way through -->
-  <path d="M-20 560 C 140 480, 200 300, 340 300 C 480 300, 470 540, 610 560 C 700 573, 760 420, 850 380 C 930 345, 990 430, 1040 430 C 1110 430, 1140 350, 1160 320"
-    fill="none" stroke="#16151A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M-40 480 C 120 432, 160 305, 300 332 C 420 356, 400 522, 520 542 C 610 557, 645 472, 705 432 C 765 392, 825 422, 885 402 C 955 377, 1010 318, 1100 290"
+    fill="none" stroke="#16151A" stroke-width="13" stroke-linecap="round"/>
 
-  <circle cx="1165" cy="315" r="9" fill="#6B2049"/>
+  <!-- where it was going -->
+  <circle cx="1150" cy="272" r="30" fill="#F5EDF1" stroke="#6B2049" stroke-width="10"/>
+  <circle cx="1150" cy="272" r="11" fill="#6B2049"/>
 </svg>

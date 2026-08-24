@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Marginalia from '../components/Marginalia.astro';
 
 // The proof page. Entries live as markdown files in src/content/work/,
 // sorted by their `order` field, and render as hairline-separated sections
@@ -30,7 +29,7 @@ const rendered = await Promise.all(
       </p>
     </header>
 
-    {rendered.map(({ entry, Content }, index) => (
+    {rendered.map(({ entry, Content }) => (
       <article id={entry.id} class="entry">
         <p class="eyebrow">
           {entry.data.kind}{entry.data.years && <> · {entry.data.years}</>}
@@ -57,11 +56,6 @@ const rendered = await Promise.all(
           )}
         </div>
         <div class="annotated entry-body">
-          {index === 0 && (
-            <Marginalia>
-              <span class="placeholder">[PLACEHOLDER: work aside, needs Erin]</span>
-            </Marginalia>
-          )}
           <Content />
         </div>
         {entry.data.highlight && (
