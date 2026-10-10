@@ -22,4 +22,3 @@ The brief's dates were used on the site because it is sourced from uploaded reco
 
 - **Photographer site.** Launch date and URL, then set `status: 'complete'` and add `link` in `src/content/work/photographer-site.md`.
 - **Contact form delivery.** Send a test message on the deployed site and confirm it arrives. Form detection may need enabling in the Netlify dashboard.
-- **Gloto artwork.** See `docs/IMAGE_MANIFEST.md`.

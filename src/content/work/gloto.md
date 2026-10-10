@@ -8,10 +8,10 @@ years: '2012 to 2016'
 status: 'complete'
 summary: 'Led client services and later executive operations for a technology startup delivering custom web and mobile products for nationally recognized brands.'
 highlight: 'Clients included Marvel, the NBA, NBCUniversal, Wyndham Worldwide, and Google.'
-image: '/images/art/hero-operations.webp'
-imageAlt: 'Crimson, gold, and black ribbons sweeping in from both sides and converging at a single point.'
-imageWidth: 1600
-imageHeight: 900
+image: '/images/art/gloto.webp'
+imageAlt: 'Crimson, gold, and black ribbons weaving through a field of circles and small connected nodes.'
+imageWidth: 1448
+imageHeight: 1086
 order: 2
 featured: true
 ---

@@ -9,8 +9,10 @@ status: 'complete'
 link: 'https://shophappens.com'
 summary: 'An affiliate content site I have owned, built, and operated since 2007, helping people make sense of online shopping.'
 highlight: 'Nearly two decades of owning and running an independent online business.'
-image: '/images/work/shophappens.svg'
-imageAlt: 'One bold line winding between scattered soft circles to reach a crimson ringed point.'
+image: '/images/art/shophappens.webp'
+imageAlt: 'Crimson, gold, and black ribbons flowing past a row of small tags and a golden sun.'
+imageWidth: 1448
+imageHeight: 1086
 order: 3
 featured: false
 ---

@@ -8,8 +8,10 @@ status: 'complete'
 link: 'https://helloagainproperties.com'
 summary: 'A website for a set of short-term rental properties in Wisconsin, with consistent branding, real photography, and a clear path to booking.'
 highlight: 'Designed, built, and maintained, with each property given its own clear picture.'
-image: '/images/work/hello-again-properties.svg'
-imageAlt: 'Bold rings rippling out from a crimson point on still water, with a second smaller ripple beside them.'
+image: '/images/art/hello-again-properties.webp'
+imageAlt: 'Arched crimson, gold, and black shapes like a row of rooftops, with ribbons flowing beneath and a golden sun above.'
+imageWidth: 1448
+imageHeight: 1086
 order: 2
 featured: false
 ---

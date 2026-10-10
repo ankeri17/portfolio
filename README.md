@@ -22,7 +22,6 @@ npm run preview  # serve the built site locally
 - `src/pages/` - one file per page, plus `work/[id].astro` for case study pages and `sitemap.xml.ts`
 - `src/content/work/` - one markdown file per work entry; frontmatter drives the cards, the body is the case study
 - `public/images/art/` - custom artwork as WebP, two sizes each; sources in `assets/img/`
-- `public/images/work/` - SVG illustrations still used by some work entries
 - `src/components/ArtImage.astro` - the one image component for artwork, cards, and case studies
 - `public/fonts/` - self-hosted Newsreader and Instrument Sans (woff2, latin subset)
 - `public/__forms.html` - Netlify Forms stub; keep its fields in sync with the contact form

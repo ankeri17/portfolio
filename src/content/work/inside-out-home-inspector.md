@@ -8,8 +8,10 @@ years: '2017 to 2024'
 status: 'complete'
 summary: 'Branding, messaging, social media, and promotional support for a family-owned home inspection business in Maryland, over seven years.'
 highlight: 'Seven years of hands-on marketing for a trust-based local service business.'
-image: '/images/work/inside-out-home-inspector.svg'
-imageAlt: 'A single thick spiral unwinding outward from a crimson point at its center.'
+image: '/images/art/inside-out-home-inspector.webp'
+imageAlt: 'Crimson, gold, and black ribbons flowing toward a peaked roofline under a golden sun.'
+imageWidth: 1448
+imageHeight: 1086
 order: 1
 featured: false
 ---

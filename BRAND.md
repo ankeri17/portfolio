@@ -110,7 +110,7 @@ Direction: **Editorial ivory with the artwork's palette.** Warm ivory page, char
 - Never place `--muted` text on `--crimson`. `--paper` only.
 - No dark mode for v1. Revisit after launch.
 
-**Artwork.** The custom illustration set in `public/images/art/` (crimson, charcoal, gold, ivory, taupe, organic forms, fine gold lines, paper texture) is the primary source of visual personality. The older SVG illustrations in `public/images/work/` were recolored to the same palette and stay in use until each is replaced. `docs/IMAGE_MANIFEST.md` lists every image and where it appears.
+**Artwork.** The custom illustration set in `public/images/art/` (crimson, charcoal, gold, ivory, taupe, organic forms, fine gold lines, paper texture) is the primary source of visual personality. Every work entry now uses a piece from that set. `docs/IMAGE_MANIFEST.md` lists every image and where it appears.
 
 ---
 
@@ -279,7 +279,7 @@ Present the home inspection work accurately: consulting for a small family-owned
 ## 12. Working in this repo
 
 - Read this file at the start of every session.
-- Derive every color and type value from sections 4 and 5. Do not introduce new hex values or font families. The SVG illustrations use the same hex values as the tokens.
+- Derive every color and type value from sections 4 and 5. Do not introduce new hex values or font families.
 - When a copy decision comes up that isn't covered here, draft it and flag it rather than shipping it. Copy is Erin's call.
 - Do not add analytics, tracking, or third-party embeds without asking.
 - Keep the dependency list short. This site should be maintainable by one person a year from now.
