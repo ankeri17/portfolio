@@ -45,7 +45,7 @@ html {
 
 body {
   background: var(--paper);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: var(--size-body);
   font-weight: 400;
@@ -68,6 +68,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 400;
+  color: var(--ink);
   text-wrap: balance;
 }
 
@@ -110,7 +111,7 @@ small,
 /* Links (BRAND.md section 7) */
 
 a {
-  color: var(--plum);
+  color: var(--crimson);
   text-decoration: none;
 }
 
@@ -127,17 +128,17 @@ main p a:not(.button-primary):not(.button-secondary) {
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, var(--plum) 40%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--crimson) 40%, transparent);
 }
 
 main p a:not(.button-primary):not(.button-secondary):hover {
-  text-decoration-color: var(--plum);
+  text-decoration-color: var(--crimson);
 }
 
 /* Focus (BRAND.md section 9) */
 
 :focus-visible {
-  outline: 2px solid var(--plum);
+  outline: 2px solid var(--crimson);
   outline-offset: 2px;
 }
 
@@ -160,7 +161,7 @@ main p a:not(.button-primary):not(.button-secondary):hover {
 
 .button-primary {
   display: inline-block;
-  background: var(--plum);
+  background: var(--crimson);
   color: var(--paper);
   font-family: var(--font-body);
   font-size: 0.9375rem;
@@ -174,7 +175,7 @@ main p a:not(.button-primary):not(.button-secondary):hover {
 }
 
 .button-primary:hover {
-  background: var(--plum-hover);
+  background: var(--crimson-deep);
   text-decoration: none;
 }
 
@@ -254,12 +255,12 @@ main p a:not(.button-primary):not(.button-secondary):hover {
 }
 
 .field .error {
-  color: var(--plum);
+  color: var(--crimson);
 }
 
 .field [aria-invalid='true'],
 .field :user-invalid {
-  border-color: var(--plum);
+  border-color: var(--crimson);
 }
 
 /* Spam honeypot: hidden from everyone, kept out of the tab order in the
@@ -314,8 +315,8 @@ main p a:not(.button-primary):not(.button-secondary):hover {
    before launch */
 
 .placeholder {
-  background: var(--plum-tint);
-  color: var(--plum);
+  background: var(--crimson-tint);
+  color: var(--crimson);
   font-size: var(--size-small);
   padding: 2px 6px;
   border-radius: var(--radius-control);

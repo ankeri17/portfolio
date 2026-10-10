@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import WorkCard from '../components/WorkCard.astro';
+import ArtImage from '../components/ArtImage.astro';
 
 // The portfolio page. Entries live as markdown files in src/content/work/
 // and are grouped into the same two areas the Home page introduces.
@@ -42,15 +43,28 @@ const sections = [
   title="Work | Erin Ankeny"
   description="Selected work from twenty years across enterprise program management, startup operations, and websites and marketing for small businesses."
 >
-  <div class="content">
-    <header class="page-intro">
+  <header class="page-intro">
+    <div class="intro-text">
       <h1>Work</h1>
       <p>
         A selection of what I've led, built, and run, in two areas. Each one is
         the same job in a different room: getting people with different
         vocabularies working from the same page.
       </p>
-    </header>
+    </div>
+    <div class="intro-art">
+      <ArtImage
+        src="/images/art/hero-work.webp"
+        alt=""
+        width={1600}
+        height={900}
+        loading="eager"
+        sizes="(min-width: 1024px) 480px, (min-width: 768px) 50vw, 100vw"
+      />
+    </div>
+  </header>
+
+  <div class="content">
 
     {sections.map((section) => (
       <section class="area" id={section.id} aria-labelledby={`${section.id}-heading`}>
@@ -69,6 +83,8 @@ const sections = [
               category={entry.data.category}
               image={entry.data.image}
               imageAlt={entry.data.imageAlt}
+          imageWidth={entry.data.imageWidth}
+          imageHeight={entry.data.imageHeight}
             />
           ))}
         </div>
@@ -83,14 +99,22 @@ const sections = [
 </Base>
 
 <style>
+  /* Intro spans the full canvas so the artwork can sit beside the text. */
   .page-intro {
     padding-block-start: var(--space-48);
+    display: grid;
+    gap: var(--space-32);
+    align-items: center;
   }
 
   .page-intro p {
     margin-top: var(--space-16);
     font-size: var(--size-subhead);
     color: var(--muted);
+  }
+
+  .intro-art img {
+    border-radius: var(--radius-card);
   }
 
   .area {
@@ -119,6 +143,11 @@ const sections = [
   }
 
   @media (min-width: 768px) {
+    .page-intro {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-48);
+    }
+
     .cards {
       grid-template-columns: 1fr 1fr;
     }
@@ -127,6 +156,8 @@ const sections = [
   @media (min-width: 1024px) {
     .page-intro {
       padding-block-start: var(--space-64);
+      grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+      gap: var(--space-64);
     }
 
     .area {

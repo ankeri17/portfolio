@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import ArtImage from '../../components/ArtImage.astro';
 
 // Case study page, one per work entry with `caseStudy: true`. The entry's
 // markdown body carries the five sections (Overview, Challenge, My role,
@@ -68,13 +69,12 @@ function isPlaceholder(value?: string) {
 
     <figure class="shot">
       {d.image ? (
-        <img
+        <ArtImage
           src={d.image}
           alt={d.imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'}
-          width="680"
-          height="425"
+          width={d.imageWidth}
+          height={d.imageHeight}
           loading="eager"
-          decoding="async"
         />
       ) : (
         <span class="placeholder">[PLACEHOLDER: image, needs Erin]</span>
@@ -110,12 +110,12 @@ function isPlaceholder(value?: string) {
     color: var(--muted);
     text-decoration: underline;
     text-underline-offset: 2px;
-    text-decoration-color: color-mix(in srgb, var(--plum) 40%, transparent);
+    text-decoration-color: color-mix(in srgb, var(--crimson) 40%, transparent);
   }
 
   .page-intro .eyebrow a:hover {
-    color: var(--plum);
-    text-decoration-color: var(--plum);
+    color: var(--crimson);
+    text-decoration-color: var(--crimson);
   }
 
   .summary {
@@ -145,27 +145,24 @@ function isPlaceholder(value?: string) {
     font-weight: 500;
   }
 
+  /* The artwork sets its own height so the whole composition shows. */
   .shot {
     margin-top: var(--space-32);
-    aspect-ratio: 16 / 10;
     background: var(--panel);
-    border: 1px solid var(--border);
     border-radius: var(--radius-card);
     overflow: hidden;
+  }
+
+  .shot:not(:has(img)) {
+    aspect-ratio: 4 / 3;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .shot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .highlight {
     margin-top: var(--space-32);
-    border-left: 2px solid var(--plum);
+    border-left: 2px solid var(--crimson);
     padding-left: var(--space-16);
     font-family: var(--font-display);
     font-style: italic;

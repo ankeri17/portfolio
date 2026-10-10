@@ -2,15 +2,19 @@
    Do not add colors, fonts, or spacing values that aren't in that file. */
 
 :root {
-  /* Color (BRAND.md section 4) */
-  --paper:       #FDFDFD;
-  --panel:       #EDEBEF;
-  --border:      #E2E0E5;
-  --ink:         #16151A;
-  --muted:       #6E6A75;
-  --plum:        #6B2049;
-  --plum-hover:  #551639;
-  --plum-tint:   #F5EDF1;
+  /* Color (BRAND.md section 4). Palette inspired by the custom artwork:
+     crimson, charcoal, gold, ivory, taupe. */
+  --paper:          #FAF6EE;  /* page background, warm ivory */
+  --panel:          #F2ECE1;  /* section tint, cards, secondary surfaces */
+  --border:         #D8C9B7;  /* hairline rules, taupe */
+  --ink:            #1D1D1D;  /* headings, charcoal */
+  --text:           #292522;  /* body copy */
+  --muted:          #6B625A;  /* secondary text, captions, metadata */
+  --crimson:        #C8102E;  /* accent: links, primary button, marks */
+  --crimson-deep:   #8E1022;  /* accent hover and active */
+  --crimson-tint:   #F6E4E3;  /* accent wash, used rarely */
+  --gold:           #E6B43C;  /* small accents, dividers, decorative marks */
+  --gold-tint:      #F7ECD2;  /* gold wash, used rarely */
 
   /* Type families (BRAND.md section 5) */
   --font-display: 'Newsreader', Georgia, serif;

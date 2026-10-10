@@ -9,7 +9,7 @@ status: 'complete'
 summary: 'Five years running client services and then operations at a mobile and web build startup working with national brands.'
 highlight: 'The communications hub between customers, engineering, and management for brands like Marvel, the NBA, NBC Universal, Wyndham Rewards, and Target.'
 image: '/images/work/gloto.svg'
-imageAlt: 'Three thick threads crossing through a single plum ring at the center and continuing on.'
+imageAlt: 'Three thick threads crossing through a single crimson ring at the center and continuing on.'
 order: 2
 featured: true
 ---

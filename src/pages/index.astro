@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import WorkCard from '../components/WorkCard.astro';
+import ArtImage from '../components/ArtImage.astro';
 
 // Home: hero, the two areas of work, three featured case studies, how I
 // work, and a closing call to action. Featured entries come from the
@@ -11,16 +12,24 @@ const featured = (
   await getCollection('work', (entry) => entry.data.featured && entry.data.status === 'complete')
 ).sort((a, b) => a.data.order - b.data.order);
 
+// Each area carries its own artwork (docs/IMAGE_MANIFEST.md). The images
+// are decorative here, the headings carry the meaning, so alt is empty.
 const areas = [
   {
     id: 'programs',
     title: 'Programs and operations',
+    image: '/images/art/hero-operations.webp',
+    imageWidth: 1600,
+    imageHeight: 900,
     body: 'Enterprise delivery, cross-functional leadership, MarTech governance, organizational change, and operational improvement. I lead the work that cuts across teams and needs someone to hold the whole picture.',
     link: 'See the programs and operations work',
   },
   {
     id: 'websites',
     title: 'Websites and marketing',
+    image: '/images/art/small-business-websites.webp',
+    imageWidth: 1448,
+    imageHeight: 1086,
     body: 'Website development, digital experiences, marketing strategy, and practical support for small businesses. I build the site, and I know what the business behind it needs from it.',
     link: 'See the websites and marketing work',
   },
@@ -50,21 +59,33 @@ const principles = [
   title="Erin Ankeny | Program and operations leadership, websites and marketing"
   description="Erin Ankeny leads programs, builds operations, and connects technical and business teams. Over 20 years across enterprise technology, startups, and digital operations."
 >
-  <section class="hero content hero-reveal">
-    <h1>Making complex work easier to move forward.</h1>
-    <div class="hero-rule"></div>
-    <p class="lede">
-      I lead programs, build operations, and connect technical and business
-      teams so good ideas become work that actually gets done.
-    </p>
-    <p class="lede-small">
-      Over 20 years across enterprise technology, startups, and digital
-      operations.
-    </p>
-    <p class="actions">
-      <a class="button-primary" href="/work/">Explore my work</a>
-      <a class="button-secondary" href="/contact/">Get in touch</a>
-    </p>
+  <section class="hero hero-reveal">
+    <div class="hero-text">
+      <h1>Making complex work easier to move forward.</h1>
+      <div class="hero-rule"></div>
+      <p class="lede">
+        I lead programs, build operations, and connect technical and business
+        teams so good ideas become work that actually gets done.
+      </p>
+      <p class="lede-small">
+        Over 20 years across enterprise technology, startups, and digital
+        operations.
+      </p>
+      <p class="actions">
+        <a class="button-primary" href="/work/">Explore my work</a>
+        <a class="button-secondary" href="/contact/">Get in touch</a>
+      </p>
+    </div>
+    <div class="hero-art">
+      <ArtImage
+        src="/images/art/hero-home.webp"
+        alt=""
+        width={1600}
+        height={900}
+        loading="eager"
+        sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
+      />
+    </div>
   </section>
 
   <section class="areas" aria-labelledby="what-i-do">
@@ -77,6 +98,16 @@ const principles = [
       <div class="area-list">
         {areas.map((area) => (
           <div class="area">
+            <div class="area-art">
+              <ArtImage
+                src={area.image}
+                alt=""
+                width={area.imageWidth}
+                height={area.imageHeight}
+                fit="cover"
+                sizes="(min-width: 768px) 320px, 100vw"
+              />
+            </div>
             <h3>{area.title}</h3>
             <p>{area.body}</p>
             <p><a href={`/work/#${area.id}`}>{area.link}</a></p>
@@ -101,6 +132,8 @@ const principles = [
           category={entry.data.category}
           image={entry.data.image}
           imageAlt={entry.data.imageAlt}
+          imageWidth={entry.data.imageWidth}
+          imageHeight={entry.data.imageHeight}
           wide={index === 0}
         />
       ))}
@@ -120,19 +153,39 @@ const principles = [
     </dl>
   </section>
 
-  <section class="closing content">
-    <p>
-      If you're hiring for program or operations leadership, need a hand
-      with a project, or run a small business that needs a site and a
-      marketing plan, I'd like to hear about it.
-    </p>
-    <p><a class="button-primary" href="/contact/">Start a conversation</a></p>
+  <section class="closing">
+    <div class="closing-art">
+      <ArtImage
+        src="/images/art/services.webp"
+        alt=""
+        width={1448}
+        height={1086}
+        sizes="(min-width: 1024px) 400px, (min-width: 768px) 40vw, 100vw"
+      />
+    </div>
+    <div class="closing-text">
+      <p>
+        If you're hiring for program or operations leadership, need a hand
+        with a project, or run a small business that needs a site and a
+        marketing plan, I'd like to hear about it.
+      </p>
+      <p><a class="button-primary" href="/contact/">Start a conversation</a></p>
+    </div>
   </section>
 </Base>
 
 <style>
+  /* Hero uses the full canvas width so text and artwork sit side by side
+     at desktop. Text first in source so it reads first on mobile. */
   .hero {
-    padding-block-start: var(--section-gap);
+    padding-block-start: var(--space-48);
+    display: grid;
+    gap: var(--space-32);
+    align-items: center;
+  }
+
+  .hero-art img {
+    border-radius: var(--radius-card);
   }
 
   .hero h1 {
@@ -144,7 +197,7 @@ const principles = [
   .hero-rule {
     width: 52px;
     height: 3px;
-    background: var(--plum);
+    background: var(--gold);
     margin-top: var(--space-24);
   }
 
@@ -173,7 +226,7 @@ const principles = [
   .areas {
     margin-top: var(--section-gap);
     margin-inline: calc(50% - 50vw);
-    background: var(--plum-tint);
+    background: var(--panel);
     padding-block: var(--space-48);
     padding-inline: var(--gutter);
   }
@@ -192,6 +245,15 @@ const principles = [
   .area {
     padding-top: var(--space-24);
     border-top: 1px solid var(--border);
+  }
+
+  /* Both area images crop to the same wide frame so the two columns line
+     up; the compositions are centered so the crop is safe. */
+  .area-art {
+    aspect-ratio: 3 / 2;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    margin-bottom: var(--space-16);
   }
 
   .area p {
@@ -243,18 +305,39 @@ const principles = [
     max-width: 60ch;
   }
 
-  .closing p:first-child {
+  .closing {
+    display: grid;
+    gap: var(--space-32);
+    align-items: center;
+  }
+
+  .closing-art img {
+    border-radius: var(--radius-card);
+  }
+
+  .closing-text p:first-child {
     font-family: var(--font-display);
     font-size: var(--size-heading);
     line-height: 1.25;
     text-wrap: balance;
   }
 
-  .closing p + p {
+  .closing-text p + p {
     margin-top: var(--space-32);
   }
 
   @media (min-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-48);
+      padding-block-start: var(--space-64);
+    }
+
+    .closing {
+      grid-template-columns: 2fr 3fr;
+      gap: var(--space-48);
+    }
+
     .area-list {
       grid-template-columns: 1fr 1fr;
       gap: var(--space-32);
@@ -275,6 +358,12 @@ const principles = [
   }
 
   @media (min-width: 1024px) {
+    .hero {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 6fr);
+      gap: var(--space-64);
+      padding-block-start: var(--space-96);
+    }
+
     .areas {
       padding-block: var(--space-64);
     }

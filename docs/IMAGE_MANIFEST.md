@@ -1,32 +1,42 @@
 # Image manifest
 
-Every image the site uses, where it appears, and what it should become in the visual-design phase. Swapping an image is a one-line change: each work entry's `image` and `imageAlt` live in its frontmatter in `src/content/work/`, and the components (`WorkCard.astro`, `work/[id].astro`) read from there. Keep new files in `public/images/`.
+Every image the site uses, where it appears, how it is rendered, and what should happen to it next. Swapping an image is a frontmatter or one-line change: work entries set `image`, `imageAlt`, `imageWidth`, and `imageHeight` in `src/content/work/`, and page artwork is placed through the `ArtImage` component in `src/components/ArtImage.astro`.
 
-Illustrations currently follow BRAND.md: palette from section 4 only, no gradients, no photography except the headshot. The Gloto illustration was added in this phase in the same style so the three Home cards don't repeat an image; it is interim.
+## Custom artwork (October 2026)
 
-## Work illustrations
+Source PNGs live in `assets/img/` as uploaded. The site serves WebP copies from `public/images/art/`: `name.webp` at up to 1600 wide and `name-800.webp` for small screens. To regenerate after replacing a source file, run the conversion in the README.
 
-All six use the same frame: 1280 by 800 SVG, 16:10, opaque panel background (`#EDEBEF`). Shown at 640 by 400 on cards and 680 by 425 on case study pages, `object-fit: cover`, so the composition should hold if the edges are cropped slightly.
+| File | Source | Appears on | Rendering | Alt |
+|---|---|---|---|---|
+| `art/hero-home.webp` (1600 x 900) | `hero-home.png` | Home hero, beside the headline | Natural ratio, eager, high priority | Decorative, `alt=""` |
+| `art/hero-operations.webp` (1600 x 900) | `hero-enterprise.png` | Home, What I do, Programs and operations | 3:2 frame, cover | Decorative |
+| `art/small-business-websites.webp` (1448 x 1086) | `small-business-websites.png` | Home, What I do, Websites and marketing | 3:2 frame, cover | Decorative |
+| `art/hero-work.webp` (1600 x 900) | `hero-work.png` | Work page intro, beside the title | Natural ratio, eager | Decorative |
+| `art/schwab-martech.webp` (1448 x 1086) | `schwab-martech.png` | TD Ameritrade card (Home, Work) and `/work/td-ameritrade-schwab/` | Card 4:3 cover; case study natural | Descriptive, in frontmatter |
+| `art/sentinel-insights.webp` (1448 x 1086) | `sentinel-insights.png` | Sentinel Insights card (Home, Work) and `/work/sentinel-insights/` | Card 4:3 cover; case study natural | Descriptive, in frontmatter |
+| `art/about.webp` (1122 x 1402, portrait) | `about.png` | About, beside How I approach the work | Natural ratio | Decorative |
+| `art/services.webp` (1448 x 1086) | `services.png` | Home closing section, beside the call to action | Natural ratio | Decorative |
+| `art/contact.webp` (1448 x 1086) | `contact.png` | Contact, beside the form (after it on phones) | Natural ratio | Decorative |
 
-| File | Appears on | Subject now | Recommended replacement | Size and ratio | Transparent or opaque | Type |
-|---|---|---|---|---|---|---|
-| `public/images/work/td-ameritrade-schwab.svg` | Home (wide featured card), Work page, `/work/td-ameritrade-schwab/` | Five threads settling into one band | Keep the convergence idea. Could be refined for the wide card, which crops to roughly 5:4 at tablet and up. | 1280 x 800, 16:10 | Opaque | Illustration |
-| `public/images/work/gloto.svg` | Home (featured card), Work page, `/work/gloto/` | Three threads crossing through one hub (interim, added this phase) | A hub-and-spokes or translator idea that reads as "the person in the middle." Highest priority to replace. | 1280 x 800, 16:10 | Opaque | Illustration |
-| `public/images/work/sentinel-insights.svg` | Home (featured card), Work page, `/work/sentinel-insights/` | Calm lines, one swell circled | Keep. Fits monitoring. | 1280 x 800, 16:10 | Opaque | Illustration |
-| `public/images/work/inside-out-home-inspector.svg` | Work page, `/work/inside-out-home-inspector/` | Spiral unwinding from a center point | Something that reads as brand-building or local reputation. Not a house icon. | 1280 x 800, 16:10 | Opaque | Illustration |
-| `public/images/work/hello-again-properties.svg` | Work page, `/work/hello-again-properties/` | Rings on still water | Decide between an illustration and a real screenshot of helloagainproperties.com. If a screenshot: full-page capture of the home page at 1280 wide, cropped to 16:10 from the top. | 1280 x 800, 16:10 | Opaque | Illustration or screenshot |
-| `public/images/work/shophappens.svg` | Work page, `/work/shophappens/` | One line finding its way between obstacles | Same decision as above: illustration or a screenshot of shophappens.com. | 1280 x 800, 16:10 | Opaque | Illustration or screenshot |
-| `public/images/work/photographer-site.svg` | Work page (in-progress card) | Star trails over a prairie horizon | Keep until launch, then a screenshot of the live site. | 1280 x 800, 16:10 | Opaque | Illustration, later screenshot |
+All nine supplied images are in use. None were substituted with screenshots or stock.
+
+## Recolored SVG illustrations
+
+These predate the custom set and were recolored to the new palette so they sit alongside it. They are thinner in feel than the painterly artwork and are the next candidates for replacement. Each is 1280 x 800, opaque, `#F2ECE1` background.
+
+| File | Appears on | Subject now | Recommended replacement |
+|---|---|---|---|
+| `work/gloto.svg` | Gloto card (Home, Work), `/work/gloto/` | Three threads through one hub | First priority: it sits next to two custom pieces on the Home page. Something in the custom set's style about the person in the middle. |
+| `work/inside-out-home-inspector.svg` | Inside Out card, case study | Spiral unwinding | Custom piece on local reputation or brand-building. |
+| `work/hello-again-properties.svg` | Hello Again card, case study | Rings on water | Custom piece, or a real screenshot of helloagainproperties.com once that decision is made. |
+| `work/shophappens.svg` | ShopHappens card, case study | A line finding its way | Custom piece, or a screenshot of shophappens.com. |
+| `work/photographer-site.svg` | Photographer card (in progress) | Star trails over prairie | Keep until launch, then a screenshot. |
+| `work/td-ameritrade-schwab.svg`, `work/sentinel-insights.svg` | Not used | Replaced by custom artwork | Can be deleted once the custom set is final. |
 
 ## Other images
 
-| File | Appears on | Subject now | Recommended replacement | Size and ratio | Transparent or opaque | Type |
-|---|---|---|---|---|---|---|
-| `public/images/headshot.webp` | About page intro | Headshot, brick wall background | Keep, or replace with a shot from the planned photo session. Source is `assets/headshot-original.png`. | 400 x 400, 1:1 (displayed at 200 px) | Opaque | Photo |
-| `public/og.png` | Social sharing preview on every page (Open Graph and Twitter) | Current generic share image | A share card with name and the hero line. Consider a per-page variant for case studies later; `Base.astro` would need an `ogImage` prop. | 1200 x 630 | Opaque | Illustration or typographic card |
-| `public/favicon.svg` | Browser tab, every page | Current mark | Keep unless the brand mark changes. | Square, any size (SVG) | Transparent | Icon |
-
-## Not yet used, but reserved
-
-- **Case study inline images.** The markdown body of each case study can take images (`![alt](/images/work/...)`) if a diagram or screenshot would help the Approach section. None are used now.
-- **Home hero.** No image. BRAND.md keeps the hero typographic; the brief doesn't ask for one.
+| File | Appears on | Notes |
+|---|---|---|
+| `images/headshot.webp` (400 x 400) | About intro | Kept, per the brief. Source in `assets/headshot-original.png`. |
+| `og.png` (1200 x 630) | Social sharing on every page | Regenerated with the new headline, ivory background, gold rule, and the hero artwork. |
+| `favicon.svg` | Browser tab | Recolored to crimson. |

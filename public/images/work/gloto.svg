@@ -4,17 +4,17 @@
        threads arrive from the left, pass through one plum point on a soft
        wash, and leave as three again. Palette from BRAND.md section 4
        only; no gradients. Listed for replacement in docs/IMAGE_MANIFEST.md. -->
-  <rect width="1280" height="800" fill="#EDEBEF"/>
+  <rect width="1280" height="800" fill="#F2ECE1"/>
 
   <!-- the wash around the hub -->
-  <circle cx="640" cy="400" r="150" fill="#F5EDF1"/>
+  <circle cx="640" cy="400" r="150" fill="#F7ECD2"/>
 
   <g fill="none" stroke-linecap="round">
-    <path d="M-40 160 C 260 180, 460 330, 640 400 C 820 470, 1020 620, 1320 640" stroke="#16151A" stroke-width="12"/>
-    <path d="M-40 400 C 300 396, 500 404, 640 400 C 780 396, 980 404, 1320 400" stroke="#6E6A75" stroke-width="12"/>
-    <path d="M-40 640 C 260 620, 460 470, 640 400 C 820 330, 1020 180, 1320 160" stroke="#16151A" stroke-width="12"/>
+    <path d="M-40 160 C 260 180, 460 330, 640 400 C 820 470, 1020 620, 1320 640" stroke="#1D1D1D" stroke-width="12"/>
+    <path d="M-40 400 C 300 396, 500 404, 640 400 C 780 396, 980 404, 1320 400" stroke="#A48C72" stroke-width="12"/>
+    <path d="M-40 640 C 260 620, 460 470, 640 400 C 820 330, 1020 180, 1320 160" stroke="#1D1D1D" stroke-width="12"/>
   </g>
 
   <!-- the hub -->
-  <circle cx="640" cy="400" r="34" fill="#EDEBEF" stroke="#6B2049" stroke-width="12"/>
+  <circle cx="640" cy="400" r="34" fill="#F2ECE1" stroke="#C8102E" stroke-width="12"/>
 </svg>

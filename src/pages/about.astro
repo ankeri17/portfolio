@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Marginalia from '../components/Marginalia.astro';
+import ArtImage from '../components/ArtImage.astro';
 
 // About: a short professional introduction, how she approaches the work,
 // a scannable career timeline, and a condensed note on technology and AI.
@@ -159,16 +160,27 @@ function isPlaceholder(value?: string) {
       </p>
     </section>
 
-    <section aria-labelledby="approach-heading">
-      <h2 id="approach-heading">How I approach the work</h2>
-      <dl class="approach">
-        {approach.map((item) => (
-          <div class="approach-item">
-            <dt>{item.title}</dt>
-            <dd>{item.body}</dd>
-          </div>
-        ))}
-      </dl>
+    <section aria-labelledby="approach-heading" class="approach-section">
+      <div class="approach-text">
+        <h2 id="approach-heading">How I approach the work</h2>
+        <dl class="approach">
+          {approach.map((item) => (
+            <div class="approach-item">
+              <dt>{item.title}</dt>
+              <dd>{item.body}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div class="approach-art">
+        <ArtImage
+          src="/images/art/about.webp"
+          alt=""
+          width={1122}
+          height={1402}
+          sizes="(min-width: 1024px) 300px, (min-width: 768px) 260px, 100vw"
+        />
+      </div>
     </section>
 
     <section aria-labelledby="highlights-heading">
@@ -261,6 +273,18 @@ function isPlaceholder(value?: string) {
     margin-bottom: var(--space-16);
   }
 
+  /* The portrait botanical sits beside the six approach items; at phone
+     width it follows them. */
+  .approach-section {
+    display: grid;
+    gap: var(--space-32);
+    align-items: start;
+  }
+
+  .approach-art img {
+    border-radius: var(--radius-card);
+  }
+
   .approach {
     display: grid;
     gap: var(--space-16);
@@ -346,9 +370,13 @@ function isPlaceholder(value?: string) {
       margin-top: 0;
     }
 
-    .approach {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-16) var(--space-32);
+    .approach-section {
+      grid-template-columns: 1fr 260px;
+      gap: var(--space-48);
+    }
+
+    .approach-art {
+      margin-top: var(--space-48);
     }
 
     .timeline-item {
@@ -363,6 +391,11 @@ function isPlaceholder(value?: string) {
 
     section {
       margin-top: var(--space-64);
+    }
+
+    .approach-section {
+      grid-template-columns: 1fr 300px;
+      gap: var(--space-64);
     }
   }
 </style>

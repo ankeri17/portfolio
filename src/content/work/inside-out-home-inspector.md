@@ -9,7 +9,7 @@ status: 'complete'
 summary: 'The full marketing function for a family-owned home inspection business, over seven years.'
 highlight: 'A recognizable local brand backed by consistent five-star reviews.'
 image: '/images/work/inside-out-home-inspector.svg'
-imageAlt: 'A single thick spiral unwinding outward from a plum point at its center.'
+imageAlt: 'A single thick spiral unwinding outward from a crimson point at its center.'
 order: 1
 featured: false
 ---
