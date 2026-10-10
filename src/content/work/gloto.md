@@ -8,8 +8,10 @@ years: '[PLACEHOLDER: years at Gloto, needs Erin]'
 status: 'complete'
 summary: 'Five years running client services and then operations at a mobile and web build startup working with national brands.'
 highlight: 'The communications hub between customers, engineering, and management for brands like Marvel, the NBA, NBC Universal, Wyndham Rewards, and Target.'
-image: '/images/work/gloto.svg'
-imageAlt: 'Three thick threads crossing through a single crimson ring at the center and continuing on.'
+image: '/images/art/hero-operations.webp'
+imageAlt: 'Crimson, gold, and black ribbons sweeping in from both sides and converging at a single point.'
+imageWidth: 1600
+imageHeight: 900
 order: 2
 featured: true
 ---

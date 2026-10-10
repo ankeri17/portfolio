@@ -9,7 +9,7 @@ Source PNGs live in `assets/img/` as uploaded. The site serves WebP copies from 
 | File | Source | Appears on | Rendering | Alt |
 |---|---|---|---|---|
 | `art/hero-home.webp` (1600 x 900) | `hero-home.png` | Home hero, beside the headline | Natural ratio, eager, high priority | Decorative, `alt=""` |
-| `art/hero-operations.webp` (1600 x 900) | `hero-enterprise.png` | Home, What I do, Programs and operations | 3:2 frame, cover | Decorative |
+| `art/hero-operations.webp` (1600 x 900) | `hero-enterprise.png` | Home, What I do, Programs and operations; also the Gloto card and case study until a Gloto piece exists | 3:2 frame, cover; card 4:3 cover; case study natural | Decorative in What I do; descriptive on Gloto |
 | `art/small-business-websites.webp` (1448 x 1086) | `small-business-websites.png` | Home, What I do, Websites and marketing | 3:2 frame, cover | Decorative |
 | `art/hero-work.webp` (1600 x 900) | `hero-work.png` | Work page intro, beside the title | Natural ratio, eager | Decorative |
 | `art/schwab-martech.webp` (1448 x 1086) | `schwab-martech.png` | TD Ameritrade card (Home, Work) and `/work/td-ameritrade-schwab/` | Card 4:3 cover; case study natural | Descriptive, in frontmatter |
@@ -26,7 +26,7 @@ These predate the custom set and were recolored to the new palette so they sit a
 
 | File | Appears on | Subject now | Recommended replacement |
 |---|---|---|---|
-| `work/gloto.svg` | Gloto card (Home, Work), `/work/gloto/` | Three threads through one hub | First priority: it sits next to two custom pieces on the Home page. Something in the custom set's style about the person in the middle. |
+| `work/gloto.svg` | Not used | Three threads through one hub | Gloto currently reuses `hero-operations.webp`. Erin will supply a dedicated Gloto piece; point `image` in `gloto.md` at it when it arrives. |
 | `work/inside-out-home-inspector.svg` | Inside Out card, case study | Spiral unwinding | Custom piece on local reputation or brand-building. |
 | `work/hello-again-properties.svg` | Hello Again card, case study | Rings on water | Custom piece, or a real screenshot of helloagainproperties.com once that decision is made. |
 | `work/shophappens.svg` | ShopHappens card, case study | A line finding its way | Custom piece, or a screenshot of shophappens.com. |
