@@ -1,58 +1,119 @@
 ---
 // Card for a work entry (BRAND.md section 7: cards are only for work
-// entries). Links through to the entry's anchor on the Work page. The
-// image slot shows the entry's illustration from its `image` and
-// `imageAlt` frontmatter, with a marked placeholder as the fallback for
-// any future entry that doesn't have one yet.
+// entries). Used on the Home page (Selected work) and the Work page.
+// Entries with a case study link through to /work/<id>/. Entries without
+// one (in-progress work) render as a plain card with no link, labeled so
+// it never reads as finished.
+//
+// The image slot shows the entry's illustration from `image` and
+// `imageAlt`. Images are swappable per entry via frontmatter; see
+// docs/IMAGE_MANIFEST.md for what each one should become.
 interface Props {
   id: string;
   title: string;
   kind: string;
   summary: string;
+  years?: string;
+  status?: 'complete' | 'in-progress';
+  caseStudy?: boolean;
+  category?: 'programs' | 'websites';
   image?: string;
   imageAlt?: string;
+  link?: string;
   wide?: boolean;
+  headingLevel?: 'h2' | 'h3';
 }
 
-const { id, title, kind, summary, image, imageAlt, wide = false } = Astro.props;
+const {
+  id,
+  title,
+  kind,
+  summary,
+  years,
+  status = 'complete',
+  caseStudy = true,
+  category,
+  image,
+  imageAlt,
+  link,
+  wide = false,
+  headingLevel = 'h3',
+} = Astro.props;
+
+const href = `/work/${id}/`;
+const Heading = headingLevel;
+// Placeholder years stay off the card; the case study page shows them.
+const meta =
+  status === 'in-progress' ? 'In progress' : years?.startsWith('[PLACEHOLDER') ? undefined : years;
 ---
 
-<a class:list={['work-card', { wide }]} href={`/work/#${id}`}>
-  <div class="shot">
-    {image ? (
-      <img
-        src={image}
-        alt={imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'}
-        width="640"
-        height="400"
-        loading="lazy"
-        decoding="async"
-      />
-    ) : (
-      <span class="placeholder">[PLACEHOLDER: screenshot, needs Erin]</span>
-    )}
-  </div>
-  <div class="card-body">
-    <p class="eyebrow">{kind}</p>
-    <h3>{title}</h3>
-    <p class="summary">{summary}</p>
-  </div>
-</a>
+<article class:list={['work-card', { wide, static: !caseStudy }]} id={id}>
+  {caseStudy ? (
+    <a class="card-link" href={href}>
+      <div class="shot">
+        {image ? (
+          <img src={image} alt={imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'} width="640" height="400" loading="lazy" decoding="async" />
+        ) : (
+          <span class="placeholder">[PLACEHOLDER: image, needs Erin]</span>
+        )}
+      </div>
+      <div class="card-body">
+        <p class="eyebrow">
+          {kind}
+          {meta && <span class:list={['meta', { 'in-progress': status === 'in-progress' }]}> · {meta}</span>}
+        </p>
+        <Heading class="card-title">{title}</Heading>
+        <p class="summary">{summary}</p>
+        <p class="more">Read the case study</p>
+      </div>
+    </a>
+  ) : (
+    <div class="card-link">
+      <div class="shot">
+        {image ? (
+          <img src={image} alt={imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'} width="640" height="400" loading="lazy" decoding="async" />
+        ) : (
+          <span class="placeholder">[PLACEHOLDER: image, needs Erin]</span>
+        )}
+      </div>
+      <div class="card-body">
+        <p class="eyebrow">
+          {kind}
+          {meta && <span class:list={['meta', { 'in-progress': status === 'in-progress' }]}> · {meta}</span>}
+        </p>
+        <Heading class="card-title">{title}</Heading>
+        <p class="summary">{summary}</p>
+        {link && <p class="more"><a href={link}>{link.replace(/^https?:\/\//, '')}</a></p>}
+      </div>
+    </div>
+  )}
+</article>
 
 <style>
   .work-card {
-    display: block;
     background: var(--paper);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     overflow: hidden;
-    color: var(--ink);
     transition: border-color var(--transition);
   }
 
-  .work-card:hover {
-    text-decoration: none;
+  .work-card:not(.static):hover {
     border-color: color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+
+  .card-link {
+    display: block;
+    height: 100%;
+    color: var(--ink);
+  }
+
+  .card-link:hover {
+    text-decoration: none;
+  }
+
+  .card-link:focus-visible {
+    outline-offset: -2px;
   }
 
   .shot {
@@ -80,8 +141,16 @@ const { id, title, kind, summary, image, imageAlt, wide = false } = Astro.props;
     padding: var(--space-24);
   }
 
-  h3 {
+  .meta.in-progress {
+    color: var(--plum);
+  }
+
+  .card-title {
     margin-top: var(--space-8);
+    font-family: var(--font-body);
+    font-size: var(--size-subhead);
+    font-weight: 500;
+    line-height: 1.4;
   }
 
   .summary {
@@ -91,10 +160,22 @@ const { id, title, kind, summary, image, imageAlt, wide = false } = Astro.props;
     color: var(--muted);
   }
 
-  /* The wide card (first on Home) goes side by side at tablet and up so
-     its screenshot doesn't dominate the page. */
+  .more {
+    margin-top: var(--space-16);
+    font-size: var(--size-small);
+    font-weight: 500;
+    color: var(--plum);
+  }
+
+  .card-link:hover .more {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* The wide card (first in Selected work) goes side by side at tablet and
+     up so its illustration doesn't dominate the page. */
   @media (min-width: 768px) {
-    .work-card.wide {
+    .work-card.wide .card-link {
       display: grid;
       grid-template-columns: 5fr 4fr;
     }

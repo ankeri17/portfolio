@@ -3,46 +3,91 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import WorkCard from '../components/WorkCard.astro';
 
-const featured = (await getCollection('work', (entry) => entry.data.featured))
-  .sort((a, b) => a.data.order - b.data.order);
+// Home: hero, the two areas of work, three featured case studies, how I
+// work, and a closing call to action. Featured entries come from the
+// `featured` flag in src/content/work/, sorted by `order`. Only completed
+// work is featured here; in-progress entries stay on the Work page.
+const featured = (
+  await getCollection('work', (entry) => entry.data.featured && entry.data.status === 'complete')
+).sort((a, b) => a.data.order - b.data.order);
+
+const areas = [
+  {
+    id: 'programs',
+    title: 'Programs and operations',
+    body: 'Enterprise delivery, cross-functional leadership, MarTech governance, organizational change, and operational improvement. I lead the work that cuts across teams and needs someone to hold the whole picture.',
+    link: 'See the programs and operations work',
+  },
+  {
+    id: 'websites',
+    title: 'Websites and marketing',
+    body: 'Website development, digital experiences, marketing strategy, and practical support for small businesses. I build the site, and I know what the business behind it needs from it.',
+    link: 'See the websites and marketing work',
+  },
+];
+
+const principles = [
+  {
+    title: 'Make complexity understandable',
+    body: 'Most stuck projects are stuck because nobody can see the whole thing. I write it down, draw it, and keep explaining it until everyone is looking at the same picture.',
+  },
+  {
+    title: 'Create clarity around ownership and decisions',
+    body: 'Work moves when people know what is theirs and who decides. I make that explicit early, and I keep it current as things change.',
+  },
+  {
+    title: 'Build practical processes people can maintain',
+    body: 'The right amount of structure is the amount a team will actually keep using after I leave the room.',
+  },
+  {
+    title: 'Bring people together across functions',
+    body: 'Engineering, marketing, legal, customers, leadership. Different vocabularies, same goal. My job is making sure they hear each other.',
+  },
+];
 ---
 
 <Base
-  title="Erin Ankeny"
-  description="Program and operations leadership, MarTech and data governance, and web and brand work for small businesses."
+  title="Erin Ankeny | Program and operations leadership, websites and marketing"
+  description="Erin Ankeny leads programs, builds operations, and connects technical and business teams. Over 20 years across enterprise technology, startups, and digital operations."
 >
   <section class="hero content hero-reveal">
-    <div class="annotated">
-      <h1>I help people who don't speak the same language build things together.</h1>
-    </div>
+    <h1>Making complex work easier to move forward.</h1>
     <div class="hero-rule"></div>
-    <p>
-      Twenty years helping technical teams and everyone else to understand each
-      other... including our new AI partners.
+    <p class="lede">
+      I lead programs, build operations, and connect technical and business
+      teams so good ideas become work that actually gets done.
+    </p>
+    <p class="lede-small">
+      Over 20 years across enterprise technology, startups, and digital
+      operations.
+    </p>
+    <p class="actions">
+      <a class="button-primary" href="/work/">Explore my work</a>
+      <a class="button-secondary" href="/contact/">Get in touch</a>
     </p>
   </section>
 
-  <section class="doors">
+  <section class="areas" aria-labelledby="what-i-do">
     <div class="content">
-      <p class="eyebrow">How to work with me</p>
-      <p class="door">
-        I lead programs and operations for teams in the middle of change,
-        including agile and transformation work.
+      <h2 id="what-i-do">What I do</h2>
+      <p class="areas-intro">
+        Two kinds of work, one habit underneath both: getting people with
+        different vocabularies working from the same page.
       </p>
-      <p class="door">I untangle MarTech, data, and privacy and consent governance.</p>
-      <p class="door">
-        And I build websites and brands for small businesses, with property and
-        home services as the corner of the world I know best.
-      </p>
-      <p class="door">
-        Different rooms, same job: getting people with different vocabularies
-        working from the same page, so work ships more smoothly.
-      </p>
+      <div class="area-list">
+        {areas.map((area) => (
+          <div class="area">
+            <h3>{area.title}</h3>
+            <p>{area.body}</p>
+            <p><a href={`/work/#${area.id}`}>{area.link}</a></p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="featured content">
-    <h2>Selected work</h2>
+  <section class="featured content" aria-labelledby="selected-work">
+    <h2 id="selected-work">Selected work</h2>
     <div class="cards">
       {featured.map((entry, index) => (
         <WorkCard
@@ -50,20 +95,36 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
           title={entry.data.title}
           kind={entry.data.kind}
           summary={entry.data.summary}
+          years={entry.data.years}
+          status={entry.data.status}
+          caseStudy={entry.data.caseStudy}
+          category={entry.data.category}
           image={entry.data.image}
           imageAlt={entry.data.imageAlt}
           wide={index === 0}
         />
       ))}
     </div>
-    <p><a href="/work/">See more of the work</a></p>
+    <p><a href="/work/">See all the work</a></p>
+  </section>
+
+  <section class="how content" aria-labelledby="how-i-work">
+    <h2 id="how-i-work">How I work</h2>
+    <dl class="principles">
+      {principles.map((item) => (
+        <div class="principle">
+          <dt>{item.title}</dt>
+          <dd>{item.body}</dd>
+        </div>
+      ))}
+    </dl>
   </section>
 
   <section class="closing content">
     <p>
-      If you're hiring for program or operations work, wrestling with your
-      MarTech stack, or a small business that needs a site built by someone
-      who's run the whole function, let's talk.
+      If you're hiring for program or operations leadership, need a hand
+      with a project, or run a small business that needs a site and a
+      marketing plan, I'd like to hear about it.
     </p>
     <p><a class="button-primary" href="/contact/">Start a conversation</a></p>
   </section>
@@ -87,15 +148,29 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
     margin-top: var(--space-24);
   }
 
-  .hero p {
+  .hero .lede {
     margin-top: var(--space-24);
     font-size: var(--size-subhead);
+    line-height: 1.5;
+    max-width: 48ch;
+  }
+
+  .hero .lede-small {
+    margin-top: var(--space-12);
     color: var(--muted);
+  }
+
+  .hero .actions {
+    margin-top: var(--space-32);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-12) var(--space-16);
+    align-items: center;
   }
 
   /* Full-bleed tinted band. The negative margins stretch the section to
      the viewport edges; the inner .content column stays aligned. */
-  .doors {
+  .areas {
     margin-top: var(--section-gap);
     margin-inline: calc(50% - 50vw);
     background: var(--plum-tint);
@@ -103,19 +178,34 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
     padding-inline: var(--gutter);
   }
 
-  .doors .eyebrow {
-    margin-bottom: var(--space-8);
+  .areas-intro {
+    margin-top: var(--space-12);
+    color: var(--muted);
   }
 
-  .doors .door {
-    padding-block: var(--space-16);
+  .area-list {
+    margin-top: var(--space-32);
+    display: grid;
+    gap: var(--space-24);
   }
 
-  .doors .door + .door {
+  .area {
+    padding-top: var(--space-24);
     border-top: 1px solid var(--border);
   }
 
+  .area p {
+    margin-top: var(--space-8);
+  }
+
+  .area p + p {
+    margin-top: var(--space-12);
+    font-size: var(--size-small);
+    font-weight: 500;
+  }
+
   .featured,
+  .how,
   .closing {
     margin-top: var(--section-gap);
   }
@@ -130,6 +220,29 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
     margin-top: var(--space-24);
   }
 
+  .principles {
+    margin-top: var(--space-24);
+    display: grid;
+    gap: var(--space-24);
+  }
+
+  .principle {
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--border);
+  }
+
+  .principle dt {
+    font-size: var(--size-subhead);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .principle dd {
+    margin-top: var(--space-8);
+    color: var(--muted);
+    max-width: 60ch;
+  }
+
   .closing p:first-child {
     font-family: var(--font-display);
     font-size: var(--size-heading);
@@ -142,6 +255,11 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
   }
 
   @media (min-width: 768px) {
+    .area-list {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-32);
+    }
+
     .featured .cards {
       grid-template-columns: 1fr 1fr;
     }
@@ -149,10 +267,15 @@ const featured = (await getCollection('work', (entry) => entry.data.featured))
     .featured .cards > :global(.work-card.wide) {
       grid-column: 1 / -1;
     }
+
+    .principles {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-32);
+    }
   }
 
   @media (min-width: 1024px) {
-    .doors {
+    .areas {
       padding-block: var(--space-64);
     }
   }
