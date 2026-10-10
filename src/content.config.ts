@@ -10,9 +10,9 @@ import { glob } from 'astro/loaders';
 // `featured` puts an entry in Selected work on the Home page.
 //
 // The markdown body is the case study. Use `## ` headings in this order:
-// Overview, Challenge, My role, Approach, Outcome. Where a section has no
-// verified content yet, leave a visible [PLACEHOLDER: ...] line rather than
-// filler (BRAND.md section 12).
+// Overview, Challenge, My role, Approach, Outcome. Only verified facts go
+// in; where an outcome can't be measured, describe it qualitatively
+// (BRAND.md section 12).
 const work = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
   schema: z.object({

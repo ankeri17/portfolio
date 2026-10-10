@@ -1,13 +1,13 @@
 ---
-title: 'Inside Out Home Inspector'
+title: "Building a local service business's marketing presence"
 category: 'websites'
 kind: 'Small business marketing'
 organization: 'Inside Out Home Inspector'
-role: 'Marketing lead, the full function'
+role: 'Marketing consultant'
 years: '2017 to 2024'
 status: 'complete'
-summary: 'The full marketing function for a family-owned home inspection business, over seven years.'
-highlight: 'A recognizable local brand backed by consistent five-star reviews.'
+summary: 'Branding, messaging, social media, and promotional support for a family-owned home inspection business in Maryland, over seven years.'
+highlight: 'Seven years of hands-on marketing for a trust-based local service business.'
 image: '/images/work/inside-out-home-inspector.svg'
 imageAlt: 'A single thick spiral unwinding outward from a crimson point at its center.'
 order: 1
@@ -16,22 +16,20 @@ featured: false
 
 ## Overview
 
-Inside Out Home Inspector was a family-owned home inspection business in central Maryland. For seven years I ran its whole marketing function: brand, social media, and outreach. The business has since closed.
+Inside Out Home Inspector was a family-owned home inspection business in Maryland. From January 2017 to September 2024 I was its marketing consultant, responsible for branding, social media, marketing strategy, and promotional support. The business has since closed.
 
 ## Challenge
 
-A home inspector competes on trust. Buyers and sellers are making the biggest purchase of their lives and need to believe the person walking through the house will tell them the truth. The marketing had to earn that trust before the first phone call.
+A home inspector sells trust. Buyers and sellers are in the middle of the largest purchase of their lives, often on a deadline, and they need to believe that the person walking through the house will tell them the truth. In a competitive local market, the marketing had to earn that trust before the first phone call, and it had to keep earning it with the agents who make most of the referrals.
 
 ## My role
 
-I owned the marketing function end to end rather than a single deliverable: the brand, the voice, the social channels, and how the business showed up with agents and homeowners.
-
-<span class="placeholder">[PLACEHOLDER: anything else the role covered, for example the website, review management, or referral relationships, needs Erin]</span>
+I owned the brand, the messaging, the content, the social media channels, and the promotional initiatives. Over seven years that meant setting the direction and also doing the work: writing, posting, designing, and showing up consistently.
 
 ## Approach
 
-<span class="placeholder">[PLACEHOLDER: how the brand and outreach were built, for example the channels that mattered, what the content focused on, and how reviews were encouraged, needs Erin]</span>
+I built the brand around plain, confident explanation of what an inspection covers and why it matters, the same translation work I've done in every other role. Social media and outreach focused on being useful to homeowners and agents rather than loud, and promotional efforts stayed consistent over years rather than arriving in bursts.
 
 ## Outcome
 
-The work built a recognizable local brand backed by consistent five-star reviews, and a reputation that helped homeowners buy and sell with confidence.
+A recognizable local brand with a consistent voice, maintained across every channel for seven years. The engagement is my longest-running example of owning a small business's marketing end to end, from strategy through execution.

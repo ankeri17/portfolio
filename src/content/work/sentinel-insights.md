@@ -1,13 +1,13 @@
 ---
-title: 'Founding team at Sentinel Insights'
+title: 'Building operations at Sentinel Insights'
 category: 'programs'
-kind: 'Founding team and product operations'
+kind: 'Executive leadership and startup operations'
 organization: 'Sentinel Insights'
-role: 'First employee, product operations and customer support'
+role: 'Founding team member and executive vice president'
 years: '2021 to 2026'
 status: 'complete'
-summary: 'Five years on the founding team of a MarTech monitoring startup, running product operations, customer support, and team building.'
-highlight: 'First employee, and for five years the person who did whatever the day required.'
+summary: 'Joined as the first employee and served as an executive vice president, helping build the operational foundation of a B2B SaaS company across product operations, customer success, marketing, and internal operations.'
+highlight: 'First employee, five years on the founding team, and a strategic advisor to three CEOs.'
 image: '/images/art/sentinel-insights.webp'
 imageAlt: 'Overlapping crimson, gold, and black circles joined by fine gold lines, like nodes in a network.'
 imageWidth: 1448
@@ -18,24 +18,24 @@ featured: true
 
 ## Overview
 
-Sentinel Insights builds a platform that helps cross-functional teams monitor the data their marketing technology stacks generate, so they can be sure their tools are doing what they're supposed to. I joined as the first employee in 2021 and stayed five years.
+Sentinel Insights developed a monitoring platform to help organizations identify issues in their marketing technology environments, including data collection, consent management, and third-party technology performance.
+
+I joined as the first employee in July 2021 and spent five years on the founding team, working across product operations, customer success, marketing, and internal business operations.
 
 ## Challenge
 
-An early-stage company has more work than people and no established way of doing most of it. Customers need support, the product needs feedback from the field, and the team needs to grow without losing what made it work.
-
-<span class="placeholder">[PLACEHOLDER: the specific problems product operations and support were set up to solve, needs Erin]</span>
+Building an early-stage SaaS company requires continuous decisions about how to allocate limited resources. Product development, customer requirements, commercial priorities, and internal operational needs all compete for attention, and the people making those calls are usually the same people doing the work.
 
 ## My role
 
-My focus was product operations, customer support, and team building, plus whatever else a fast-moving startup needed on a given day.
-
-<span class="placeholder">[PLACEHOLDER: what you owned outright, for example the support function, onboarding, hiring, or internal process, and which decisions were yours, needs Erin]</span>
+As an executive vice president, I served as a strategic advisor to company leadership, including three CEOs over my five years, and helped establish the functions and operating practices needed to support the business. My responsibilities included customer-facing operations, product coordination, marketing, sales enablement, and internal organizational processes.
 
 ## Approach
 
-<span class="placeholder">[PLACEHOLDER: how you built the support and operations functions from nothing, and how customer feedback made its way back into the product, needs Erin]</span>
+I focused on connecting business priorities with day-to-day execution. That included translating customer feedback into actionable product discussions, developing sales and marketing resources, coordinating work across engineering, product, sales, and customer-facing teams, and creating repeatable processes as the organization evolved.
+
+Some of that work was hands-on and specific. I built pitch decks and market-sizing models, wrote sales enablement materials, and developed an AI-powered thought leadership engine that turned the team's expertise into a steady stream of published content.
 
 ## Outcome
 
-<span class="placeholder">[PLACEHOLDER: verifiable outcomes over the five years, for example team size at departure, customers supported, or processes that outlasted you, needs Erin]</span>
+Over five years, I helped Sentinel move from its earliest stage to an established enterprise-focused SaaS business. The experience strengthened my ability to build functions from the ground up, lead across organizational boundaries, and balance strategic planning with hands-on execution.

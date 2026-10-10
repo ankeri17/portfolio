@@ -26,9 +26,13 @@ LinkedIn holds a chronological list of jobs in a format someone else controls. T
 
 ## 2. Positioning
 
-**Throughline:** Erin is the glue between people with different goals. She gets groups who use different vocabularies for the same thing working from the same page, and the result is that work ships.
+**Primary positioning (October 2026 content brief):** an experienced leader who brings clarity, structure, sound judgment, and practical execution to complex organizations and initiatives. Technical program and operations leadership, startup executive leadership, more than 20 years of experience.
 
-This is provable, not aspirational. She was the communications hub between customers, engineering, and management at Gloto, drove communication and collaboration across the enterprise at TD Ameritrade, and spent the first years of her career as a technical writer making what engineers know legible to people who aren't engineers. Same job, different titles.
+**Secondary positioning:** a versatile digital practitioner who also designs websites, manages marketing initiatives, and builds independent businesses.
+
+**Throughline, used sparingly:** she makes complex work understandable and manageable. Her career started in technical writing and that skill runs through everything since. Do not repeat the "different vocabularies, same page" framing across pages; it appears once, on About, and that is enough.
+
+**Verified background.** Titles and dates on the site come from Erin's October 2026 content brief. Red Hat (July 2026 to present), Sentinel Insights EVP and founding team (July 2021 to June 2026), Project 3 Consulting (August 2021 to March 2025), Humana (January 2024 to April 2025), Charles Schwab (June to August 2021), TD Ameritrade (July 2018 to June 2021), Oracle (July 2017 to July 2018), Gloto (January 2012 to June 2016, two roles), Inside Out Home Inspector (January 2017 to September 2024). Change these only with a new source from Erin.
 
 **Hero copy (approved by Erin, October 2026):**
 
@@ -282,4 +286,4 @@ Present the home inspection work accurately: consulting for a small family-owned
 
 **Never invent facts about Erin.** This is the most important rule in the file. Do not write job titles, dates, employers, project outcomes, metrics, percentages, client names, testimonials, or quotes unless they appear in a source she has provided. A plausible-sounding invented number on a credibility site is worse than an empty section, because a serious reader will probe it.
 
-Where real content is missing, write a clearly marked placeholder such as `[PLACEHOLDER: outcome for TD Ameritrade entry, needs Erin]` and keep it visible in the page. Do not fill gaps with generic filler that reads like finished copy. Placeholders are tracked and removed before launch; invented copy is not, because nobody knows it's there.
+Where real content is missing, leave the detail out and write a complete, appropriately scoped qualitative description instead. Record the gap in `docs/MISSING_CONTENT.md` as a question for Erin. Do not fill gaps with generic filler that reads like finished copy, and do not leave bracketed editorial instructions visible on the site.

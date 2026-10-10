@@ -1,13 +1,13 @@
 ---
-title: 'Client services and operations at Gloto'
+title: 'Leading client services and operations at Gloto'
 category: 'programs'
-kind: 'Startup operations leadership'
+kind: 'Startup operations and client delivery'
 organization: 'Gloto'
-role: 'Client services, then EVP of operations'
-years: '[PLACEHOLDER: years at Gloto, needs Erin]'
+role: 'Director of client services, then executive vice president and operations manager'
+years: '2012 to 2016'
 status: 'complete'
-summary: 'Five years running client services and then operations at a mobile and web build startup working with national brands.'
-highlight: 'The communications hub between customers, engineering, and management for brands like Marvel, the NBA, NBC Universal, Wyndham Rewards, and Target.'
+summary: 'Led client services and later executive operations for a technology startup delivering custom web and mobile products for nationally recognized brands.'
+highlight: 'Clients included Marvel, the NBA, NBCUniversal, Wyndham Worldwide, and Google.'
 image: '/images/art/hero-operations.webp'
 imageAlt: 'Crimson, gold, and black ribbons sweeping in from both sides and converging at a single point.'
 imageWidth: 1600
@@ -18,28 +18,20 @@ featured: true
 
 ## Overview
 
-Gloto was a startup that designed and built mobile and web products for national brands. I spent five years there, first running client services and later running operations as EVP.
-
-<span class="placeholder">[PLACEHOLDER: a sentence on the size of the company and team, and what kinds of products it built, needs Erin]</span>
+Gloto developed custom websites, mobile experiences, and applications for nationally recognized brands. I joined in January 2012 as director of client services and project manager, and in May 2014 I moved into executive operational leadership as executive vice president and operations manager, a role I held until June 2016.
 
 ## Challenge
 
-A build shop lives or dies on whether the customer, the engineers, and the people running the company are talking about the same thing. Each group had its own vocabulary and its own definition of done.
-
-<span class="placeholder">[PLACEHOLDER: the specific operational or delivery problems you were brought in to solve, needs Erin]</span>
+Delivering custom digital products required continuous coordination between clients, engineering teams, and company leadership. As the business grew and took on more enterprise accounts at once, operational consistency became increasingly important.
 
 ## My role
 
-I was the communications hub between customers, engineering, and management. On the client side that meant owning the relationship and the scope. On the operations side it meant the structures the company ran on.
-
-<span class="placeholder">[PLACEHOLDER: what EVP of operations covered day to day, for example staffing, delivery process, finance, or vendor management, and which decisions were yours, needs Erin]</span>
+I managed client relationships and project delivery, connecting customer requirements with technical teams and leadership. I also supported the user interface, user experience, and usability testing work that shaped what we built. As EVP, I took on broader responsibility for the company's daily operations, processes, and organizational effectiveness across the software development lifecycle.
 
 ## Approach
 
-<span class="placeholder">[PLACEHOLDER: how you ran client services and operations, for example the process you put in place for scoping, status, and escalation, needs Erin]</span>
+I established clearer delivery practices, introduced agile ways of working, maintained client communication so that nobody was surprised, and helped coordinate projects from scoping through release.
 
 ## Outcome
 
-Work shipped for brands including Marvel, the NBA, NBC Universal, Wyndham Rewards, and Target.
-
-<span class="placeholder">[PLACEHOLDER: verifiable outcomes, for example products launched, client retention, or team growth over the five years, needs Erin]</span>
+I supported digital delivery for clients including Marvel, the NBA, NBCUniversal, Wyndham Worldwide, and Google, while helping strengthen the operational practices needed to support multiple enterprise accounts at the same time.

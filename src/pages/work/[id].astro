@@ -26,14 +26,11 @@ const facts = [
   { label: 'Status', value: d.status === 'in-progress' ? 'In progress' : undefined },
 ].filter((f) => f.value);
 
-function isPlaceholder(value?: string) {
-  return value?.startsWith('[PLACEHOLDER');
-}
 ---
 
 <Base
   title={`${d.title} | Erin Ankeny`}
-  description={d.summary}
+  description={`${d.organization ? `${d.organization}: ` : ''}${d.summary}`}
 >
   <article class="content case-study">
     <header class="page-intro">
@@ -50,11 +47,7 @@ function isPlaceholder(value?: string) {
           <div class="fact">
             <dt>{fact.label}</dt>
             <dd>
-              {isPlaceholder(fact.value) ? (
-                <span class="placeholder">{fact.value}</span>
-              ) : (
-                fact.value
-              )}
+              {fact.value}
             </dd>
           </div>
         ))}
@@ -71,14 +64,12 @@ function isPlaceholder(value?: string) {
       {d.image ? (
         <ArtImage
           src={d.image}
-          alt={d.imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'}
+          alt={d.imageAlt ?? ''}
           width={d.imageWidth}
           height={d.imageHeight}
           loading="eager"
         />
-      ) : (
-        <span class="placeholder">[PLACEHOLDER: image, needs Erin]</span>
-      )}
+      ) : null}
     </figure>
 
     {d.highlight && <p class="highlight">{d.highlight}</p>}
@@ -154,10 +145,7 @@ function isPlaceholder(value?: string) {
   }
 
   .shot:not(:has(img)) {
-    aspect-ratio: 4 / 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
   }
 
   .highlight {

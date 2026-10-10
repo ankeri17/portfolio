@@ -26,30 +26,35 @@ const sections = [
     id: 'programs',
     title: 'Programs and operations',
     intro:
-      'Enterprise delivery, cross-functional leadership, MarTech governance, and operations work inside startups and large companies.',
+      'Enterprise technology delivery, executive startup operations, organizational change, and cross-functional leadership.',
     entries: sortEntries(entries.filter((e) => e.data.category === 'programs')),
   },
   {
     id: 'websites',
     title: 'Websites and marketing',
     intro:
-      'Websites, brands, and the marketing function itself for small businesses, plus independent projects I build and run end to end.',
+      'Website design and development, small business marketing, and independent digital ventures.',
     entries: sortEntries(entries.filter((e) => e.data.category === 'websites')),
   },
 ];
 ---
 
 <Base
-  title="Work | Erin Ankeny"
-  description="Selected work from twenty years across enterprise program management, startup operations, and websites and marketing for small businesses."
+  title="Selected Work | Erin Ankeny"
+  description="Explore projects spanning enterprise MarTech delivery, startup operations, organizational transformation, website development, and small business marketing."
 >
   <header class="page-intro">
     <div class="intro-text">
       <h1>Work</h1>
       <p>
-        A selection of what I've led, built, and run, in two areas. Each one is
-        the same job in a different room: getting people with different
-        vocabularies working from the same page.
+        My career has included leading enterprise technology initiatives,
+        helping startups build and grow, improving how teams operate, and
+        creating websites and marketing programs for small businesses.
+      </p>
+      <p>
+        The projects below highlight the different ways I've contributed, from
+        coordinating complex delivery to owning day-to-day operations and
+        building digital experiences.
       </p>
     </div>
     <div class="intro-art">
@@ -111,6 +116,10 @@ const sections = [
     margin-top: var(--space-16);
     font-size: var(--size-subhead);
     color: var(--muted);
+  }
+
+  .page-intro p + p {
+    font-size: var(--size-body);
   }
 
   .intro-art img {
