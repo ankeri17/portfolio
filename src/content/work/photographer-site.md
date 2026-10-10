@@ -5,8 +5,10 @@ kind: 'Small business website'
 role: 'Designer and builder'
 status: 'in-progress'
 summary: 'A portfolio and workshop site for a North Dakota photographer, built to stay out of the way of the pictures.'
-image: '/images/work/photographer-site.svg'
-imageAlt: 'Thick star trails turning around a crimson pole star, above the soft silhouette of a prairie horizon.'
+image: '/images/art/photography-portfolio.webp'
+imageAlt: 'Crimson, gold, and black ribbons curling into a circular aperture, framed by fine gold corner marks.'
+imageWidth: 1448
+imageHeight: 1086
 order: 4
 featured: false
 caseStudy: false

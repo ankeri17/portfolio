@@ -4,96 +4,97 @@ import Marginalia from '../components/Marginalia.astro';
 import ArtImage from '../components/ArtImage.astro';
 
 // About: a short professional introduction, how she approaches the work,
-// a scannable career timeline, and a condensed note on technology and AI.
-// Facts come from Erin's LinkedIn export and her own notes. Anything not
-// verified carries a visible placeholder (BRAND.md section 12).
+// a scannable career timeline, education, and a note on technology and AI.
+// Facts come from Erin's verified background brief (October 2026). Nothing
+// unverified appears (BRAND.md section 12).
 
 const approach = [
   {
-    title: 'Cross-functional collaboration',
-    body: 'I spend most of my time at the seams between teams, because that is where work gets lost.',
-  },
-  {
     title: 'Systems thinking',
-    body: 'A late deliverable is usually a symptom. I look for the structure underneath before fixing the surface.',
+    body: 'Most problems that look like a late deliverable are really about how the pieces fit together. I look for the structure underneath before I touch the surface.',
   },
   {
-    title: 'Transparent communication',
-    body: 'People can handle bad news. What they cannot handle is finding out late. I say what I know, early.',
+    title: 'Collaborative leadership',
+    body: 'I lead by making the work visible and the decisions explicit, so people across engineering, marketing, customers, and leadership can contribute from where they sit.',
   },
   {
-    title: 'Practical operational structure',
-    body: 'Enough process to make the work predictable, and no more. A plan nobody follows is not a plan.',
+    title: 'Transparency and good judgment',
+    body: 'I say what I know, early, including the bad news. When the right call is not obvious, I weigh the tradeoffs openly and own the decision.',
   },
   {
-    title: 'Thoughtful decision-making',
-    body: 'Name the decision, name who makes it, and write down why. Most arguments are really about an unnamed decision.',
-  },
-  {
-    title: 'Adaptability in complex environments',
-    body: 'Mergers, startups, transformations. I have done my best work in places where the ground was moving.',
+    title: 'Practical execution',
+    body: 'Plans and process only matter if the work ships. I stay close enough to the day-to-day to know what is actually happening, and I do the work myself when that is what the moment needs.',
   },
 ];
 
-// Career highlights, most recent first. Years from Erin; the Gloto dates
-// are still outstanding.
+// Career timeline, most prominent first. Dates and titles are from Erin's
+// verified background (October 2026). Overlapping roles are shown as they
+// were; consulting ran alongside Sentinel Insights for most of those years.
 const timeline = [
   {
-    years: '2026',
+    years: 'July 2026 to present',
     title: 'Technical program manager',
     org: 'Red Hat',
     note: 'Current role.',
   },
   {
-    years: '2021 to 2026',
-    title: 'First employee, product operations and customer support',
+    years: 'July 2021 to June 2026',
+    title: 'Founding team member and executive vice president',
     org: 'Sentinel Insights',
-    note: 'Founding team of a MarTech monitoring startup.',
+    note: 'First employee of a B2B SaaS company focused on MarTech data quality, consent validation, and real-user monitoring. Strategic advisor to three CEOs.',
     link: '/work/sentinel-insights/',
   },
   {
-    years: '2021 to 2025',
-    title: 'Program management, agile and digital transformation, web and MarTech',
-    org: 'Project 3 Consulting, later Northern',
-    note: 'Boutique agency work in parallel with Sentinel Insights.',
+    years: 'August 2021 to March 2025',
+    title: 'Principal consultant',
+    org: 'Project 3 Consulting',
+    note: 'Program and project management, agile and digital transformation, marketing technology, web development, and process improvement. Engagements included enterprise agile coaching for a digital marketing technology program at Bayer Crop Science.',
   },
   {
-    years: '2023 to 2024',
-    title: 'Agile coach, marketing operations',
+    years: 'January 2024 to April 2025',
+    title: 'Agile coach, marketing operations transformation',
     org: 'Humana',
-    note: 'Coached marketing operations teams through an agile transformation.',
+    note: 'Supported the launch of four new agile pods and coached ten more, along with product owners, Scrum Masters, and leaders. Built communities of practice, playbooks, and working agreements, and delivered training that reached more than 150 people.',
   },
   {
-    years: '2018 to 2021',
-    title: 'Scrum Master and project manager, then senior IT program manager',
-    org: 'TD Ameritrade, then Charles Schwab',
-    note: 'MarTech Enablement and Data Architecture Lab, through the merger.',
+    years: 'June 2021 to August 2021',
+    title: 'Senior IT program manager',
+    org: 'Charles Schwab',
+    note: 'Tag management and data architecture across the combined TD Ameritrade and Schwab digital properties.',
     link: '/work/td-ameritrade-schwab/',
   },
   {
-    years: '2017 to 2024',
-    title: 'Marketing lead',
+    years: 'July 2018 to June 2021',
+    title: 'Senior enterprise and technical project manager',
+    org: 'TD Ameritrade',
+    note: 'MarTech Enablement and Data Architecture Lab. Coordinated two engineering delivery teams through the Schwab merger.',
+    link: '/work/td-ameritrade-schwab/',
+  },
+  {
+    years: 'January 2017 to September 2024',
+    title: 'Marketing consultant',
     org: 'Inside Out Home Inspector',
-    note: 'The full marketing function for a family-owned business, now closed.',
+    note: 'Branding, social media, and marketing strategy for a family-owned home inspection business.',
     link: '/work/inside-out-home-inspector/',
   },
   {
-    years: '2017 to 2018',
-    title: 'Technical writer',
+    years: 'July 2017 to July 2018',
+    title: 'Senior technical writer',
     org: 'Oracle',
+    note: 'Global product documentation for Oracle Hospitality, working with cross-functional scrum teams. Led the Maryland Oracle Women\'s Leadership group.',
   },
   {
-    years: '[PLACEHOLDER: Gloto years, needs Erin]',
-    title: 'Client services, then EVP of operations',
+    years: 'January 2012 to June 2016',
+    title: 'Director of client services, then executive vice president',
     org: 'Gloto',
-    note: 'Five years at a mobile and web build startup serving national brands.',
+    note: 'Director of client services and project manager from January 2012, then executive vice president and operations manager from May 2014. Custom web and mobile products for national brands.',
     link: '/work/gloto/',
   },
   {
-    years: '2007 to 2011',
-    title: 'Technical writer',
-    org: 'Raytheon Solipsys',
-    note: 'Manuals, training, and usability testing.',
+    years: '2006 to 2011',
+    title: 'Technical writing, training, and publications',
+    org: 'Raytheon Solipsys, then Xerox/ACS',
+    note: 'Senior technical writer, editor, and trainer at Raytheon Solipsys from July 2006 to March 2011, then publications specialist at Xerox/ACS. Before that, customer support and operations roles at Verizon Business and Capital One.',
   },
   {
     years: 'Since 2007',
@@ -104,14 +105,11 @@ const timeline = [
   },
 ];
 
-function isPlaceholder(value?: string) {
-  return value?.startsWith('[PLACEHOLDER');
-}
 ---
 
 <Base
-  title="About | Erin Ankeny"
-  description="Erin Ankeny has spent over 20 years connecting technical and business teams, from technical writing to enterprise program management to founding-team operations."
+  title="About Erin Ankeny | Experience & Approach"
+  description="Learn about Erin Ankeny's experience in enterprise program management, startup executive leadership, agile transformation, and digital business."
 >
   <div class="content">
     <header class="page-intro">
@@ -127,36 +125,41 @@ function isPlaceholder(value?: string) {
         />
       </figure>
       <p>
-        I've spent over 20 years being the person who gets groups with
-        different vocabularies working from the same page, in enterprise
-        technology, startups, and small businesses.
+        I've spent more than 20 years working at the intersection of
+        technology, business, and people. My career has taken me from
+        technical writing to enterprise program management and executive
+        startup leadership, with a consistent focus on making complex work
+        understandable and manageable.
       </p>
     </header>
 
     <section aria-labelledby="intro-heading">
       <h2 id="intro-heading">What I do</h2>
       <p>
-        I lead programs and operations for teams in the middle of change. That
-        has meant running delivery for MarTech engineering teams through a
-        merger, building the operations of a startup from its first employee,
-        coaching marketing teams through an agile transformation, and running
-        client services for a build shop serving national brands.
+        I lead programs and operations in environments where priorities
+        compete, teams depend on one another, and the path forward isn't
+        always obvious.
       </p>
       <p>
-        The problems I'm good at tend to look the same underneath: a lot of
-        capable people, several vocabularies, and no shared picture of the
-        work. I make the picture, get everyone looking at it, and keep it
-        current until the work ships.
+        I've coordinated enterprise MarTech initiatives through a major
+        corporate merger, helped build a SaaS startup as its first employee,
+        supported organizational transformation through agile coaching, and
+        led client services and operations for a technology startup working
+        with national brands.
       </p>
       <p>
-        I also build websites and brands for small businesses, with property
-        and home services as the corner of the world I know best. I've worked
-        inside those businesses, not just built websites for them. I ran the
-        marketing function for a family-owned home inspection company for
-        roughly seven years, and I've been a licensed real estate agent since
-        2016, still handling{' '}
+        Those experiences have shaped how I work. I connect the broader
+        business context to the practical decisions teams make every day. I
+        help people understand what matters, establish ownership, and build
+        the structure needed to deliver.
+      </p>
+      <p>
+        I also design websites and support marketing for small businesses.
+        Having managed marketing for a family-owned home inspection company
+        and worked in real estate since 2016, including{' '}
         <a href="https://realtyconnect.net/site/erin-ankeny/">relocation referrals</a>{' '}
-        through a nationwide network.
+        today, I understand many of the practical challenges small business
+        owners face.
       </p>
     </section>
 
@@ -192,20 +195,15 @@ function isPlaceholder(value?: string) {
         </Marginalia>
         <p>
           I started as a technical writer, turning what engineers build into
-          something the rest of the world can understand. Everything since has
+          something the rest of the world can understand. Everything since,
+          from program leadership to running a startup's operations, has
           depended on that skill.
         </p>
       </div>
       <ol class="timeline">
         {timeline.map((item) => (
           <li class="timeline-item">
-            <p class="timeline-years">
-              {isPlaceholder(item.years) ? (
-                <span class="placeholder">{item.years}</span>
-              ) : (
-                item.years
-              )}
-            </p>
+            <p class="timeline-years">{item.years}</p>
             <div class="timeline-body">
               <p class="timeline-title">{item.title}</p>
               <p class="timeline-org">
@@ -216,23 +214,48 @@ function isPlaceholder(value?: string) {
           </li>
         ))}
       </ol>
+      <p class="parallel">
+        Alongside those roles I've worked as a consultant for an insurance
+        agency, Knights of Columbus Insurance through the Callaway Agency,
+        from 2016 to 2024, and in real estate since 2016, first as a licensed
+        realtor with Weichert and since 2021 as a relocation specialist with
+        License Park Realty.
+      </p>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <ul class="education">
+        <li>
+          <strong>University of Maryland Global Campus.</strong> Master of
+          Science in Technology Management.
+        </li>
+        <li>
+          <strong>University of Maryland, College Park.</strong> Bachelor of
+          Arts in History and American Studies, with focus areas in
+          Psychology and Sociology.
+        </li>
+      </ul>
     </section>
 
     <section aria-labelledby="ai-heading">
       <h2 id="ai-heading">Technology and AI</h2>
       <p>
-        I use AI the way I've used every new tool in twenty years of technical
-        work: to get more done without lowering the standard. In practice that
-        means deciding which parts of a project belong to a person and which to
-        a model, being precise about what I'm asking for, and checking what
-        comes back before it goes anywhere.
+        I've worked alongside technical teams throughout my career,
+        translating complex requirements into plans, documentation,
+        decisions, and experiences that people can use.
       </p>
       <p>
-        It shows up in how I plan work, draft documentation, build sites, and
-        clear the repetitive parts of operations so the team can spend its
-        time on judgment. This site was built that way: I wrote the brief and
-        the design rules, a model wrote the first pass, and every line got a
-        human read.
+        Today, AI is part of that toolkit. I use it to explore ideas, create
+        working prototypes, accelerate documentation, support analysis, and
+        build digital experiences. My focus is on applying the technology
+        thoughtfully, with clear requirements, appropriate review, and
+        accountability for the finished work.
+      </p>
+      <p>
+        This portfolio is one example of that approach, combining my own
+        strategy, content direction, design decisions, and hands-on iteration
+        with AI-assisted development.
       </p>
     </section>
   </div>
@@ -341,6 +364,24 @@ function isPlaceholder(value?: string) {
     font-size: var(--size-small);
   }
 
+  .parallel,
+  .education {
+    margin-top: var(--space-24);
+    color: var(--muted);
+  }
+
+  .education {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .education strong {
+    font-weight: 500;
+    color: var(--text);
+  }
+
   .timeline-item p + p.timeline-note {
     margin-top: var(--space-4);
     font-size: var(--size-small);
@@ -380,7 +421,7 @@ function isPlaceholder(value?: string) {
     }
 
     .timeline-item {
-      grid-template-columns: 140px 1fr;
+      grid-template-columns: 180px 1fr;
     }
   }
 

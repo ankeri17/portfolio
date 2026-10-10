@@ -48,9 +48,7 @@ const {
 
 const href = `/work/${id}/`;
 const Heading = headingLevel;
-// Placeholder years stay off the card; the case study page shows them.
-const meta =
-  status === 'in-progress' ? 'In progress' : years?.startsWith('[PLACEHOLDER') ? undefined : years;
+const meta = status === 'in-progress' ? 'In progress' : years;
 ---
 
 <article class:list={['work-card', { wide, static: !caseStudy }]} id={id}>
@@ -58,10 +56,8 @@ const meta =
     <a class="card-link" href={href}>
       <div class="shot">
         {image ? (
-          <ArtImage src={image} alt={imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'} width={imageWidth} height={imageHeight} fit="cover" sizes="(min-width: 768px) 340px, 100vw" />
-        ) : (
-          <span class="placeholder">[PLACEHOLDER: image, needs Erin]</span>
-        )}
+          <ArtImage src={image} alt={imageAlt ?? ''} width={imageWidth} height={imageHeight} fit="cover" sizes="(min-width: 768px) 340px, 100vw" />
+        ) : null}
       </div>
       <div class="card-body">
         <p class="eyebrow">
@@ -70,17 +66,15 @@ const meta =
         </p>
         <Heading class="card-title">{title}</Heading>
         <p class="summary">{summary}</p>
-        <p class="more">Read the case study</p>
+        <p class="more">View case study</p>
       </div>
     </a>
   ) : (
     <div class="card-link">
       <div class="shot">
         {image ? (
-          <ArtImage src={image} alt={imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'} width={imageWidth} height={imageHeight} fit="cover" sizes="(min-width: 768px) 340px, 100vw" />
-        ) : (
-          <span class="placeholder">[PLACEHOLDER: image, needs Erin]</span>
-        )}
+          <ArtImage src={image} alt={imageAlt ?? ''} width={imageWidth} height={imageHeight} fit="cover" sizes="(min-width: 768px) 340px, 100vw" />
+        ) : null}
       </div>
       <div class="card-body">
         <p class="eyebrow">

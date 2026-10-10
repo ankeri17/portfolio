@@ -1,63 +1,24 @@
-# Missing content that needs Erin
+# Open questions for Erin
 
-Everything on this list is either a visible `[PLACEHOLDER: ...]` on the site or a fact the site currently works around. Nothing here was invented to fill the gap (BRAND.md section 12). Remove each placeholder from the source file as you supply the content.
+The October 2026 content brief resolved every placeholder. The site carries no visible editorial markers. What remains is a short list of facts where the brief and earlier notes disagreed, or where an assumption was made.
 
-Where to edit: case study text lives in `src/content/work/<entry>.md`. The About timeline lives in `src/pages/about.astro`.
+## Dates that differ from what Erin said earlier
 
-## Facts
+The brief's dates were used on the site because it is sourced from uploaded records. Confirm them, and the timeline in `src/pages/about.astro` is a one-line change each.
 
-| Item | Where it shows | What's needed |
+| Role | Erin said earlier | Brief says (now on site) |
 |---|---|---|
-| Gloto years | `/work/gloto/` facts block, About timeline | Start and end years (you said five years; the dates are not on the site) |
-| Hello Again Properties years | `/work/hello-again-properties/` | Year built, and whether it's still maintained |
-| Photographer site | Work page card | Launch date and URL when it goes live, then set `status: 'complete'`, add `link`, and consider `caseStudy: true` |
+| Humana, agile coach | 2023 to 2024 | January 2024 to April 2025 |
+| Raytheon Solipsys | 2007 to 2011 | July 2006 to March 2011 |
 
-## Case study questions
+## Assumptions made
 
-Each case study has five sections: Overview, Challenge, My role, Approach, Outcome. The ones below have placeholders. A few sentences per question is plenty; I'll fit them to the voice.
+- **Bayer Crop Science** has no dates in the brief and is described as consulting work. It appears as an engagement note under Project 3 Consulting on the About timeline, not as its own entry. Move it if it was a separate contract.
+- **TD Ameritrade "more than 100 digital properties" and OneTrust.** The brief says to keep the 100-plus figure only if existing project material supports it. It came from the copy Erin wrote for the previous version of the site, so it stays, with OneTrust alongside Tealium as before. Say the word to drop either.
+- **Date style.** The brief writes ranges with an en dash (2021–2026). The site uses "2021 to 2026" throughout, matching BRAND.md's no-dash rule and the existing voice.
+- **Page titles** follow the brief's capitalization ("Program & Operations Leadership") in the browser tab and search results only. Visible headings stay in sentence case per BRAND.md.
 
-### TD Ameritrade and Charles Schwab (`td-ameritrade-schwab.md`)
+## Still to do when ready
 
-1. What was the state of things when you arrived? What was inconsistent or at risk?
-2. Which decisions were yours: prioritization, vendor coordination, release go/no-go, something else?
-3. One concrete example of how the Tealium or OneTrust rollout was sequenced, or how a privacy gap was found and closed.
-4. Any verifiable outcome: number of properties migrated, timeline, audit result, or similar.
-
-### Gloto (`gloto.md`)
-
-1. Company and team size, and the kinds of products it built.
-2. The specific operational or delivery problems you were brought in to solve.
-3. What EVP of operations covered day to day (staffing, delivery process, finance, vendors), and which decisions were yours.
-4. How you ran client services and operations: the scoping, status, and escalation process you put in place.
-5. Verifiable outcomes: products launched, client retention, team growth over the five years.
-
-### Sentinel Insights (`sentinel-insights.md`)
-
-1. The specific problems product operations and support were set up to solve.
-2. What you owned outright: support, onboarding, hiring, internal process.
-3. How you built support and operations from nothing, and how customer feedback got back into the product.
-4. Verifiable outcomes: team size at departure, customers supported, processes that outlasted you.
-
-### Inside Out Home Inspector (`inside-out-home-inspector.md`)
-
-1. Anything else the role covered: the website, review management, referral relationships with agents.
-2. How the brand and outreach were built: channels that mattered, what the content focused on, how reviews were encouraged.
-
-### Hello Again Properties (`hello-again-properties.md`)
-
-1. Platform or build approach, and anything notable about the design decisions.
-2. Any verifiable outcome: booking inquiries, owner feedback.
-
-### ShopHappens (`shophappens.md`)
-
-1. How the site has been built and rebuilt over the years, and what the rebrands and pivots responded to.
-2. Any outcome you're comfortable sharing: traffic, revenue model, longevity milestones.
-
-## Things to confirm
-
-- **Availability wording.** The Contact page says you're open to conversations about leadership roles, contract and project work, and website and marketing projects. Check it matches what you want to say while at Red Hat.
-- **Red Hat.** The About timeline lists it as the current role with no detail. Add a line about the work if you want one, or leave it as is.
-- **Humana.** Listed only on the About timeline with the one verified sentence. If you want it as a case study, it needs answers to the five case study questions above.
-- **Project 3 Consulting / Northern.** On the timeline as 2021 to 2025 with a general description. Any specific client engagements worth naming would strengthen the Programs and operations section.
-- **Contact form delivery.** The form markup is correct for Netlify Forms, but a submission has not been tested end to end from this environment. Check that form detection is enabled in the Netlify dashboard and send a test message once this branch is deployed.
-- **Domain.** `astro.config.mjs`, the sitemap, and canonical tags all point to erinankeny.com. Keep it that way for launch; it just means social previews and canonicals name the final domain while the site lives at erinankeny.netlify.app.
+- **Photographer site.** Launch date and URL, then set `status: 'complete'` and add `link` in `src/content/work/photographer-site.md`.
+- **Contact form delivery.** Send a test message on the deployed site and confirm it arrives. Form detection may need enabling in the Netlify dashboard.
