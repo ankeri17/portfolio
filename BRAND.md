@@ -78,29 +78,35 @@ Direct, warm, understated. She writes like a person talking, not a brand.
 
 ## 4. Color
 
-Direction: **Column.** Editorial, near-white, one strong accent used with restraint.
+Direction: **Editorial ivory with the artwork's palette.** Warm ivory page, charcoal type, crimson used with restraint, gold for small marks. Inspired by the University of Maryland colors, as an independent brand; never reproduce the university's logos or marks. Approved by Erin, October 2026, replacing the earlier plum palette.
 
 ```css
 :root {
-  --paper:       #FDFDFD;  /* page background */
-  --panel:       #EDEBEF;  /* section tint, cards, code blocks */
-  --border:      #E2E0E5;  /* hairline rules */
-  --ink:         #16151A;  /* headings, primary text */
-  --muted:       #6E6A75;  /* secondary text, captions, metadata */
-  --plum:        #6B2049;  /* accent: links, buttons, marks */
-  --plum-hover:  #551639;  /* accent hover and active */
-  --plum-tint:   #F5EDF1;  /* accent wash, used rarely */
+  --paper:         #FAF6EE;  /* page background, warm ivory */
+  --panel:         #F2ECE1;  /* section tint, cards, secondary surfaces */
+  --border:        #D8C9B7;  /* hairline rules, taupe */
+  --ink:           #1D1D1D;  /* headings, charcoal */
+  --text:          #292522;  /* body copy */
+  --muted:         #6B625A;  /* secondary text, captions, metadata */
+  --crimson:       #C8102E;  /* accent: links, primary button, marks */
+  --crimson-deep:  #8E1022;  /* accent hover and active */
+  --crimson-tint:  #F6E4E3;  /* accent wash, used rarely */
+  --gold:          #E6B43C;  /* small accents, dividers, decorative marks */
+  --gold-tint:     #F7ECD2;  /* gold wash, used rarely */
 }
 ```
 
 **Rules:**
 
-- Accent is for links, one primary button per view, and small editorial marks. It is not a background color for large areas.
+- Crimson is for links, one primary button per view, and small editorial marks. It is not a background color for large areas. The artwork already carries the strong color; sections stay ivory or panel.
+- Gold is never used for text. Dividers, the hero rule, and small marks only.
 - No gradients, drop shadows, glows, or blur effects anywhere.
-- Borders are hairlines. `1px solid var(--border)`, or `0.5px` where the browser supports it.
-- Contrast floor is WCAG AA. `--muted` on `--paper` passes for body text; do not lighten it further.
-- Never place `--muted` text on `--plum`. White (`--paper`) only.
+- Borders are hairlines. `1px solid var(--border)`.
+- Contrast floor is WCAG AA. `--muted` on `--paper` passes for body text; do not lighten it further. `--crimson` on `--paper` passes for link and button text.
+- Never place `--muted` text on `--crimson`. `--paper` only.
 - No dark mode for v1. Revisit after launch.
+
+**Artwork.** The custom illustration set in `public/images/art/` (crimson, charcoal, gold, ivory, taupe, organic forms, fine gold lines, paper texture) is the primary source of visual personality. The older SVG illustrations in `public/images/work/` were recolored to the same palette and stay in use until each is replaced. `docs/IMAGE_MANIFEST.md` lists every image and where it appears.
 
 ---
 
@@ -169,7 +175,9 @@ External links get no icon.
 
 **Secondary button.** Transparent fill, 1px `--border`, `--ink` text, 4px radius. Hover fills `--panel`.
 
-**Cards.** Only for work entries. `--paper` background, 1px `--border`, 8px radius, 24px padding. No shadow. Hover raises the border to `--ink` at 20 percent, nothing else moves.
+**Cards.** Only for work entries. `--paper` background, 1px `--border`, 8px radius, 24px padding. No shadow. Hover raises the border to `--ink` at 20 percent, nothing else moves. The image frame is 4:3 with `object-fit: cover`, through the `ArtImage` component.
+
+**Artwork placement.** Standalone artwork (hero, section, About, Contact) uses `ArtImage` at its natural ratio with the card radius and no border or shadow. Text never sits on top of artwork. Decorative artwork gets `alt=""`; artwork that stands for a project gets descriptive alt.
 
 **Navigation.** Text links, Instrument Sans 500 at 15px, no background, no border. Current page marked with a 2px `--plum` underline. Mobile collapses to a plain stacked menu, not a slide-out drawer.
 
@@ -180,7 +188,7 @@ External links get no icon.
 - No icons unless one does real work. No decorative icon grids.
 - No numbered markers (01 / 02 / 03) unless the content is an actual sequence.
 - No stat cards, no big-number-with-small-label hero blocks.
-- No stock photography. Real photos only, from the shoot.
+- No stock photography. Real photos only, from the shoot, plus the custom illustration set.
 
 ---
 
@@ -213,7 +221,7 @@ Non-negotiable, and not worth announcing on the site.
 
 Things that would make this site look like every other AI-built site. Avoid all of them.
 
-- Warm cream background with a terracotta or clay accent. This is the current default look and reads as a tell.
+- Terracotta or clay accents on cream. The ivory here is tied to the artwork's paper tone and pairs with crimson and gold, not clay.
 - Near-black page with one acid-bright accent.
 - Gradient text, gradient buttons, gradient anything.
 - Glassmorphism, frosted panels, heavy blur.
@@ -267,7 +275,7 @@ Present the home inspection work accurately: consulting for a small family-owned
 ## 12. Working in this repo
 
 - Read this file at the start of every session.
-- Derive every color and type value from sections 4 and 5. Do not introduce new hex values or font families.
+- Derive every color and type value from sections 4 and 5. Do not introduce new hex values or font families. The SVG illustrations use the same hex values as the tokens.
 - When a copy decision comes up that isn't covered here, draft it and flag it rather than shipping it. Copy is Erin's call.
 - Do not add analytics, tracking, or third-party embeds without asking.
 - Keep the dependency list short. This site should be maintainable by one person a year from now.

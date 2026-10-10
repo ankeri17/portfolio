@@ -1,0 +1,73 @@
+---
+// One component for every piece of artwork on the site: hero and section
+// illustrations, work card images, and case study images. It renders a
+// plain <img> with intrinsic width and height so nothing shifts on load.
+//
+// Artwork in /images/art/ ships as WebP at two widths (name.webp up to
+// 1600 wide, name-800.webp for small screens); for those the component
+// adds a srcset. SVG illustrations in /images/work/ are used as is.
+//
+// `fit` decides what happens when the frame's aspect ratio differs from
+// the image's. 'natural' (default) lets the image set its own height, so
+// the whole composition is visible. 'cover' fills a frame the parent
+// sizes, cropping from the center; use it only where the crop is
+// intentional, such as work cards that need one consistent shape.
+//
+// Decorative artwork gets alt="" so screen readers skip it. Artwork that
+// stands for a project (work cards, case studies) gets descriptive alt.
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  fit?: 'natural' | 'cover';
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  fit = 'natural',
+  loading = 'lazy',
+  sizes = '(min-width: 1024px) 680px, 100vw',
+  class: className,
+} = Astro.props;
+
+const art = /^\/images\/art\/([^/]+)\.webp$/.exec(src);
+const srcset = art ? `/images/art/${art[1]}-800.webp 800w, ${src} ${width}w` : undefined;
+---
+
+<img
+  class:list={['art', `art-${fit}`, className]}
+  src={src}
+  srcset={srcset}
+  sizes={srcset ? sizes : undefined}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+  fetchpriority={loading === 'eager' ? 'high' : undefined}
+/>
+
+<style>
+  .art {
+    display: block;
+    max-width: 100%;
+  }
+
+  .art-natural {
+    width: 100%;
+    height: auto;
+  }
+
+  .art-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

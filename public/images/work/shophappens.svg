@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img">
   <!-- One bold line finding its way between soft filled circles to a plum
-       ringed point. Palette from BRAND.md section 4 only; no gradients. -->
-  <rect width="1280" height="800" fill="#EDEBEF"/>
+       ringed point. Palette from BRAND.md section 4 only (crimson, charcoal, gold, taupe); no gradients. -->
+  <rect width="1280" height="800" fill="#F2ECE1"/>
 
   <!-- what's in the way -->
-  <circle cx="240" cy="190" r="55" fill="#E2E0E5"/>
-  <circle cx="500" cy="150" r="36" fill="#FDFDFD" stroke="#6E6A75" stroke-width="8"/>
-  <circle cx="770" cy="230" r="62" fill="#E2E0E5"/>
-  <circle cx="300" cy="565" r="70" fill="#E2E0E5"/>
-  <circle cx="620" cy="645" r="42" fill="#FDFDFD" stroke="#6E6A75" stroke-width="8"/>
-  <circle cx="905" cy="565" r="52" fill="#E2E0E5"/>
-  <circle cx="1060" cy="175" r="38" fill="#FDFDFD" stroke="#6E6A75" stroke-width="8"/>
-  <circle cx="560" cy="395" r="28" fill="#E2E0E5"/>
+  <circle cx="240" cy="190" r="55" fill="#D8C9B7"/>
+  <circle cx="500" cy="150" r="36" fill="#FAF6EE" stroke="#A48C72" stroke-width="8"/>
+  <circle cx="770" cy="230" r="62" fill="#D8C9B7"/>
+  <circle cx="300" cy="565" r="70" fill="#D8C9B7"/>
+  <circle cx="620" cy="645" r="42" fill="#FAF6EE" stroke="#A48C72" stroke-width="8"/>
+  <circle cx="905" cy="565" r="52" fill="#D8C9B7"/>
+  <circle cx="1060" cy="175" r="38" fill="#FAF6EE" stroke="#A48C72" stroke-width="8"/>
+  <circle cx="560" cy="395" r="28" fill="#D8C9B7"/>
 
   <!-- the way through -->
   <path d="M-40 480 C 120 432, 160 305, 300 332 C 420 356, 400 522, 520 542 C 610 557, 645 472, 705 432 C 765 392, 825 422, 885 402 C 955 377, 1010 318, 1100 290"
-    fill="none" stroke="#16151A" stroke-width="13" stroke-linecap="round"/>
+    fill="none" stroke="#1D1D1D" stroke-width="13" stroke-linecap="round"/>
 
   <!-- where it was going -->
-  <circle cx="1150" cy="272" r="30" fill="#F5EDF1" stroke="#6B2049" stroke-width="10"/>
-  <circle cx="1150" cy="272" r="11" fill="#6B2049"/>
+  <circle cx="1150" cy="272" r="30" fill="#F7ECD2" stroke="#C8102E" stroke-width="10"/>
+  <circle cx="1150" cy="272" r="11" fill="#C8102E"/>
 </svg>

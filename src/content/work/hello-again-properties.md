@@ -9,7 +9,7 @@ link: 'https://helloagainproperties.com'
 summary: 'A landing page for a set of short-term rental properties in Wisconsin, with real photography and a clear sense of each space.'
 highlight: 'One of the properties is also the home of a new outdoor bucket golf game, launching soon.'
 image: '/images/work/hello-again-properties.svg'
-imageAlt: 'Bold rings rippling out from a plum point on still water, with a second smaller ripple beside them.'
+imageAlt: 'Bold rings rippling out from a crimson point on still water, with a second smaller ripple beside them.'
 order: 2
 featured: false
 ---

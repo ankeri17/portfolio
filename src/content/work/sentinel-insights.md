@@ -8,8 +8,10 @@ years: '2021 to 2026'
 status: 'complete'
 summary: 'Five years on the founding team of a MarTech monitoring startup, running product operations, customer support, and team building.'
 highlight: 'First employee, and for five years the person who did whatever the day required.'
-image: '/images/work/sentinel-insights.svg'
-imageAlt: 'Calm drifting lines, one rising into a swell, circled and marked in plum.'
+image: '/images/art/sentinel-insights.webp'
+imageAlt: 'Overlapping crimson, gold, and black circles joined by fine gold lines, like nodes in a network.'
+imageWidth: 1448
+imageHeight: 1086
 order: 3
 featured: true
 ---

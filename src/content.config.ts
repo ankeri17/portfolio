@@ -28,6 +28,10 @@ const work = defineCollection({
     highlight: z.string().optional(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    // Intrinsic size of `image`, for layout stability. SVG illustrations
+    // are 1280 by 800; the custom artwork in /images/art/ varies.
+    imageWidth: z.number().default(1280),
+    imageHeight: z.number().default(800),
     order: z.number(),
     featured: z.boolean().default(false),
     caseStudy: z.boolean().default(true),

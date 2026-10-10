@@ -6,7 +6,7 @@ role: 'Designer and builder'
 status: 'in-progress'
 summary: 'A portfolio and workshop site for a North Dakota photographer, built to stay out of the way of the pictures.'
 image: '/images/work/photographer-site.svg'
-imageAlt: 'Thick star trails turning around a plum pole star, above the soft silhouette of a prairie horizon.'
+imageAlt: 'Thick star trails turning around a crimson pole star, above the soft silhouette of a prairie horizon.'
 order: 4
 featured: false
 caseStudy: false

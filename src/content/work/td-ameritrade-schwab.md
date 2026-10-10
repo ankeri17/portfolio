@@ -8,8 +8,10 @@ years: '2018 to 2021'
 status: 'complete'
 summary: 'Program management for the MarTech and data architecture teams behind a major brokerage, through a merger.'
 highlight: 'Project managed the Tealium tag management and OneTrust consent rollouts across more than 100 sites.'
-image: '/images/work/td-ameritrade-schwab.svg'
-imageAlt: 'Five thick threads arriving from different directions and settling into one parallel band, the center thread plum.'
+image: '/images/art/schwab-martech.webp'
+imageAlt: 'Many crimson, gold, and black strands sweeping in from the left and converging into one central flow.'
+imageWidth: 1448
+imageHeight: 1086
 order: 1
 featured: true
 ---
