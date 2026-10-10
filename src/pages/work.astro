@@ -1,67 +1,78 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import WorkCard from '../components/WorkCard.astro';
 
-// The proof page. Entries live as markdown files in src/content/work/,
-// sorted by their `order` field, and render as hairline-separated sections
-// with anchors so Home cards can link straight to an entry.
+// The portfolio page. Entries live as markdown files in src/content/work/
+// and are grouped into the same two areas the Home page introduces.
+// Within each area, completed work sorts above in-progress work, then by
+// `order`. Each card carries the entry's id as an anchor so older
+// /work/#id links still land on the right entry.
 
-const entries = (await getCollection('work')).sort(
-  (a, b) => a.data.order - b.data.order
-);
+const entries = await getCollection('work');
 
-const rendered = await Promise.all(
-  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content }))
-);
+function sortEntries(list: typeof entries) {
+  return list.sort((a, b) => {
+    if (a.data.status !== b.data.status) {
+      return a.data.status === 'complete' ? -1 : 1;
+    }
+    return a.data.order - b.data.order;
+  });
+}
+
+const sections = [
+  {
+    id: 'programs',
+    title: 'Programs and operations',
+    intro:
+      'Enterprise delivery, cross-functional leadership, MarTech governance, and operations work inside startups and large companies.',
+    entries: sortEntries(entries.filter((e) => e.data.category === 'programs')),
+  },
+  {
+    id: 'websites',
+    title: 'Websites and marketing',
+    intro:
+      'Websites, brands, and the marketing function itself for small businesses, plus independent projects I build and run end to end.',
+    entries: sortEntries(entries.filter((e) => e.data.category === 'websites')),
+  },
+];
 ---
 
 <Base
   title="Work | Erin Ankeny"
-  description="Selected work: program and operations leadership, MarTech and data governance, and websites and brands for small businesses."
+  description="Selected work from twenty years across enterprise program management, startup operations, and websites and marketing for small businesses."
 >
   <div class="content">
     <header class="page-intro">
       <h1>Work</h1>
       <p>
-        A few things I've built and run, and what came of them. Each one is the
-        same job in a different room: getting people with different vocabularies
-        working from the same page.
+        A selection of what I've led, built, and run, in two areas. Each one is
+        the same job in a different room: getting people with different
+        vocabularies working from the same page.
       </p>
     </header>
 
-    {rendered.map(({ entry, Content }) => (
-      <article id={entry.id} class="entry">
-        <p class="eyebrow">
-          {entry.data.kind}{entry.data.years && <> · {entry.data.years}</>}
-        </p>
-        <h2>
-          {entry.data.link ? (
-            <a href={entry.data.link}>{entry.data.title}</a>
-          ) : (
-            entry.data.title
-          )}
-        </h2>
-        <div class="shot">
-          {entry.data.image ? (
-            <img
-              src={entry.data.image}
-              alt={entry.data.imageAlt ?? '[PLACEHOLDER: alt text, needs Erin]'}
-              width="680"
-              height="425"
-              loading="lazy"
-              decoding="async"
+    {sections.map((section) => (
+      <section class="area" id={section.id} aria-labelledby={`${section.id}-heading`}>
+        <h2 id={`${section.id}-heading`}>{section.title}</h2>
+        <p class="area-intro">{section.intro}</p>
+        <div class="cards">
+          {section.entries.map((entry) => (
+            <WorkCard
+              id={entry.id}
+              title={entry.data.title}
+              kind={entry.data.kind}
+              summary={entry.data.summary}
+              years={entry.data.years}
+              status={entry.data.status}
+              caseStudy={entry.data.caseStudy}
+              category={entry.data.category}
+              image={entry.data.image}
+              imageAlt={entry.data.imageAlt}
             />
-          ) : (
-            <span class="placeholder">[PLACEHOLDER: screenshot, needs Erin]</span>
-          )}
+          ))}
         </div>
-        <div class="annotated entry-body">
-          <Content />
-        </div>
-        {entry.data.highlight && (
-          <p class="highlight">{entry.data.highlight}</p>
-        )}
-      </article>
+      </section>
     ))}
 
     <p class="also">
@@ -82,69 +93,35 @@ const rendered = await Promise.all(
     color: var(--muted);
   }
 
-  .entry {
-    margin-top: var(--space-48);
+  .area {
+    margin-top: var(--section-gap);
     padding-top: var(--space-48);
     border-top: 1px solid var(--border);
   }
 
-  .entry .eyebrow {
-    margin-bottom: var(--space-8);
+  .area-intro {
+    margin-top: var(--space-12);
+    color: var(--muted);
   }
 
-  .entry h2 a {
-    color: var(--ink);
-  }
-
-  .entry h2 a:hover {
-    color: var(--plum);
-  }
-
-  .shot {
-    aspect-ratio: 16 / 10;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    margin-top: var(--space-24);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-16);
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .shot:has(img) {
-    padding: 0;
-  }
-
-  .shot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .entry-body :global(p) {
-    margin-top: var(--space-16);
-  }
-
-  .highlight {
-    margin-top: var(--space-24);
-    border-left: 2px solid var(--plum);
-    padding-left: var(--space-16);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: var(--size-subhead);
-    line-height: 1.5;
-    max-width: 52ch;
+  .cards {
+    display: grid;
+    gap: var(--space-16);
+    margin-top: var(--space-32);
   }
 
   .also {
-    margin-top: var(--space-48);
+    margin-top: var(--section-gap);
     padding-top: var(--space-32);
     border-top: 1px solid var(--border);
     font-size: var(--size-small);
     color: var(--muted);
+  }
+
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -152,8 +129,7 @@ const rendered = await Promise.all(
       padding-block-start: var(--space-64);
     }
 
-    .entry {
-      margin-top: var(--space-64);
+    .area {
       padding-top: var(--space-64);
     }
   }

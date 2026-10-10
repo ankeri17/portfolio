@@ -234,6 +234,34 @@ main p a:not(.button-primary):not(.button-secondary):hover {
   resize: vertical;
 }
 
+.field select {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-8) var(--space-12);
+  width: 100%;
+}
+
+.field .hint,
+.field .error {
+  font-size: var(--size-small);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.field .error {
+  color: var(--plum);
+}
+
+.field [aria-invalid='true'],
+.field :user-invalid {
+  border-color: var(--plum);
+}
+
 /* Spam honeypot: hidden from everyone, kept out of the tab order in the
    markup */
 

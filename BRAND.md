@@ -4,7 +4,7 @@ Brand and design guide for **erinankeny.com**.
 
 Read this file before starting any work in this repo. Every color, typeface, and spacing decision comes from here. If something isn't covered, ask rather than inventing a new token.
 
-Status: working draft. Copy in the "Positioning" section is not final and is subject to Erin's approval.
+Status: working draft. Hero copy and the two areas were approved by Erin in October 2026. Other copy on the site is draft until she signs it off.
 
 ---
 
@@ -30,17 +30,22 @@ LinkedIn holds a chronological list of jobs in a format someone else controls. T
 
 This is provable, not aspirational. She was the communications hub between customers, engineering, and management at Gloto, drove communication and collaboration across the enterprise at TD Ameritrade, and spent the first years of her career as a technical writer making what engineers know legible to people who aren't engineers. Same job, different titles.
 
-**Hero copy (draft):**
+**Hero copy (approved by Erin, October 2026):**
 
-> I help people who don't speak the same language build things together.
+> Making complex work easier to move forward.
 >
-> Twenty years getting technical teams and everyone else to understand each other. Lately, one of them isn't human.
+> I lead programs, build operations, and connect technical and business teams so good ideas become work that actually gets done.
+>
+> Over 20 years across enterprise technology, startups, and digital operations.
 
-**Ways to work with her (three doors, one house):**
+The earlier line, "I help people who don't speak the same language build things together," is retired from the hero but the idea stays in the Home and Work copy as the throughline.
 
-1. Program and operations leadership, including transformation work
-2. MarTech, data, and privacy and consent governance
-3. Web and brand work for small businesses, with property and home services as the area she knows best
+**Ways to work with her (two areas, one house):**
+
+1. Programs and operations: enterprise delivery, cross-functional leadership, MarTech governance (including data, privacy, and consent), organizational change, and operational improvement
+2. Websites and marketing: website development, digital experiences, marketing strategy, and practical support for small businesses, with property and home services as the area she knows best
+
+MarTech governance used to be its own door. It now sits inside programs and operations, per Erin's October 2026 brief.
 
 Writing is not a door. It's the first job she held and part of why the translation claim holds up, so it belongs in the About page narrative. Her Substack, Inside Ops, is **not linked from this site for now** at her request. Do not add it, reference it, or build a writing page until she says otherwise.
 
@@ -226,20 +231,21 @@ Four pages for v1. The fuller project plan lives alongside this file.
 
 | Page | Job |
 |---|---|
-| Home | State the throughline, then route to work and contact. |
-| About | The full arc and the person. The most important page after Home. |
-| Work | Proof. Each entry is one tight paragraph plus a single highlight line. |
-| Contact | One clear ask, one simple form, and what she's open to. |
+| Home | Hero, the two areas, three featured case studies, how I work, closing call to action. |
+| About | Introduction, how she approaches the work, a scannable career timeline, and a short note on technology and AI. |
+| Work | Proof, in two sections matching the two areas. Cards link to case study pages at `/work/<id>/`. |
+| Work case studies | One page per completed entry: Overview, Challenge, My role, Approach, Outcome, plus a facts block and the highlight line. |
+| Contact | What she's open to, one simple form with an optional topic, and an email fallback. |
+
+**Case study structure.** Each case study's markdown body uses the five headings in order: Overview, Challenge, My role, Approach, Outcome. Emphasize ownership and actual contributions. Where a measurable outcome isn't available, describe verifiable deliverables and qualitative outcomes. Never fabricate; leave a visible placeholder. In-progress work sorts below completed work and is labeled, and it does not get a case study page until it ships.
 
 ShopHappens, her affiliate content site, belongs as an entry on the Work page rather than as a page of its own. It is proof that she builds and runs something end to end, and it shares the values thread that runs through her career: helping people navigate complicated systems. Frame it that way. Do not list it as a bare credential.
 
-**Work page curation.** Feature four to six entries, not everything she has ever touched. Quantity dilutes proof. Each featured entry carries real weight: one paragraph covering what it was, her role, and what came of it, plus one highlight line as the proof point. Candidates, strongest first:
+**Work page curation.** Feature the work that carries real weight, not everything she has ever touched. Quantity dilutes proof. Current entries:
 
-- The photographer's site (in progress). Carries design craft and is the source of referral traffic.
-- helloagainproperties.com. A complete multi-page site for a vacation rental business, with real photography and copy that has a voice.
-- Brand and marketing for a family-owned home inspection business, roughly seven years, now closed. The strongest small-business entry because it covers the whole marketing function rather than a single build.
-- ShopHappens. Building and operating something end to end over years.
-- One or two enterprise entries from her program and MarTech work.
+Programs and operations: TD Ameritrade and Charles Schwab, Gloto, Sentinel Insights. These three are also the featured work on Home, in that order. Humana and Project 3 Consulting appear on the About timeline only, until there is verified content for a case study.
+
+Websites and marketing: Inside Out Home Inspector (the full marketing function over seven years, the strongest small-business entry), Hello Again Properties, ShopHappens, and the photographer's site (in progress, labeled, no case study page yet).
 
 Weaker material, which may be named in a short "also build and maintain" line but should not be featured: blbrenovations.com (a single-page contact site) and her Etsy shop (a platform storefront, so it demonstrates no build craft). A thin entry sitting next to a strong one lowers the read on both.
 

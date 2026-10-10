@@ -2,13 +2,24 @@
 import Base from '../layouts/Base.astro';
 
 // One clear ask, one simple form, and what she's open to. The form posts
-// to Netlify Forms (the data-netlify attribute wires it up at deploy
-// time), with a honeypot field for spam and a mailto fallback below.
+// to Netlify Forms (the data-netlify attribute wires it up at deploy time)
+// with a honeypot for spam and a mailto fallback below. Native browser
+// validation does the work without JavaScript; the small script at the
+// bottom only improves the messages and reports submit errors.
+//
+// The field list must stay in sync with public/__forms.html, which
+// Netlify's build-time scanner reads.
+
+const topics = [
+  { value: 'programs', label: 'Programs and operations' },
+  { value: 'websites', label: 'Websites and marketing' },
+  { value: 'general', label: 'General inquiry' },
+];
 ---
 
 <Base
   title="Contact | Erin Ankeny"
-  description="Get in touch about program and operations work, MarTech and data governance, or a website for your small business."
+  description="Get in touch with Erin Ankeny about program and operations leadership, contract work, or a website and marketing project for your small business."
 >
   <div class="content">
     <header class="page-intro">
@@ -19,11 +30,26 @@ import Base from '../layouts/Base.astro';
       </p>
     </header>
 
-    <section class="open-to">
-      <p class="eyebrow">What I'm open to</p>
+    <section class="open-to" aria-labelledby="open-to-heading">
+      <h2 id="open-to-heading" class="eyebrow">What I'm open to</h2>
+      <ul>
+        <li>
+          <strong>Program and operations leadership.</strong> Conversations
+          about senior program, operations, and cross-functional leadership
+          roles.
+        </li>
+        <li>
+          <strong>Contract and project work.</strong> Program management, MarTech
+          and data governance, and operational improvement engagements.
+        </li>
+        <li>
+          <strong>Websites and marketing.</strong> Site builds, brand work, and
+          practical marketing help for small businesses.
+        </li>
+      </ul>
       <p>
-        Contract program and operations work, MarTech and data governance
-        engagements, and website and brand projects for small businesses.
+        And if none of those fit, I still like meeting people who do
+        interesting work. Say hello anyway.
       </p>
     </section>
 
@@ -40,25 +66,119 @@ import Base from '../layouts/Base.astro';
       </p>
       <div class="field">
         <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required />
+        <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" />
+        <p class="error" id="name-error" hidden>Please add your name.</p>
       </div>
       <div class="field">
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required />
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error" />
+        <p class="hint" id="email-hint">So I can reply. I won't share it.</p>
+        <p class="error" id="email-error" hidden>Please enter an email address I can reply to.</p>
+      </div>
+      <div class="field">
+        <label for="topic">What's this about?</label>
+        <select id="topic" name="topic" aria-describedby="topic-hint">
+          <option value="">Choose one, if you like</option>
+          {topics.map((topic) => (
+            <option value={topic.value}>{topic.label}</option>
+          ))}
+        </select>
+        <p class="hint" id="topic-hint">Optional.</p>
       </div>
       <div class="field">
         <label for="message">What you're working on</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+        <p class="error" id="message-error" hidden>Tell me a little about it, even one line is fine.</p>
       </div>
+      <p class="form-status" role="status" aria-live="polite" hidden></p>
       <button class="button-primary" type="submit">Send message</button>
     </form>
 
     <p class="fallback">
       Prefer email? Write to{' '}
-      <a href="mailto:erinankeny@gmail.com">erinankeny@gmail.com</a>.
+      <a href="mailto:erinankeny@gmail.com">erinankeny@gmail.com</a>. You can
+      also find me on <a href="https://www.linkedin.com/in/erinankeny">LinkedIn</a>.
     </p>
   </div>
 </Base>
+
+<script>
+  // Progressive enhancement. Without this script the browser's native
+  // validation and the normal POST to Netlify still work. With it: inline
+  // messages per field, focus on the first problem, and a visible error if
+  // the submission itself fails instead of a blank Netlify error page.
+  const form = document.querySelector<HTMLFormElement>('form[name="contact"]');
+
+  if (form) {
+    const status = form.querySelector<HTMLElement>('.form-status');
+    const fields = Array.from(
+      form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]')
+    );
+
+    function errorFor(field: HTMLElement) {
+      return document.getElementById(`${field.id}-error`);
+    }
+
+    function showError(field: HTMLInputElement | HTMLTextAreaElement, show: boolean) {
+      const error = errorFor(field);
+      if (!error) return;
+      error.hidden = !show;
+      field.setAttribute('aria-invalid', show ? 'true' : 'false');
+    }
+
+    function validate() {
+      let first: HTMLElement | null = null;
+      for (const field of fields) {
+        const ok = field.checkValidity();
+        showError(field, !ok);
+        if (!ok && !first) first = field;
+      }
+      return first;
+    }
+
+    for (const field of fields) {
+      field.addEventListener('blur', () => showError(field, !field.checkValidity()));
+      field.addEventListener('input', () => {
+        if (field.checkValidity()) showError(field, false);
+      });
+    }
+
+    form.noValidate = true;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const first = validate();
+      if (first) {
+        first.focus();
+        return;
+      }
+
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (button) button.disabled = true;
+      if (status) {
+        status.hidden = false;
+        status.textContent = 'Sending your message.';
+      }
+
+      try {
+        const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+        if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+        window.location.assign(form.action);
+      } catch {
+        if (button) button.disabled = false;
+        if (status) {
+          status.textContent =
+            'Something went wrong sending that. Please try again, or email erinankeny@gmail.com directly.';
+        }
+      }
+    });
+  }
+</script>
 
 <style>
   .page-intro {
@@ -72,11 +192,34 @@ import Base from '../layouts/Base.astro';
   }
 
   .open-to {
-    margin-top: var(--space-32);
+    margin-top: var(--space-48);
   }
 
-  .open-to .eyebrow {
-    margin-bottom: var(--space-8);
+  .open-to h2 {
+    font-size: var(--size-eyebrow);
+    margin-bottom: var(--space-12);
+  }
+
+  .open-to ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-12);
+    max-width: 68ch;
+  }
+
+  .open-to li {
+    padding-top: var(--space-12);
+    border-top: 1px solid var(--border);
+  }
+
+  .open-to strong {
+    font-weight: 500;
+  }
+
+  .open-to p {
+    margin-top: var(--space-16);
+    color: var(--muted);
   }
 
   form {
@@ -86,6 +229,12 @@ import Base from '../layouts/Base.astro';
 
   form .button-primary {
     margin-top: var(--space-24);
+  }
+
+  .form-status {
+    margin-top: var(--space-16);
+    font-size: var(--size-small);
+    color: var(--plum);
   }
 
   .fallback {
