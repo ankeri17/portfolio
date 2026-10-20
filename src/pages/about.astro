@@ -105,6 +105,63 @@ const timeline = [
   },
 ];
 
+// Community and mentorship, from Erin's October 2026 section brief. Three
+// understated groups. No dates, and no leadership language for the women in
+// technology groups; the Oracle group is the same one named in the timeline.
+const community = [
+  {
+    heading: 'Community building',
+    entries: [
+      {
+        org: 'MeasureCamp DC',
+        role: 'Founding volunteer member',
+        body: 'Helping build and support the DC-area analytics community for two consecutive years.',
+      },
+      {
+        org: 'Habitat for Humanity Baltimore',
+        role: 'Volunteer',
+        body: 'Contributing time to local community and housing initiatives.',
+      },
+    ],
+  },
+  {
+    heading: 'Mentorship',
+    entries: [
+      {
+        org: 'College Park Scholars',
+        role: 'Mentor',
+        body: 'Supporting students as they navigate academic and professional development.',
+      },
+      {
+        org: 'University of Maryland',
+        role: 'Mentor',
+        body: 'Sharing professional experience and guidance with emerging talent.',
+      },
+      {
+        org: 'Realty Connect',
+        role: 'Referral agent peer mentor',
+        body: 'Helping fellow agents navigate referrals and build confidence in their work.',
+        link: 'https://realtyconnect.net/site/erin-ankeny/',
+      },
+    ],
+  },
+  {
+    heading: 'Women in technology',
+    entries: [
+      {
+        org: 'Oracle Women\'s Leadership',
+        role: 'Group member',
+        body: 'Participating in a professional community focused on connection, development, and supporting women in technology.',
+      },
+      {
+        org: 'TD Ameritrade',
+        role: 'Women in technology group member',
+        body: 'Engaging with colleagues through a community dedicated to supporting women and fostering professional growth in technology.',
+      },
+    ],
+  },
+];
+
 ---
 
 <Base
@@ -239,6 +296,31 @@ const timeline = [
           Psychology and Sociology.
         </li>
       </ul>
+    </section>
+
+    <section aria-labelledby="community-heading">
+      <h2 id="community-heading">Community and mentorship</h2>
+      <p>
+        I believe in sharing what I've learned, creating opportunities for
+        others, and contributing to communities where people can connect,
+        grow, and succeed.
+      </p>
+      {community.map((group) => (
+        <div class="community-group">
+          <h3 class="community-group-heading">{group.heading}</h3>
+          <ul class="community">
+            {group.entries.map((item) => (
+              <li class="community-item">
+                <p class="community-org">
+                  {item.link ? <a href={item.link}>{item.org}</a> : item.org}
+                </p>
+                <p class="community-role">{item.role}</p>
+                <p class="community-note">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
 
     <section aria-labelledby="ai-heading">
@@ -397,6 +479,55 @@ const timeline = [
     line-height: 1.5;
   }
 
+  /* Community and mentorship: three understated groups, each a two-column
+     grid of compact entries with the same hairline-top treatment as the
+     approach list, so nothing new is introduced. Group headings borrow the
+     timeline's italic eyebrow so they stay secondary to the section title. */
+  .community-group {
+    margin-top: var(--space-24);
+  }
+
+  .community-group-heading {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--size-eyebrow);
+    color: var(--muted);
+    margin-bottom: var(--space-8);
+  }
+
+  .community {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-16) var(--space-32);
+  }
+
+  .community-item {
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--border);
+  }
+
+  .community-item p,
+  .community-item p + p {
+    margin: 0;
+  }
+
+  .community-org {
+    font-weight: 500;
+  }
+
+  .community-role {
+    font-size: var(--size-small);
+  }
+
+  .community-item p + p.community-note {
+    margin-top: var(--space-4);
+    font-size: var(--size-small);
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
   @media (min-width: 768px) {
     .page-intro {
       display: grid;
@@ -430,6 +561,10 @@ const timeline = [
 
     .timeline-item {
       grid-template-columns: 180px 1fr;
+    }
+
+    .community {
+      grid-template-columns: 1fr 1fr;
     }
   }
 
