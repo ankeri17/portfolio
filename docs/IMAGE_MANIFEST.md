@@ -33,6 +33,6 @@ The six line-drawn SVGs in `public/images/work/` were removed once every work en
 
 | File | Appears on | Notes |
 |---|---|---|
-| `images/headshot.webp` (1000 x 1250) and `images/headshot-600.webp` (600 x 750) | About intro, in the right-hand column beside the title (full width on phones) | Replaced October 2026 with the studio portrait on a warm neutral background; cropped to 4:5 from the center. Source in `assets/headshot-original.png`. |
+| `images/headshot.webp` (700 x 1000) and `images/headshot-420.webp` (420 x 600) | About intro, in the right-hand column beside the title (full width on phones) | Replaced October 2026 with the studio portrait on a warm neutral background; cropped to 7:10, a slightly tighter frame than the source. Source in `assets/headshot-original.png`. |
 | `og.png` (1200 x 630) | Social sharing on every page | Regenerated with the new headline, ivory background, gold rule, and the hero artwork. |
 | `favicon.svg` | Browser tab | Recolored to crimson. |
