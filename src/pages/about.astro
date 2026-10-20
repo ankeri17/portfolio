@@ -117,11 +117,14 @@ const timeline = [
       <figure class="headshot">
         <img
           src="/images/headshot.webp"
-          alt="Erin Ankeny, smiling in front of a brick wall"
-          width="400"
-          height="400"
+          srcset="/images/headshot-600.webp 600w, /images/headshot.webp 1000w"
+          sizes="(min-width: 1024px) 300px, (min-width: 768px) 260px, 100vw"
+          alt="Erin Ankeny, smiling, wearing tortoiseshell glasses and a navy sweater"
+          width="1000"
+          height="1250"
           loading="eager"
           decoding="async"
+          fetchpriority="high"
         />
       </figure>
       <p>
@@ -273,12 +276,17 @@ const timeline = [
     max-width: 60ch;
   }
 
+  /* The portrait is treated like the other standalone artwork on the site:
+     natural 4:5 ratio, card radius, no border or shadow (BRAND.md section
+     7). It takes the same right-hand column as the botanical beside "How I
+     approach the work", so the two sit on one rail. At phone width it runs
+     full width between the title and the introduction. */
   .headshot {
-    margin-top: var(--space-24);
-    width: 200px;
+    margin: var(--space-24) 0 0;
   }
 
   .headshot img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: var(--radius-card);
@@ -392,7 +400,7 @@ const timeline = [
   @media (min-width: 768px) {
     .page-intro {
       display: grid;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 1fr 260px;
       gap: var(--space-16) var(--space-48);
       align-items: start;
     }
@@ -428,6 +436,8 @@ const timeline = [
   @media (min-width: 1024px) {
     .page-intro {
       padding-block-start: var(--space-64);
+      grid-template-columns: 1fr 300px;
+      column-gap: var(--space-64);
     }
 
     section {
