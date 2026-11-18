@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import WorkCard from '../components/WorkCard.astro';
 import ArtImage from '../components/ArtImage.astro';
 
-// Home: hero, the two areas of work, three featured case studies, how I
+// Home: type-only hero, the two areas of work, three featured case studies, how I
 // work, and a closing call to action. Featured entries come from the
 // `featured` flag in src/content/work/, sorted by `order`. Only completed
 // work is featured here; in-progress entries stay on the Work page.
@@ -75,16 +75,6 @@ const principles = [
         <a class="button-primary" href="/work/">Explore my work</a>
         <a class="button-secondary" href="/contact/">Get in touch</a>
       </p>
-    </div>
-    <div class="hero-art">
-      <ArtImage
-        src="/images/art/hero-home.webp"
-        alt=""
-        width={1600}
-        height={900}
-        loading="eager"
-        sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
-      />
     </div>
   </section>
 
@@ -175,23 +165,19 @@ const principles = [
 </Base>
 
 <style>
-  /* Hero uses the full canvas width so text and artwork sit side by side
-     at desktop. Text first in source so it reads first on mobile. */
+  /* Type-only hero on the full canvas. No artwork here, so the first
+     image a visitor meets is the What I do art below. The headline is
+     capped so it always breaks into two balanced lines. */
   .hero {
-    padding-block-start: var(--space-48);
-    display: grid;
-    gap: var(--space-32);
-    align-items: center;
-  }
-
-  .hero-art img {
-    border-radius: var(--radius-card);
+    padding-block-start: var(--space-64);
   }
 
   .hero h1 {
     font-size: var(--size-hero);
-    line-height: 1.12;
-    letter-spacing: -0.01em;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    max-width: 14em;
+    text-wrap: balance;
   }
 
   .hero-rule {
@@ -205,12 +191,13 @@ const principles = [
     margin-top: var(--space-24);
     font-size: var(--size-subhead);
     line-height: 1.5;
-    max-width: 48ch;
+    max-width: 36rem;
   }
 
   .hero .lede-small {
     margin-top: var(--space-12);
     color: var(--muted);
+    max-width: 36rem;
   }
 
   .hero .actions {
@@ -328,9 +315,7 @@ const principles = [
 
   @media (min-width: 768px) {
     .hero {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-48);
-      padding-block-start: var(--space-64);
+      padding-block-start: var(--space-96);
     }
 
     .closing {
@@ -359,9 +344,7 @@ const principles = [
 
   @media (min-width: 1024px) {
     .hero {
-      grid-template-columns: minmax(0, 7fr) minmax(0, 6fr);
-      gap: var(--space-64);
-      padding-block-start: var(--space-96);
+      padding-block-start: var(--space-128);
     }
 
     .areas {

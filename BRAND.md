@@ -130,7 +130,7 @@ Two families, both from Google Fonts. Self-host or preload; do not add a third f
 
 | Role | Family | Size (desktop) | Weight | Line height | Tracking |
 |---|---|---|---|---|---|
-| Hero headline | Display | 52px | 400 | 1.12 | -0.01em |
+| Hero headline | Display | 64px | 400 | 1.08 | -0.015em |
 | Page title | Display | 40px | 400 | 1.15 | -0.01em |
 | Section heading | Display | 28px | 400 | 1.25 | 0 |
 | Subheading | Body | 18px | 500 | 1.4 | 0 |
@@ -138,7 +138,7 @@ Two families, both from Google Fonts. Self-host or preload; do not add a third f
 | Small / caption | Body | 14px | 400 | 1.5 | 0 |
 | Eyebrow / aside | Display italic | 15px | 400 | 1.4 | 0 |
 
-Mobile: hero drops to 34px, page title to 28px, section heading to 22px. Body stays 17px. Nothing below 14px anywhere.
+Mobile: hero drops to 40px, page title to 28px, section heading to 22px. Body stays 17px. Nothing below 14px anywhere.
 
 **Rules:**
 
@@ -181,7 +181,7 @@ External links get no icon.
 
 **Cards.** Only for work entries. `--paper` background, 1px `--border`, 8px radius, 24px padding. No shadow. Hover raises the border to `--ink` at 20 percent, nothing else moves. The image frame is 4:3 with `object-fit: cover`, through the `ArtImage` component.
 
-**Artwork placement.** Standalone artwork (hero, section, About, Contact) uses `ArtImage` at its natural ratio with the card radius and no border or shadow. Text never sits on top of artwork. Decorative artwork gets `alt=""`; artwork that stands for a project gets descriptive alt.
+**Artwork placement.** The Home hero is type only, so the first artwork a visitor sees is in What I do. Standalone artwork (page intros, sections, About, Contact) uses `ArtImage` at its natural ratio with the card radius and no border or shadow. Text never sits on top of artwork. Decorative artwork gets `alt=""`; artwork that stands for a project gets descriptive alt.
 
 **Navigation.** Text links, Instrument Sans 500 at 15px, no background, no border. Current page marked with a 2px `--plum` underline. Mobile collapses to a plain stacked menu, not a slide-out drawer.
 
@@ -243,7 +243,7 @@ Four pages for v1. The fuller project plan lives alongside this file.
 
 | Page | Job |
 |---|---|
-| Home | Hero, the two areas, three featured case studies, how I work, closing call to action. |
+| Home | Type-only hero, the two areas, three featured case studies, how I work, closing call to action. |
 | About | Introduction, how she approaches the work, a scannable career timeline, and a short note on technology and AI. |
 | Work | Proof, in two sections matching the two areas. Cards link to case study pages at `/work/<id>/`. |
 | Work case studies | One page per completed entry: Overview, Challenge, My role, Approach, Outcome, plus a facts block and the highlight line. |
