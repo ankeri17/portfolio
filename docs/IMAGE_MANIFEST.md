@@ -11,7 +11,7 @@ Source PNGs live in `assets/img/` as uploaded. The site serves WebP copies from 
 | `art/hero-home.webp` (1600 x 900) | `hero-home.png` | Home hero, beside the headline | Natural ratio, eager, high priority | Decorative, `alt=""` |
 | `art/hero-operations.webp` (1600 x 900) | `hero-enterprise.png` | Home, What I do, Programs and operations | 3:2 frame, cover | Decorative |
 | `art/small-business-websites.webp` (1448 x 1086) | `small-business-websites.png` | Home, What I do, Websites and marketing | 3:2 frame, cover | Decorative |
-| `art/hero-work.webp` (1600 x 900) | `hero-work.png` | Work page intro, beside the title | Natural ratio, eager | Decorative |
+| `art/hero-work.webp` (1184 x 666) | `hero-work.png`, a 16:9 crop of `hero-work-original.webp` centered on Erin | Work page intro, beside the title | Natural ratio, eager | Descriptive, in `work.astro` |
 | `art/schwab-martech.webp` (1448 x 1086) | `schwab-martech.png` | TD Ameritrade card (Home, Work) and case study | Card 4:3 cover; case study natural | Descriptive, in frontmatter |
 | `art/gloto.webp` (1448 x 1086) | `gloto.png` | Gloto card (Home, Work) and case study | Card 4:3 cover; case study natural | Descriptive, in frontmatter |
 | `art/sentinel-insights.webp` (1448 x 1086) | `sentinel-insights.png` | Sentinel Insights card (Home, Work) and case study | Card 4:3 cover; case study natural | Descriptive, in frontmatter |
