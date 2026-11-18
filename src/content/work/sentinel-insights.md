@@ -30,6 +30,14 @@ Building an early-stage SaaS company requires continuous decisions about how to 
 
 As an executive vice president, I served as a strategic advisor to company leadership, including three CEOs over my five years, and helped establish the functions and operating practices needed to support the business. My responsibilities included customer-facing operations, product coordination, marketing, sales enablement, and internal organizational processes.
 
+<figure class="photo">
+<picture>
+<source type="image/webp" srcset="/images/work/tealium-digital-velocity-panel-clean-800.webp 800w, /images/work/tealium-digital-velocity-panel-clean.webp 1774w" sizes="(min-width: 1024px) 680px, 100vw">
+<img src="/images/work/tealium-digital-velocity-panel-clean.jpg" alt="Erin Ankeny moderating a panel on stage at Tealium Digital Velocity." width="1774" height="887" loading="lazy" decoding="async">
+</picture>
+<figcaption><strong>On stage at Tealium Digital Velocity</strong> Moderating an industry panel on digital data and technology during my time at Sentinel Insights.</figcaption>
+</figure>
+
 ## Approach
 
 I focused on connecting business priorities with day-to-day execution. That included translating customer feedback into actionable product discussions, developing sales and marketing resources, coordinating work across engineering, product, sales, and customer-facing teams, and creating repeatable processes as the organization evolved.

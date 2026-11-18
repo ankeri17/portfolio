@@ -167,6 +167,32 @@ const facts = [
     margin-top: var(--space-16);
   }
 
+  /* Editorial photo placed in a case study body as raw HTML. Shown at its
+     natural ratio with the card radius, no border, overlay, or filter. */
+  .body :global(.photo) {
+    margin-top: var(--space-32);
+  }
+
+  .body :global(.photo img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-card);
+  }
+
+  .body :global(.photo figcaption) {
+    margin-top: var(--space-12);
+    font-size: var(--size-small);
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .body :global(.photo figcaption strong) {
+    display: block;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
   .case-footer {
     margin-top: var(--section-gap);
     padding-top: var(--space-32);
