@@ -21,7 +21,7 @@
   --font-body:    'Instrument Sans', system-ui, sans-serif;
 
   /* Type scale, desktop (BRAND.md section 5) */
-  --size-hero:    3.25rem;    /* 52px */
+  --size-hero:    4rem;       /* 64px */
   --size-title:   2.5rem;     /* 40px */
   --size-heading: 1.75rem;    /* 28px */
   --size-subhead: 1.125rem;   /* 18px */
@@ -69,11 +69,11 @@
   }
 }
 
-/* Mobile type scale (BRAND.md section 5): hero 34px, page title 28px,
+/* Mobile type scale (BRAND.md section 5): hero 40px, page title 28px,
    section heading 22px. Body stays 17px. */
 @media (max-width: 767px) {
   :root {
-    --size-hero:    2.125rem;  /* 34px */
+    --size-hero:    2.5rem;    /* 40px */
     --size-title:   1.75rem;   /* 28px */
     --size-heading: 1.375rem;  /* 22px */
   }

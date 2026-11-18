@@ -8,7 +8,6 @@ Source PNGs live in `assets/img/` as uploaded. The site serves WebP copies from 
 
 | File | Source | Appears on | Rendering | Alt |
 |---|---|---|---|---|
-| `art/hero-home.webp` (1600 x 900) | `hero-home.png` | Home hero, beside the headline | Natural ratio, eager, high priority | Decorative, `alt=""` |
 | `art/hero-operations.webp` (1600 x 900) | `hero-enterprise.png` | Home, What I do, Programs and operations | 3:2 frame, cover | Decorative |
 | `art/small-business-websites.webp` (1448 x 1086) | `small-business-websites.png` | Home, What I do, Websites and marketing | 3:2 frame, cover | Decorative |
 | `art/hero-work.webp` (1184 x 666) | `hero-work.png`, a 16:9 crop of `hero-work-original.webp` centered on Erin | Work page intro, beside the title | Natural ratio, eager | Descriptive, in `work.astro` |
@@ -23,7 +22,7 @@ Source PNGs live in `assets/img/` as uploaded. The site serves WebP copies from 
 | `art/services.webp` (1448 x 1086) | `services.png` | Home closing section, beside the call to action | Natural ratio | Decorative |
 | `art/contact.webp` (1448 x 1086) | `contact.png` | Contact, beside the form (after it on phones) | Natural ratio | Decorative |
 
-All fourteen supplied images are in use. None were substituted with screenshots or stock.
+Thirteen of the fourteen supplied images are in use. None were substituted with screenshots or stock. `hero-home.png` was the Home hero until November 2026, when the hero became type only so it would not echo the Programs and operations art just below. Its source stays in `assets/img/` and its WebP copies are in git history.
 
 ## Retired SVG illustrations
 

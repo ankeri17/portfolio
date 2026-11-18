@@ -39,7 +39,7 @@ Put the new PNG in `assets/img/`, then regenerate the WebP copies (needs Python 
 ```sh
 python3 -c "
 from PIL import Image
-name = 'hero-home'  # the file's base name
+name = 'about'  # the file's base name
 im = Image.open(f'assets/img/{name}.png').convert('RGB')
 for w, suffix in ((1600, ''), (800, '-800')):
     out = im.copy(); out.thumbnail((w, w)); out.save(f'public/images/art/{name}{suffix}.webp', 'WEBP', quality=80, method=6)
